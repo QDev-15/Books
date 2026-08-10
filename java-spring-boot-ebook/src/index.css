@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .code-block {
+    @apply bg-gray-100 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto font-mono text-sm;
+  }
+
+  .chapter-link {
+    @apply hover:text-primary-600 dark:hover:text-primary-400 transition-colors;
+  }
+
+  .active-chapter {
+    @apply bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 border-l-4 border-primary-600;
+  }
+
+  .fade-in {
+    @apply animate-fade-in;
+  }
+}
+
+/* Syntax highlighting for code blocks */
+.hljs {
+  @apply bg-transparent p-0 border-0;
+}
+
+.hljs-string {
+  @apply text-green-600 dark:text-green-400;
+}
+
+.hljs-number {
+  @apply text-blue-600 dark:text-blue-400;
+}
+
+.hljs-literal {
+  @apply text-purple-600 dark:text-purple-400;
+}
+
+.hljs-attr {
+  @apply text-orange-600 dark:text-orange-400;
+}
+
+.hljs-title {
+  @apply text-red-600 dark:text-red-400;
+}
+
+/* Markdown content styling */
+.markdown-content {
+  @apply prose dark:prose-invert max-w-none prose-headings:font-bold prose-headings:text-gray-900 dark:prose-headings:text-gray-100 prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-code:bg-gray-200 dark:prose-code:bg-gray-800 prose-code:text-red-600 dark:prose-code:text-red-400 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-pre:bg-gray-900 dark:prose-pre:bg-gray-950 prose-pre:text-gray-100 prose-blockquote:border-primary-500 prose-blockquote:text-gray-700 dark:prose-blockquote:text-gray-300;
+}
+
+/* Override prose defaults for better control */
+.markdown-content h1 {
+  @apply text-4xl font-bold mb-8 mt-8 text-gray-900 dark:text-white scroll-mt-20;
+}
+
+.markdown-content h2 {
+  @apply text-3xl font-bold mb-6 mt-8 text-gray-800 dark:text-gray-100 scroll-mt-20;
+}
+
+.markdown-content h3 {
+  @apply text-2xl font-bold mb-4 mt-6 text-gray-700 dark:text-gray-200 scroll-mt-20;
+}
+
+.markdown-content h4 {
+  @apply text-xl font-semibold mb-3 mt-5 text-gray-700 dark:text-gray-200;
+}
+
+.markdown-content p {
+  @apply mb-4 leading-7;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  @apply mb-4;
+}
+
+.markdown-content li {
+  @apply mb-2;
+}
+
+.markdown-content pre {
+  @apply bg-gray-900 dark:bg-gray-950 text-gray-100 rounded-lg overflow-x-auto;
+}
+
+.markdown-content pre code {
+  @apply bg-transparent p-0;
+}
+
+.markdown-content blockquote {
+  @apply border-l-4 pl-4 py-2 my-4 bg-gray-50 dark:bg-gray-900/50;
+}
+
+.markdown-content table {
+  @apply w-full border-collapse;
+}
+
+.markdown-content th,
+.markdown-content td {
+  @apply border border-gray-300 dark:border-gray-700 px-4 py-2 text-left;
+}
+
+.markdown-content th {
+  @apply bg-gray-100 dark:bg-gray-800 font-semibold;
+}
+
+button.w-full.flex.items-center.gap-2.px-3.py-2.text-sm.font-semibold.text-gray-700.dark\:text-gray-300.hover\:bg-gray-100.dark\:hover\:bg-gray-800.rounded-lg.transition-colors {
+    text-align: left;
+}
+
+.pl-2 {
+    padding-left: 20px;
+}
