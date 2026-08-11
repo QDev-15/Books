@@ -1,14 +1,26 @@
 import MarkdownIt from 'markdown-it'
 
-// Slugify helper - convert "Class và Object" to "class-và-object" (keep diacritics)
+// Slugify helper - convert "Phần 2 — INHERITANCE" to "phần-2--inheritance" (keep vietnamese diacritics)
 function slugify(text: string): string {
   return text
     .toLowerCase()
     .trim()
-    .replace(/[^\w\s-]/g, (char) => {
-      // Keep unicode word chars and dashes, convert others to dash
-      return /[\w-]/.test(char) ? char : '-'
+    .replace(/[–—]/g, '-') // Convert en-dash, em-dash to regular dash
+    // Keep only alphanumeric (including unicode), spaces, and dashes
+    .split('')
+    .map(char => {
+      const code = char.charCodeAt(0)
+      // Keep ASCII alphanumeric, unicode letters (Vietnamese), spaces, dashes
+      if ((code >= 48 && code <= 57) || // 0-9
+          (code >= 97 && code <= 122) || // a-z
+          (code >= 65 && code <= 90) || // A-Z (already lowercased)
+          code >= 192 || // Unicode chars (Vietnamese diacritics)
+          char === ' ' || char === '-') {
+        return char
+      }
+      return '-' // Convert special chars to dash
     })
+    .join('')
     .replace(/\s+/g, '-') // Replace spaces with dash
     .replace(/-+/g, '-') // Replace multiple dashes with single dash
     .replace(/^-+|-+$/g, '') // Trim dashes from start/end
