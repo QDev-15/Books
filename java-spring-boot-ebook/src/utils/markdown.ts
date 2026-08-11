@@ -1,12 +1,12 @@
 import MarkdownIt from 'markdown-it'
 
-// Slugify helper - convert "Phần 2 — INHERITANCE" to "phần-2--inheritance" (keep vietnamese diacritics)
+// Slugify helper - convert "Phần 0 — Tại Sao" to "phần-0--tại-sao" (keep vietnamese diacritics)
+// Em-dash (—) becomes 2 dashes (--) to match HTML format
 function slugify(text: string): string {
   return text
     .toLowerCase()
     .trim()
-    .replace(/[–—]/g, '-') // Convert en-dash, em-dash to regular dash
-    // Keep only alphanumeric (including unicode), spaces, and dashes
+    .replace(/[–—]/g, '--') // Em-dash/en-dash → 2 dashes (-- format)
     .split('')
     .map(char => {
       const code = char.charCodeAt(0)
@@ -22,7 +22,7 @@ function slugify(text: string): string {
     })
     .join('')
     .replace(/\s+/g, '-') // Replace spaces with dash
-    .replace(/-+/g, '-') // Replace multiple dashes with single dash
+    .replace(/-{3,}/g, '--') // Multiple dashes → 2 dashes max
     .replace(/^-+|-+$/g, '') // Trim dashes from start/end
 }
 
