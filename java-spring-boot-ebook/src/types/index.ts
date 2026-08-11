@@ -12,7 +12,7 @@ export interface Chapter {
 export interface Section {
   id: string
   title: string
-  slug: string
+  slug: string  // Used for anchor links
   level?: number
 }
 

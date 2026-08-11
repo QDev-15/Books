@@ -1,13 +1,14 @@
 import MarkdownIt from 'markdown-it'
 
-// Slugify helper - convert "Phần 0 — Tại Sao" to "phần-0--tại-sao"
+// Slugify helper - convert "Class và Object" to "class-và-object" (keep diacritics)
 function slugify(text: string): string {
   return text
     .toLowerCase()
     .trim()
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '') // Remove diacritics
-    .replace(/[^\w\s-]/g, '') // Remove special chars except dash
+    .replace(/[^\w\s-]/g, (char) => {
+      // Keep unicode word chars and dashes, convert others to dash
+      return /[\w-]/.test(char) ? char : '-'
+    })
     .replace(/\s+/g, '-') // Replace spaces with dash
     .replace(/-+/g, '-') // Replace multiple dashes with single dash
     .replace(/^-+|-+$/g, '') // Trim dashes from start/end
