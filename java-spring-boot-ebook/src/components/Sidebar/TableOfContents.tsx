@@ -2,6 +2,7 @@ import { ChevronDown, Bookmark } from 'lucide-react'
 import { useState, useMemo } from 'react'
 import { useEbookStore } from '../../store/useEbookStore'
 import { ebookService } from '../../services/ebookService'
+import { SectionList } from './SectionList'
 import type { Chapter } from '../../types'
 
 interface TableOfContentsProps {
@@ -64,23 +65,25 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ chapters: _cha
                   const chapterBookmarked = isBookmarked(chapter.id)
 
                   return (
-                    <button
-                      key={chapter.id}
-                      onClick={() => setCurrentChapter(chapter.id)}
-                      className={`w-full flex items-start gap-2 px-3 py-2 text-sm text-left rounded-lg transition-colors ${
-                        isActive
-                          ? 'active-chapter'
-                          : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-                      }`}
-                    >
-                      <span className="flex-shrink-0 text-xs font-medium text-gray-500 dark:text-gray-500 mt-0.5">
-                        {chapter.number}
-                      </span>
-                      <span className="flex-1 truncate">{chapter.title}</span>
-                      {chapterBookmarked && (
-                        <Bookmark className="w-4 h-4 text-yellow-500 flex-shrink-0" fill="currentColor" />
-                      )}
-                    </button>
+                    <div key={chapter.id}>
+                      <button
+                        onClick={() => setCurrentChapter(chapter.id)}
+                        className={`w-full flex items-start gap-2 px-3 py-2 text-sm text-left rounded-lg transition-colors ${
+                          isActive
+                            ? 'active-chapter'
+                            : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                        }`}
+                      >
+                        <span className="flex-shrink-0 text-xs font-medium text-gray-500 dark:text-gray-500 mt-0.5">
+                          {chapter.number}
+                        </span>
+                        <span className="flex-1 truncate">{chapter.title}</span>
+                        {chapterBookmarked && (
+                          <Bookmark className="w-4 h-4 text-yellow-500 flex-shrink-0" fill="currentColor" />
+                        )}
+                      </button>
+                      {isActive && <SectionList sections={chapter.sections} chapterId={chapter.id} />}
+                    </div>
                   )
                 })}
               </div>

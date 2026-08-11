@@ -2,7 +2,7 @@ import { Bookmark } from 'lucide-react'
 import { useEffect, useMemo, useRef } from 'react'
 import DOMPurify from 'dompurify'
 import { useEbookStore } from '../../store/useEbookStore'
-import { useKeyboard, useSwipe } from '../../hooks'
+import { useKeyboard, useSwipe, useHashScroll } from '../../hooks'
 import { renderMarkdown } from '../../utils'
 import { Pagination } from './Pagination'
 import type { Chapter } from '../../types'
@@ -25,6 +25,9 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ chapters, currentC
     onSwipeLeft: () => goToNextChapter(chapters),
     onSwipeRight: () => goToPreviousChapter(chapters),
   })
+
+  // Setup hash-based anchor scrolling
+  useHashScroll(containerRef)
 
   // Scroll to top when chapter changes
   useEffect(() => {
