@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useEbookStore } from '../store/useEbookStore'
 import { Sidebar } from './Sidebar'
 import { ContentViewer } from './ContentViewer'
@@ -10,7 +9,6 @@ interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({ chapters }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
   const { currentChapterId, sidebarOpen: storeSidebarOpen, toggleSidebar } = useEbookStore()
 
   const currentChapter = chapters.find(ch => ch.id === currentChapterId) || null

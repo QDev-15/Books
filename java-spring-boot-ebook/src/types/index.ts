@@ -13,7 +13,7 @@ export interface Section {
   id: string
   title: string
   slug: string
-  level: number
+  level?: number
 }
 
 export interface TableOfContentsItem {
@@ -25,7 +25,7 @@ export interface TableOfContentsItem {
 export interface EbookData {
   chapters: Chapter[]
   tableOfContents: TableOfContentsItem[]
-  lastUpdated: string
+  lastUpdated?: string
 }
 
 export interface SearchResult {

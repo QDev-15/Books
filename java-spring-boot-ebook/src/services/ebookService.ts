@@ -6,7 +6,7 @@ class EbookService {
   private ebookData: EbookData
 
   private constructor() {
-    this.ebookData = ebookDataJson as EbookData
+    this.ebookData = ebookDataJson as unknown as EbookData
   }
 
   static getInstance(): EbookService {

@@ -129,12 +129,15 @@ export const useEbookStore = create<EbookState>()(
         bookmarks: Array.from(state.bookmarks), // Convert Set to Array for storage
         readChapters: Array.from(state.readChapters),
       }),
-      merge: (persistedState: any, currentState) => ({
-        ...currentState,
-        ...persistedState,
-        bookmarks: new Set(persistedState.bookmarks || []),
-        readChapters: new Set(persistedState.readChapters || []),
-      }),
+      merge: (persistedState: unknown, currentState: EbookState): EbookState => {
+        const state = persistedState as Partial<EbookState> & { bookmarks?: unknown[]; readChapters?: unknown[] }
+        return {
+          ...currentState,
+          ...state,
+          bookmarks: new Set((state?.bookmarks || []) as string[]),
+          readChapters: new Set((state?.readChapters || []) as string[]),
+        }
+      },
     }
   )
 )

@@ -1,5 +1,18 @@
 import MarkdownIt from 'markdown-it'
 
+// Slugify helper - convert "Phần 0 — Tại Sao" to "phần-0--tại-sao"
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '') // Remove diacritics
+    .replace(/[^\w\s-]/g, '') // Remove special chars except dash
+    .replace(/\s+/g, '-') // Replace spaces with dash
+    .replace(/-+/g, '-') // Replace multiple dashes with single dash
+    .replace(/^-+|-+$/g, '') // Trim dashes from start/end
+}
+
 const md = new MarkdownIt({
   highlight: (str: string, lang: string) => {
     // Simple code block rendering without Prism
@@ -9,6 +22,20 @@ const md = new MarkdownIt({
     return `<pre class="code-block"><code${langClass}>${escaped}</code></pre>`
   },
 })
+
+// Add anchor IDs to headers
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+md.renderer.rules.heading_open = function (tokens: any[], idx: number) {
+  const token = tokens[idx]
+  const headingToken = tokens[idx + 1]
+
+  if (headingToken && headingToken.type === 'inline' && headingToken.content) {
+    const id = slugify(headingToken.content)
+    return `<${token.tag} id="${id}">`
+  }
+
+  return md.renderer.renderToken(tokens, idx, {})
+}
 
 function escapeHtml(text: string): string {
   if (typeof document === 'undefined') {

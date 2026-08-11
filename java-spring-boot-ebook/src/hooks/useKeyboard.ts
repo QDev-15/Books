@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import type { Chapter } from '../types'
 
 export const useKeyboard = (
-  chapters: Chapter[],
+  _chapters: Chapter[],
   onNext: () => void,
   onPrevious: () => void
 ) => {

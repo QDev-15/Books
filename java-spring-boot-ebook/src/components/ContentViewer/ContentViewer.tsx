@@ -30,7 +30,17 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ chapters, currentC
     if (currentChapter) {
       markChapterAsRead(currentChapter.id)
     }
-  }, [currentChapter?.id, markChapterAsRead])
+  }, [currentChapter, markChapterAsRead])
+
+  // Memoize sanitized HTML to prevent unnecessary re-renders (before early return)
+  const sanitizedHtml = useMemo(() => {
+    if (!currentChapter) return ''
+    const html = renderMarkdown(currentChapter.content)
+    return DOMPurify.sanitize(html, {
+      ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'br', 'strong', 'em', 'code', 'pre', 'ul', 'ol', 'li', 'blockquote', 'a', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'span'],
+      ALLOWED_ATTR: ['class', 'href', 'title'],
+    })
+  }, [currentChapter])
 
   if (!currentChapter) {
     return (
@@ -41,15 +51,6 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ chapters, currentC
   }
 
   const bookmarked = isBookmarked(currentChapter.id)
-
-  // Memoize sanitized HTML to prevent unnecessary re-renders
-  const sanitizedHtml = useMemo(() => {
-    const html = renderMarkdown(currentChapter.content)
-    return DOMPurify.sanitize(html, {
-      ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'br', 'strong', 'em', 'code', 'pre', 'ul', 'ol', 'li', 'blockquote', 'a', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'span'],
-      ALLOWED_ATTR: ['class', 'href', 'title'],
-    })
-  }, [currentChapter.content])
 
   return (
     <div {...swipeHandlers} className="flex-1 overflow-y-auto bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">

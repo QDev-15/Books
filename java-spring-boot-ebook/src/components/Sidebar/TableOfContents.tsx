@@ -8,7 +8,7 @@ interface TableOfContentsProps {
   chapters: Chapter[]
 }
 
-export const TableOfContents: React.FC<TableOfContentsProps> = ({ chapters }) => {
+export const TableOfContents: React.FC<TableOfContentsProps> = ({ chapters: _chapters }) => {
   // Get tiers from service (centralized)
   const tiers = useMemo(() => ebookService.getAllTiers(), [])
 
