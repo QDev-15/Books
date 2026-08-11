@@ -47,21 +47,10 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ chapters, currentC
   const sanitizedHtml = useMemo(() => {
     if (!currentChapter) return ''
     const html = renderMarkdown(currentChapter.content)
-    const sanitized = DOMPurify.sanitize(html, {
+    return DOMPurify.sanitize(html, {
       ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'br', 'strong', 'em', 'code', 'pre', 'ul', 'ol', 'li', 'blockquote', 'a', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'span'],
       ALLOWED_ATTR: ['class', 'href', 'title', 'id'],  // Allow 'id' for anchor links
     })
-
-    // Debug: log headings with IDs
-    if (typeof window !== 'undefined') {
-      const headings = sanitized.match(/<h[1-6][^>]*id="[^"]*"[^>]*>/g)
-      if (headings?.length) {
-        console.log(`[Chapter ${currentChapter.number}] Found ${headings.length} headings with IDs:`)
-        headings.slice(0, 5).forEach(h => console.log(`  ${h}`))
-      }
-    }
-
-    return sanitized
   }, [currentChapter])
 
   if (!currentChapter) {
