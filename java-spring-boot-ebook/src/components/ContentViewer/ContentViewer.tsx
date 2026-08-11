@@ -1,5 +1,5 @@
 import { Bookmark } from 'lucide-react'
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import DOMPurify from 'dompurify'
 import { useEbookStore } from '../../store/useEbookStore'
 import { useKeyboard, useSwipe } from '../../hooks'
@@ -13,6 +13,7 @@ interface ContentViewerProps {
 }
 
 export const ContentViewer: React.FC<ContentViewerProps> = ({ chapters, currentChapter }) => {
+  const containerRef = useRef<HTMLDivElement>(null)
   const { goToNextChapter, goToPreviousChapter, isBookmarked, toggleBookmark, markChapterAsRead } =
     useEbookStore()
 
@@ -24,6 +25,13 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ chapters, currentC
     onSwipeLeft: () => goToNextChapter(chapters),
     onSwipeRight: () => goToPreviousChapter(chapters),
   })
+
+  // Scroll to top when chapter changes
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }, [currentChapter?.id])
 
   // Mark chapter as read when viewed
   useEffect(() => {
@@ -53,7 +61,7 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ chapters, currentC
   const bookmarked = isBookmarked(currentChapter.id)
 
   return (
-    <div {...swipeHandlers} className="flex-1 overflow-y-auto bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
+    <div {...swipeHandlers} ref={containerRef} className="flex-1 overflow-y-auto bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
       <article className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 py-8 lg:py-12">
         {/* Chapter Header */}
         <div className="mb-8 pb-6 border-b border-gray-200 dark:border-gray-700">
