@@ -1,5 +1,5 @@
 import { ChevronDown, Bookmark } from 'lucide-react'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useEbookStore } from '../../store/useEbookStore'
 import { ebookService } from '../../services/ebookService'
 import { SectionList } from './SectionList'
@@ -16,7 +16,28 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ chapters: _cha
   // Initialize all tiers and chapters as expanded
   const [expandedTiers, setExpandedTiers] = useState<Set<number>>(new Set(tiers))
   const [expandedChapters, setExpandedChapters] = useState<Set<string>>(new Set())
+  const [activeSection, setActiveSection] = useState<string>('')
   const { currentChapterId, setCurrentChapter, isBookmarked, getBookmarkCount } = useEbookStore()
+
+  // Track active section while scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      const headings = document.querySelectorAll('[id^="phần-"], [id^="🎯-"], [id^="📚-"]')
+      let current = ''
+
+      headings.forEach(heading => {
+        const rect = heading.getBoundingClientRect()
+        if (rect.top <= 100) {
+          current = heading.id
+        }
+      })
+
+      setActiveSection(current)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const toggleTier = (tier: number) => {
     const newTiers = new Set(expandedTiers)
@@ -114,7 +135,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ chapters: _cha
                         )}
                       </button>
                       {isChapterExpanded && hasSections && (
-                        <SectionList sections={chapter.sections} chapterId={chapter.id} />
+                        <SectionList sections={chapter.sections} chapterId={chapter.id} activeSection={activeSection} />
                       )}
                     </div>
                   )

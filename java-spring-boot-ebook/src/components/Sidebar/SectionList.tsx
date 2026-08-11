@@ -3,6 +3,7 @@ import type { Section } from '../../types'
 interface SectionListProps {
   sections: Section[]
   chapterId: string
+  activeSection?: string
 }
 
 // Same slugify function as markdown.ts to ensure consistency
@@ -29,7 +30,7 @@ function slugify(text: string): string {
     .replace(/^-+|-+$/g, '') // Trim edges
 }
 
-export const SectionList: React.FC<SectionListProps> = ({ sections, chapterId: _chapterId }) => {
+export const SectionList: React.FC<SectionListProps> = ({ sections, chapterId: _chapterId, activeSection = '' }) => {
   if (sections.length === 0) return null
 
   return (
@@ -38,12 +39,17 @@ export const SectionList: React.FC<SectionListProps> = ({ sections, chapterId: _
         // Generate slug from title using same logic as markdown.ts
         const sectionSlug = slugify(section.title)
         const href = `#${sectionSlug}`
+        const isActive = activeSection === sectionSlug
 
         return (
           <a
             key={section.id}
             href={href}
-            className="block text-xs px-3 py-1.5 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition-colors truncate"
+            className={`block text-xs px-3 py-1.5 rounded transition-colors truncate ${
+              isActive
+                ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-medium'
+                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+            }`}
             title={section.title}
           >
             └ {section.title}
