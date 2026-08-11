@@ -49,7 +49,7 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ chapters, currentC
     const html = renderMarkdown(currentChapter.content)
     return DOMPurify.sanitize(html, {
       ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'br', 'strong', 'em', 'code', 'pre', 'ul', 'ol', 'li', 'blockquote', 'a', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'span'],
-      ALLOWED_ATTR: ['class', 'href', 'title'],
+      ALLOWED_ATTR: ['class', 'href', 'title', 'id'],  // Allow 'id' for anchor links
     })
   }, [currentChapter])
 
