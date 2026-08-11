@@ -101,7 +101,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ chapters: _cha
                   const isActive = chapter.id === currentChapterId
                   const chapterBookmarked = isBookmarked(chapter.id)
 
-                  const isChapterExpanded = expandedChapters.has(chapter.id) || isActive
+                  const isChapterExpanded = expandedChapters.has(chapter.id)
                   const hasSections = chapter.sections.length > 0
 
                   return (
