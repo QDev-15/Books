@@ -42,21 +42,26 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ chapters: _cha
       {tiers.map(tier => {
         const tierChapters = getTierChapters(tier)
         const isExpanded = expandedTiers.has(tier)
+        const tierTitle = getTierTitle(tier)
+        // Create slug from tier title for anchor link (e.g. "Tầng 1: Java Fundamentals" -> "tầng-1-java-fundamentals")
+        const tierSlug = tierTitle.toLowerCase().replace(/[^\w\s-]/g, ' ').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
 
         return (
           <div key={tier} className="space-y-1">
-            <button
+            <a
+              href={`#${tierSlug}`}
               onClick={() => toggleTier(tier)}
-              className="w-full flex items-center gap-2 px-3 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+              className="w-full flex items-center gap-2 px-3 py-2 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors no-underline hover:no-underline"
+              title={tierTitle}
             >
               <ChevronDown
                 className={`w-4 h-4 transition-transform ${isExpanded ? '' : '-rotate-90'}`}
               />
-              {getTierTitle(tier)}
+              {tierTitle}
               {/* <span className="ml-auto text-xs bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">
                 {tierChapters.length}
               </span> */}
-            </button>
+            </a>
 
             {isExpanded && (
               <div className="pl-2 space-y-1">
