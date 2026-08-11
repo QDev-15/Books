@@ -1,3 +1,4 @@
+import { useEbookStore } from '../../store/useEbookStore'
 import type { Section } from '../../types'
 
 interface SectionListProps {
@@ -30,21 +31,35 @@ function slugify(text: string): string {
     .replace(/^-+|-+$/g, '') // Trim edges
 }
 
-export const SectionList: React.FC<SectionListProps> = ({ sections, chapterId: _chapterId, activeSection = '' }) => {
+export const SectionList: React.FC<SectionListProps> = ({ sections, chapterId, activeSection = '' }) => {
+  const { currentChapterId, setCurrentChapter } = useEbookStore()
+
   if (sections.length === 0) return null
+
+  const handleSectionClick = (sectionSlug: string) => {
+    // If viewing different chapter, switch to this chapter first
+    if (currentChapterId !== chapterId) {
+      setCurrentChapter(chapterId)
+    }
+    // Set hash will trigger scroll via useHashScroll
+    window.location.hash = sectionSlug
+  }
 
   return (
     <div className="pl-6 space-y-1 mt-1">
       {sections.map(section => {
         // Generate slug from title using same logic as markdown.ts
         const sectionSlug = slugify(section.title)
-        const href = `#${sectionSlug}`
         const isActive = activeSection === sectionSlug
 
         return (
           <a
             key={section.id}
-            href={href}
+            href={`#${sectionSlug}`}
+            onClick={(e) => {
+              e.preventDefault()
+              handleSectionClick(sectionSlug)
+            }}
             className={`block text-xs px-3 py-1.5 rounded transition-colors truncate ${
               isActive
                 ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 font-medium'
