@@ -13,8 +13,9 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ chapters: _cha
   // Get tiers from service (centralized)
   const tiers = useMemo(() => ebookService.getAllTiers(), [])
 
-  // Initialize all tiers as expanded
+  // Initialize all tiers and chapters as expanded
   const [expandedTiers, setExpandedTiers] = useState<Set<number>>(new Set(tiers))
+  const [expandedChapters, setExpandedChapters] = useState<Set<string>>(new Set())
   const { currentChapterId, setCurrentChapter, isBookmarked, getBookmarkCount } = useEbookStore()
 
   const toggleTier = (tier: number) => {
@@ -25,6 +26,16 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ chapters: _cha
       newTiers.add(tier)
     }
     setExpandedTiers(newTiers)
+  }
+
+  const toggleChapter = (chapterId: string) => {
+    const newChapters = new Set(expandedChapters)
+    if (newChapters.has(chapterId)) {
+      newChapters.delete(chapterId)
+    } else {
+      newChapters.add(chapterId)
+    }
+    setExpandedChapters(newChapters)
   }
 
   const getTierChapters = (tier: number) => {
@@ -69,17 +80,32 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ chapters: _cha
                   const isActive = chapter.id === currentChapterId
                   const chapterBookmarked = isBookmarked(chapter.id)
 
+                  const isChapterExpanded = expandedChapters.has(chapter.id) || isActive
+                  const hasSections = chapter.sections.length > 0
+
                   return (
                     <div key={chapter.id}>
                       <button
-                        onClick={() => setCurrentChapter(chapter.id)}
+                        onClick={() => {
+                          setCurrentChapter(chapter.id)
+                          if (hasSections) {
+                            toggleChapter(chapter.id)
+                          }
+                        }}
                         className={`w-full flex items-start gap-2 px-3 py-2 text-sm text-left rounded-lg transition-colors ${
                           isActive
                             ? 'active-chapter'
                             : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                         }`}
                       >
-                        <span className="flex-shrink-0 text-xs font-medium text-gray-500 dark:text-gray-500 mt-0.5">
+                        {hasSections && (
+                          <ChevronDown
+                            className={`w-4 h-4 flex-shrink-0 transition-transform mt-0.5 ${
+                              isChapterExpanded ? '' : '-rotate-90'
+                            }`}
+                          />
+                        )}
+                        <span className={`flex-shrink-0 text-xs font-medium ${hasSections ? '' : 'ml-5'} text-gray-500 dark:text-gray-500`}>
                           {chapter.number}
                         </span>
                         <span className="flex-1 truncate">{chapter.title}</span>
@@ -87,7 +113,9 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ chapters: _cha
                           <Bookmark className="w-4 h-4 text-yellow-500 flex-shrink-0" fill="currentColor" />
                         )}
                       </button>
-                      {isActive && <SectionList sections={chapter.sections} chapterId={chapter.id} />}
+                      {isChapterExpanded && hasSections && (
+                        <SectionList sections={chapter.sections} chapterId={chapter.id} />
+                      )}
                     </div>
                   )
                 })}
