@@ -106,34 +106,40 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ chapters: _cha
 
                   return (
                     <div key={chapter.id}>
-                      <button
-                        onClick={() => {
-                          setCurrentChapter(chapter.id)
-                          if (hasSections) {
-                            toggleChapter(chapter.id)
-                          }
-                        }}
-                        className={`w-full flex items-start gap-2 px-3 py-2 text-sm text-left rounded-lg transition-colors ${
-                          isActive
-                            ? 'active-chapter'
-                            : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-                        }`}
-                      >
+                      <div className="flex items-start">
                         {hasSections && (
-                          <ChevronDown
-                            className={`w-4 h-4 flex-shrink-0 transition-transform mt-0.5 ${
-                              isChapterExpanded ? '' : '-rotate-90'
-                            }`}
-                          />
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault()
+                              toggleChapter(chapter.id)
+                            }}
+                            className="p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition-colors flex-shrink-0"
+                            title={isChapterExpanded ? 'Collapse' : 'Expand'}
+                          >
+                            <ChevronDown
+                              className={`w-4 h-4 transition-transform ${
+                                isChapterExpanded ? '' : '-rotate-90'
+                              }`}
+                            />
+                          </button>
                         )}
-                        <span className={`flex-shrink-0 text-xs font-medium ${hasSections ? '' : 'ml-5'} text-gray-500 dark:text-gray-500`}>
-                          {chapter.number}
-                        </span>
-                        <span className="flex-1 truncate">{chapter.title}</span>
-                        {chapterBookmarked && (
-                          <Bookmark className="w-4 h-4 text-yellow-500 flex-shrink-0" fill="currentColor" />
-                        )}
-                      </button>
+                        <button
+                          onClick={() => setCurrentChapter(chapter.id)}
+                          className={`flex-1 flex items-center gap-2 px-3 py-2 text-sm text-left rounded-lg transition-colors ${
+                            isActive
+                              ? 'active-chapter'
+                              : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                          }`}
+                        >
+                          <span className={`flex-shrink-0 text-xs font-medium text-gray-500 dark:text-gray-500`}>
+                            {chapter.number}
+                          </span>
+                          <span className="flex-1 truncate">{chapter.title}</span>
+                          {chapterBookmarked && (
+                            <Bookmark className="w-4 h-4 text-yellow-500 flex-shrink-0" fill="currentColor" />
+                          )}
+                        </button>
+                      </div>
                       {isChapterExpanded && hasSections && (
                         <SectionList sections={chapter.sections} chapterId={chapter.id} activeSection={activeSection} />
                       )}
