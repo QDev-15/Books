@@ -57,9 +57,13 @@ export function useScrollHighlight() {
         setActiveSection(activeId)
         oldActiveSection = activeId
       } else {
-        const currentIndex = headingIds.indexOf(oldActiveSection)
-        const previousId = currentIndex > 0 ? headingIds[currentIndex - 1] : ''
-        setActiveSection(previousId)
+        if (isScrollUp) {
+          const currentIndex = headingIds.indexOf(oldActiveSection)
+          const previousId = currentIndex > 0 ? headingIds[currentIndex - 1] : ''
+          setActiveSection(previousId)
+        } else {
+          setActiveSection(oldActiveSection)
+        }
       }
     }
 
