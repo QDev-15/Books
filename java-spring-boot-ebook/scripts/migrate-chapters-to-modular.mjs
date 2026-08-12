@@ -234,12 +234,13 @@ try {
       fs.writeFileSync(chapPath, JSON.stringify(chapData, null, 2));
       console.log(`   ✓ tier-${tier}/${chapter.slug}/${chapter.slug}.json (sections: ${sections.length})`);
 
-      // Add to tier's chapter list
+      // Thêm vào danh sách chương của tier (bao gồm sections trong navigation index)
       tierIndexEntry.chapters.push({
         id: chapter.id,
         number: chapter.number,
         title: chapter.title,
         slug: chapter.slug,
+        sections: sections,
         dataFile: `sources/tier-${tier}/${chapter.slug}/${chapter.slug}.json`
       });
     });

@@ -12,63 +12,2583 @@
           "number": 1,
           "title": "OOP Cơ Bản - DEEP DIVE",
           "slug": "oop-co-ban",
-          "dataFile": "sources/tier-1/oop-co-ban/oop-co-ban.json"
+          "dataFile": "sources/tier-1/oop-co-ban/oop-co-ban.json",
+          "sections": [
+            {
+              "id": "sec-0",
+              "title": "🎯 Mục Tiêu Học",
+              "slug": "-mc-tiu-hc",
+              "level": 2
+            },
+            {
+              "id": "sec-1",
+              "title": "📚 Mục Lục",
+              "slug": "-mc-lc",
+              "level": 2
+            },
+            {
+              "id": "sec-2",
+              "title": "Phần 0 — Tại Sao Lại Cần OOP?",
+              "slug": "phn-0-ti-sao-li-cn-oop",
+              "level": 2
+            },
+            {
+              "id": "sec-3",
+              "title": "0.1 Hãy bắt đầu bằng một nỗi đau có thật",
+              "slug": "01-hy-bt-u-bng-mt-ni-au-c-tht",
+              "level": 3
+            },
+            {
+              "id": "sec-4",
+              "title": "0.2 OOP ra đời để giải quyết 4 nỗi đau đó",
+              "slug": "02-oop-ra-i-gii-quyt-4-ni-au-",
+              "level": 3
+            },
+            {
+              "id": "sec-5",
+              "title": "0.3 Bốn trụ cột và mối liên hệ giữa chúng",
+              "slug": "03-bn-tr-ct-v-mi-lin-h-gia-chng",
+              "level": 3
+            },
+            {
+              "id": "sec-6",
+              "title": "Phần 0.5 — Class và Object: Nền Móng Trước Khi Xây Nhà",
+              "slug": "phn-05-class-v-object-nn-mng-trc-khi-xy-nh",
+              "level": 2
+            },
+            {
+              "id": "sec-7",
+              "title": "🏠 Ví dụ đời sống",
+              "slug": "-v-d-i-sng",
+              "level": 3
+            },
+            {
+              "id": "sec-8",
+              "title": "💻 Chuyển sang Java",
+              "slug": "-chuyn-sang-java",
+              "level": 3
+            },
+            {
+              "id": "sec-9",
+              "title": "🔬 Mổ xẻ dòng `Nha nha1 = new Nha(\"Đỏ\", 4);`",
+              "slug": "-m-x-dng-nha-nha1-new-nha-4",
+              "level": 3
+            },
+            {
+              "id": "sec-10",
+              "title": "Phần 1 — ENCAPSULATION (Đóng Gói)",
+              "slug": "phn-1-encapsulation-ng-gi",
+              "level": 2
+            },
+            {
+              "id": "sec-11",
+              "title": "1.1 🏧 Ví dụ đời sống: Cây ATM",
+              "slug": "11-v-d-i-sng-cy-atm",
+              "level": 3
+            },
+            {
+              "id": "sec-12",
+              "title": "1.2 💥 Thảm họa khi KHÔNG có Encapsulation",
+              "slug": "12-thm-ha-khi-khng-c-encapsulation",
+              "level": 3
+            },
+            {
+              "id": "sec-13",
+              "title": "1.3 ✅ Cách làm đúng: private + method có kiểm soát",
+              "slug": "13-cch-lm-ng-private-method-c-kim-sot",
+              "level": 3
+            },
+            {
+              "id": "sec-14",
+              "title": "1.4 📊 Bốn mức Access Modifier",
+              "slug": "14-bn-mc-access-modifier",
+              "level": 3
+            },
+            {
+              "id": "sec-15",
+              "title": "1.5 🕳️ Cái bẫy chết người: Rò rỉ tham chiếu (Reference Leak)",
+              "slug": "15-ci-by-cht-ngi-r-r-tham-chiu-reference-leak",
+              "level": 3
+            },
+            {
+              "id": "sec-16",
+              "title": "1.6 🧊 Immutable Object — Encapsulation ở mức tuyệt đối",
+              "slug": "16-immutable-object-encapsulation-mc-tuyt-i",
+              "level": 3
+            },
+            {
+              "id": "sec-17",
+              "title": "1.7 📌 Encapsulation trong Spring Boot — điều bạn sẽ gặp ngay",
+              "slug": "17-encapsulation-trong-spring-boot-iu-bn-s-gp-ngay",
+              "level": 3
+            },
+            {
+              "id": "sec-18",
+              "title": "1.8 ⚠️ Lỗi thường gặp về Encapsulation",
+              "slug": "18-li-thng-gp-v-encapsulation",
+              "level": 3
+            },
+            {
+              "id": "sec-19",
+              "title": "1.9 ✅ Checklist Encapsulation",
+              "slug": "19-checklist-encapsulation",
+              "level": 3
+            },
+            {
+              "id": "sec-20",
+              "title": "Phần 2 — INHERITANCE (Kế Thừa)",
+              "slug": "phn-2-inheritance-k-tha",
+              "level": 2
+            },
+            {
+              "id": "sec-21",
+              "title": "2.1 🚗 Ví dụ đời sống: Các loại phương tiện",
+              "slug": "21-v-d-i-sng-cc-loi-phng-tin",
+              "level": 3
+            },
+            {
+              "id": "sec-22",
+              "title": "2.2 💥 Vấn đề khi KHÔNG có kế thừa: Code trùng lặp",
+              "slug": "22-vn-khi-khng-c-k-tha-code-trng-lp",
+              "level": 3
+            },
+            {
+              "id": "sec-23",
+              "title": "2.3 ✅ Giải pháp: `extends`",
+              "slug": "23-gii-php-extends",
+              "level": 3
+            },
+            {
+              "id": "sec-24",
+              "title": "2.4 ⭐ `super` — Ba công dụng cần nắm rõ",
+              "slug": "24-super-ba-cng-dng-cn-nm-r",
+              "level": 3
+            },
+            {
+              "id": "sec-25",
+              "title": "2.5 🔬 Thứ tự khởi tạo object — hiểu để không bị bất ngờ",
+              "slug": "25-th-t-khi-to-object-hiu-khng-b-bt-ng",
+              "level": 3
+            },
+            {
+              "id": "sec-26",
+              "title": "2.6 🔄 Method Overriding — Ghi đè hành vi của cha",
+              "slug": "26-method-overriding-ghi-hnh-vi-ca-cha",
+              "level": 3
+            },
+            {
+              "id": "sec-27",
+              "title": "2.7 🔒 `final` — chặn kế thừa và ghi đè",
+              "slug": "27-final-chn-k-tha-v-ghi-",
+              "level": 3
+            },
+            {
+              "id": "sec-28",
+              "title": "2.8 🌳 Cây phân cấp và class `Object`",
+              "slug": "28-cy-phn-cp-v-class-object",
+              "level": 3
+            },
+            {
+              "id": "sec-29",
+              "title": "2.9 🚨 IS-A vs HAS-A — Sai lầm lớn nhất về kế thừa",
+              "slug": "29-is-a-vs-has-a-sai-lm-ln-nht-v-k-tha",
+              "level": 3
+            },
+            {
+              "id": "sec-30",
+              "title": "2.10 🔎 `instanceof` và Pattern Matching",
+              "slug": "210-instanceof-v-pattern-matching",
+              "level": 3
+            },
+            {
+              "id": "sec-31",
+              "title": "2.11 ✅ Checklist Inheritance",
+              "slug": "211-checklist-inheritance",
+              "level": 3
+            },
+            {
+              "id": "sec-32",
+              "title": "Phần 3 — POLYMORPHISM (Đa Hình)",
+              "slug": "phn-3-polymorphism-a-hnh",
+              "level": 2
+            },
+            {
+              "id": "sec-33",
+              "title": "3.1 📺 Ví dụ đời sống: Chiếc điều khiển từ xa",
+              "slug": "31-v-d-i-sng-chic-iu-khin-t-xa",
+              "level": 3
+            },
+            {
+              "id": "sec-34",
+              "title": "3.2 Hai loại đa hình",
+              "slug": "32-hai-loi-a-hnh",
+              "level": 3
+            },
+            {
+              "id": "sec-35",
+              "title": "3.3 Compile-time Polymorphism: Method Overloading",
+              "slug": "33-compile-time-polymorphism-method-overloading",
+              "level": 3
+            },
+            {
+              "id": "sec-36",
+              "title": "3.4 ⭐ Runtime Polymorphism: Method Overriding — Trái tim của OOP",
+              "slug": "34-runtime-polymorphism-method-overriding-tri-tim-ca-oop",
+              "level": 3
+            },
+            {
+              "id": "sec-37",
+              "title": "3.5 ⬆️⬇️ Upcasting và Downcasting",
+              "slug": "35-upcasting-v-downcasting",
+              "level": 3
+            },
+            {
+              "id": "sec-38",
+              "title": "3.6 📊 Bảng so sánh Overloading vs Overriding",
+              "slug": "36-bng-so-snh-overloading-vs-overriding",
+              "level": 3
+            },
+            {
+              "id": "sec-39",
+              "title": "3.7 💣 Ba cái bẫy chết người của Polymorphism",
+              "slug": "37-ba-ci-by-cht-ngi-ca-polymorphism",
+              "level": 3
+            },
+            {
+              "id": "sec-40",
+              "title": "3.8 🎯 Polymorphism trong thực tế: Collections",
+              "slug": "38-polymorphism-trong-thc-t-collections",
+              "level": 3
+            },
+            {
+              "id": "sec-41",
+              "title": "3.9 ✅ Checklist Polymorphism",
+              "slug": "39-checklist-polymorphism",
+              "level": 3
+            },
+            {
+              "id": "sec-42",
+              "title": "Phần 4 — ABSTRACTION (Trừu Tượng)",
+              "slug": "phn-4-abstraction-tru-tng",
+              "level": 2
+            },
+            {
+              "id": "sec-43",
+              "title": "4.1 🚙 Ví dụ đời sống: Lái xe ô tô",
+              "slug": "41-v-d-i-sng-li-xe-t",
+              "level": 3
+            },
+            {
+              "id": "sec-44",
+              "title": "4.2 🅰️ Abstract Class",
+              "slug": "42-abstract-class",
+              "level": 3
+            },
+            {
+              "id": "sec-45",
+              "title": "4.3 🔌 Interface",
+              "slug": "43-interface",
+              "level": 3
+            },
+            {
+              "id": "sec-46",
+              "title": "4.4 ⭐ BẢNG SO SÁNH: Interface vs Abstract Class",
+              "slug": "44-bng-so-snh-interface-vs-abstract-class",
+              "level": 3
+            },
+            {
+              "id": "sec-47",
+              "title": "4.5 🧭 Khi nào dùng cái nào? — Sơ đồ quyết định",
+              "slug": "45-khi-no-dng-ci-no-s-quyt-nh",
+              "level": 3
+            },
+            {
+              "id": "sec-48",
+              "title": "4.6 🏗️ Hai design pattern kinh điển",
+              "slug": "46-hai-design-pattern-kinh-in",
+              "level": 3
+            },
+            {
+              "id": "sec-49",
+              "title": "4.7 🔐 Sealed Classes (Java 17+) — Kế thừa có kiểm soát",
+              "slug": "47-sealed-classes-java-17-k-tha-c-kim-sot",
+              "level": 3
+            },
+            {
+              "id": "sec-50",
+              "title": "4.8 📌 Abstraction trong Spring Boot",
+              "slug": "48-abstraction-trong-spring-boot",
+              "level": 3
+            },
+            {
+              "id": "sec-51",
+              "title": "4.9 ✅ Checklist Abstraction",
+              "slug": "49-checklist-abstraction",
+              "level": 3
+            },
+            {
+              "id": "sec-52",
+              "title": "Phần 5 — 4 Trụ Cột Hợp Nhất: Một Ví Dụ Hoàn Chỉnh",
+              "slug": "phn-5-4-tr-ct-hp-nht-mt-v-d-hon-chnh",
+              "level": 2
+            },
+            {
+              "id": "sec-53",
+              "title": "5.1 Bài toán",
+              "slug": "51-bi-ton",
+              "level": 3
+            },
+            {
+              "id": "sec-54",
+              "title": "5.2 Bước 1 — ABSTRACTION: định nghĩa hợp đồng",
+              "slug": "52-bc-1-abstraction-nh-ngha-hp-ng",
+              "level": 3
+            },
+            {
+              "id": "sec-55",
+              "title": "5.3 Bước 2 — ABSTRACTION + ENCAPSULATION: class cha trừu tượng",
+              "slug": "53-bc-2-abstraction-encapsulation-class-cha-tru-tng",
+              "level": 3
+            },
+            {
+              "id": "sec-56",
+              "title": "5.4 Bước 3 — INHERITANCE + POLYMORPHISM: ba class con",
+              "slug": "54-bc-3-inheritance-polymorphism-ba-class-con",
+              "level": 3
+            },
+            {
+              "id": "sec-57",
+              "title": "5.5 Bước 4 — Service: nơi polymorphism tỏa sáng",
+              "slug": "55-bc-4-service-ni-polymorphism-ta-sng",
+              "level": 3
+            },
+            {
+              "id": "sec-58",
+              "title": "5.6 Bước 5 — Chạy thử",
+              "slug": "56-bc-5-chy-th",
+              "level": 3
+            },
+            {
+              "id": "sec-59",
+              "title": "5.7 🗺️ Bản đồ 4 trụ cột trong ví dụ trên",
+              "slug": "57-bn-4-tr-ct-trong-v-d-trn",
+              "level": 3
+            },
+            {
+              "id": "sec-60",
+              "title": "5.8 🧪 Kiểm chứng: thêm loại mới có phải sửa code cũ không?",
+              "slug": "58-kim-chng-thm-loi-mi-c-phi-sa-code-c-khng",
+              "level": 3
+            },
+            {
+              "id": "sec-61",
+              "title": "Phần 6 — So Sánh & Đối Chiếu",
+              "slug": "phn-6-so-snh-i-chiu",
+              "level": 2
+            },
+            {
+              "id": "sec-62",
+              "title": "6.1 Bảng tổng hợp 4 trụ cột",
+              "slug": "61-bng-tng-hp-4-tr-ct",
+              "level": 3
+            },
+            {
+              "id": "sec-63",
+              "title": "6.2 Interface vs Abstract Class vs Class thường",
+              "slug": "62-interface-vs-abstract-class-vs-class-thng",
+              "level": 3
+            },
+            {
+              "id": "sec-64",
+              "title": "6.3 Kế thừa vs Composition — chọn nhanh",
+              "slug": "63-k-tha-vs-composition-chn-nhanh",
+              "level": 3
+            },
+            {
+              "id": "sec-65",
+              "title": "6.4 Bốn loại quan hệ giữa các class — rất dễ nhầm lẫn",
+              "slug": "64-bn-loi-quan-h-gia-cc-class-rt-d-nhm-ln",
+              "level": 3
+            },
+            {
+              "id": "sec-66",
+              "title": "Phần 7 — 12 Lỗi OOP Kinh Điển",
+              "slug": "phn-7-12-li-oop-kinh-in",
+              "level": 2
+            },
+            {
+              "id": "sec-67",
+              "title": "Lỗi 1 — Kế thừa chỉ để tái sử dụng code",
+              "slug": "li-1-k-tha-ch-ti-s-dng-code",
+              "level": 3
+            },
+            {
+              "id": "sec-68",
+              "title": "Lỗi 2 — Cây kế thừa quá sâu",
+              "slug": "li-2-cy-k-tha-qu-su",
+              "level": 3
+            },
+            {
+              "id": "sec-69",
+              "title": "Lỗi 3 — Override `equals` mà quên `hashCode`",
+              "slug": "li-3-override-equals-m-qun-hashcode",
+              "level": 3
+            },
+            {
+              "id": "sec-70",
+              "title": "Lỗi 4 — Dùng `@Data` trên `@Entity` (Spring Boot)",
+              "slug": "li-4-dng-data-trn-entity-spring-boot",
+              "level": 3
+            },
+            {
+              "id": "sec-71",
+              "title": "Lỗi 5 — Gọi method overridable trong constructor",
+              "slug": "li-5-gi-method-overridable-trong-constructor",
+              "level": 3
+            },
+            {
+              "id": "sec-72",
+              "title": "Lỗi 6 — Setter phá vỡ invariant",
+              "slug": "li-6-setter-ph-v-invariant",
+              "level": 3
+            },
+            {
+              "id": "sec-73",
+              "title": "Lỗi 7 — Rò rỉ tham chiếu qua getter",
+              "slug": "li-7-r-r-tham-chiu-qua-getter",
+              "level": 3
+            },
+            {
+              "id": "sec-74",
+              "title": "Lỗi 8 — Dùng `double` cho tiền",
+              "slug": "li-8-dng-double-cho-tin",
+              "level": 3
+            },
+            {
+              "id": "sec-75",
+              "title": "Lỗi 9 — Trả `null` thay vì `Optional`",
+              "slug": "li-9-tr-null-thay-v-optional",
+              "level": 3
+            },
+            {
+              "id": "sec-76",
+              "title": "Lỗi 10 — Interface quá to (vi phạm Interface Segregation)",
+              "slug": "li-10-interface-qu-to-vi-phm-interface-segregation",
+              "level": 3
+            },
+            {
+              "id": "sec-77",
+              "title": "Lỗi 11 — Anemic Domain Model (class chỉ có getter/setter)",
+              "slug": "li-11-anemic-domain-model-class-ch-c-gettersetter",
+              "level": 3
+            },
+            {
+              "id": "sec-78",
+              "title": "Lỗi 12 — Trừu tượng hóa quá sớm (Over-engineering)",
+              "slug": "li-12-tru-tng-ha-qu-sm-over-engineering",
+              "level": 3
+            },
+            {
+              "id": "sec-79",
+              "title": "Phần 8 — Best Practices",
+              "slug": "phn-8-best-practices",
+              "level": 2
+            },
+            {
+              "id": "sec-80",
+              "title": "8.1 Mười nguyên tắc cốt lõi",
+              "slug": "81-mi-nguyn-tc-ct-li",
+              "level": 3
+            },
+            {
+              "id": "sec-81",
+              "title": "8.2 SOLID — ánh xạ với 4 trụ cột",
+              "slug": "82-solid-nh-x-vi-4-tr-ct",
+              "level": 3
+            },
+            {
+              "id": "sec-82",
+              "title": "8.3 Quy ước đặt tên (Java convention)",
+              "slug": "83-quy-c-t-tn-java-convention",
+              "level": 3
+            },
+            {
+              "id": "sec-83",
+              "title": "8.4 Checklist OOP trước khi commit",
+              "slug": "84-checklist-oop-trc-khi-commit",
+              "level": 3
+            },
+            {
+              "id": "sec-84",
+              "title": "Phần 9 — Bài Tập Thực Hành",
+              "slug": "phn-9-bi-tp-thc-hnh",
+              "level": 2
+            },
+            {
+              "id": "sec-85",
+              "title": "🟢 Bài 1 (Dễ) — Encapsulation: Nhiệt kế",
+              "slug": "-bi-1-d-encapsulation-nhit-k",
+              "level": 3
+            },
+            {
+              "id": "sec-86",
+              "title": "🟢 Bài 2 (Dễ) — Inheritance: Hệ thống nhân sự",
+              "slug": "-bi-2-d-inheritance-h-thng-nhn-s",
+              "level": 3
+            },
+            {
+              "id": "sec-87",
+              "title": "🟡 Bài 3 (Trung bình) — Polymorphism: Máy tính hình học",
+              "slug": "-bi-3-trung-bnh-polymorphism-my-tnh-hnh-hc",
+              "level": 3
+            },
+            {
+              "id": "sec-88",
+              "title": "🟡 Bài 4 (Trung bình) — Abstraction: Hệ thống thông báo",
+              "slug": "-bi-4-trung-bnh-abstraction-h-thng-thng-bo",
+              "level": 3
+            },
+            {
+              "id": "sec-89",
+              "title": "🔴 Bài 5 (Khó) — Tổng hợp: Hệ thống đặt vé xem phim",
+              "slug": "-bi-5-kh-tng-hp-h-thng-t-v-xem-phim",
+              "level": 3
+            },
+            {
+              "id": "sec-90",
+              "title": "🔴 Bài 6 (Khó) — Refactor: Sửa code xấu",
+              "slug": "-bi-6-kh-refactor-sa-code-xu",
+              "level": 3
+            },
+            {
+              "id": "sec-91",
+              "title": "Phần 10 — Tóm Tắt & Chương Tiếp Theo",
+              "slug": "phn-10-tm-tt-chng-tip-theo",
+              "level": 2
+            },
+            {
+              "id": "sec-92",
+              "title": "10.1 Những điểm cần nhớ mãi",
+              "slug": "101-nhng-im-cn-nh-mi",
+              "level": 3
+            },
+            {
+              "id": "sec-93",
+              "title": "10.2 Sơ đồ tổng kết",
+              "slug": "102-s-tng-kt",
+              "level": 3
+            },
+            {
+              "id": "sec-94",
+              "title": "10.3 Tự đánh giá — bạn đã sẵn sàng qua chương sau chưa?",
+              "slug": "103-t-nh-gi-bn-sn-sng-qua-chng-sau-cha",
+              "level": 3
+            },
+            {
+              "id": "sec-95",
+              "title": "10.4 Chương tiếp theo",
+              "slug": "104-chng-tip-theo",
+              "level": 3
+            },
+            {
+              "id": "sec-96",
+              "title": "📎 Phụ Lục A — Bảng Tra Nhanh Từ Khóa",
+              "slug": "-ph-lc-a-bng-tra-nhanh-t-kha",
+              "level": 2
+            },
+            {
+              "id": "sec-97",
+              "title": "📎 Phụ Lục B — Thuật Ngữ Việt–Anh",
+              "slug": "-ph-lc-b-thut-ng-vitanh",
+              "level": 2
+            }
+          ]
         },
         {
           "id": "chap-2",
           "number": 2,
           "title": "Collections Framework - DEEP DIVE",
           "slug": "collections-framework",
-          "dataFile": "sources/tier-1/collections-framework/collections-framework.json"
+          "dataFile": "sources/tier-1/collections-framework/collections-framework.json",
+          "sections": [
+            {
+              "id": "sec-0",
+              "title": "🎯 Mục Tiêu Học",
+              "slug": "-mc-tiu-hc",
+              "level": 2
+            },
+            {
+              "id": "sec-1",
+              "title": "📚 Mục Lục",
+              "slug": "-mc-lc",
+              "level": 2
+            },
+            {
+              "id": "sec-2",
+              "title": "Phần 0 — Tại Sao Cần Collections?",
+              "slug": "phn-0-ti-sao-cn-collections",
+              "level": 2
+            },
+            {
+              "id": "sec-3",
+              "title": "0.1 Bắt đầu bằng một nỗi đau có thật",
+              "slug": "01-bt-u-bng-mt-ni-au-c-tht",
+              "level": 3
+            },
+            {
+              "id": "sec-4",
+              "title": "0.2 Collections Framework giải quyết đúng 4 bài toán đó",
+              "slug": "02-collections-framework-gii-quyt-ng-4-bi-ton-",
+              "level": 3
+            },
+            {
+              "id": "sec-5",
+              "title": "0.3 Bản đồ toàn cảnh Collections Framework",
+              "slug": "03-bn-ton-cnh-collections-framework",
+              "level": 3
+            },
+            {
+              "id": "sec-6",
+              "title": "0.4 Big-O trong 10 phút — công cụ để \"dự đoán tương lai\"",
+              "slug": "04-big-o-trong-10-pht-cng-c-d-on-tng-lai",
+              "level": 3
+            },
+            {
+              "id": "sec-7",
+              "title": "Phần 1 — LIST — Danh Sách Có Thứ Tự",
+              "slug": "phn-1-list-danh-sch-c-th-t",
+              "level": 2
+            },
+            {
+              "id": "sec-8",
+              "title": "1.1 Hợp đồng của `List`",
+              "slug": "11-hp-ng-ca-list",
+              "level": 3
+            },
+            {
+              "id": "sec-9",
+              "title": "1.2 `ArrayList` — mảng động, \"lựa chọn mặc định\"",
+              "slug": "12-arraylist-mng-ng-la-chn-mc-nh",
+              "level": 3
+            },
+            {
+              "id": "sec-10",
+              "title": "1.3 `LinkedList` — danh sách liên kết đôi",
+              "slug": "13-linkedlist-danh-sch-lin-kt-i",
+              "level": 3
+            },
+            {
+              "id": "sec-11",
+              "title": "1.4 `Vector` và `Stack` — di sản quá khứ",
+              "slug": "14-vector-v-stack-di-sn-qu-kh",
+              "level": 3
+            },
+            {
+              "id": "sec-12",
+              "title": "1.5 📊 Bảng so sánh độ phức tạp — nhóm List",
+              "slug": "15-bng-so-snh-phc-tp-nhm-list",
+              "level": 3
+            },
+            {
+              "id": "sec-13",
+              "title": "1.6 🎯 Khi nào dùng cái nào?",
+              "slug": "16-khi-no-dng-ci-no",
+              "level": 3
+            },
+            {
+              "id": "sec-14",
+              "title": "1.7 Các cách khởi tạo `List` — và những cái bẫy",
+              "slug": "17-cc-cch-khi-to-list-v-nhng-ci-by",
+              "level": 3
+            },
+            {
+              "id": "sec-15",
+              "title": "1.8 Ví dụ thực tế: Quản lý giỏ hàng",
+              "slug": "18-v-d-thc-t-qun-l-gi-hng",
+              "level": 3
+            },
+            {
+              "id": "sec-16",
+              "title": "1.9 ⚠️ Lỗi thường gặp với `List`",
+              "slug": "19-li-thng-gp-vi-list",
+              "level": 3
+            },
+            {
+              "id": "sec-17",
+              "title": "1.10 ✅ Checklist List",
+              "slug": "110-checklist-list",
+              "level": 3
+            },
+            {
+              "id": "sec-18",
+              "title": "Phần 2 — SET — Tập Hợp Không Trùng Lặp",
+              "slug": "phn-2-set-tp-hp-khng-trng-lp",
+              "level": 2
+            },
+            {
+              "id": "sec-19",
+              "title": "2.1 Vì sao cần `Set`?",
+              "slug": "21-v-sao-cn-set",
+              "level": 3
+            },
+            {
+              "id": "sec-20",
+              "title": "2.2 ⭐ Trái tim của Set: hợp đồng `equals()` và `hashCode()`",
+              "slug": "22-tri-tim-ca-set-hp-ng-equals-v-hashcode",
+              "level": 3
+            },
+            {
+              "id": "sec-21",
+              "title": "2.3 `HashSet` — nhanh nhất, không thứ tự",
+              "slug": "23-hashset-nhanh-nht-khng-th-t",
+              "level": 3
+            },
+            {
+              "id": "sec-22",
+              "title": "2.4 `LinkedHashSet` — nhanh + giữ thứ tự chèn",
+              "slug": "24-linkedhashset-nhanh-gi-th-t-chn",
+              "level": 3
+            },
+            {
+              "id": "sec-23",
+              "title": "2.5 `TreeSet` — luôn được sắp xếp",
+              "slug": "25-treeset-lun-c-sp-xp",
+              "level": 3
+            },
+            {
+              "id": "sec-24",
+              "title": "2.6 `EnumSet` — bí mật ít người biết, nhanh khủng khiếp",
+              "slug": "26-enumset-b-mt-t-ngi-bit-nhanh-khng-khip",
+              "level": 3
+            },
+            {
+              "id": "sec-25",
+              "title": "2.7 📊 Bảng so sánh nhóm Set",
+              "slug": "27-bng-so-snh-nhm-set",
+              "level": 3
+            },
+            {
+              "id": "sec-26",
+              "title": "2.8 🎯 Decision tree cho Set",
+              "slug": "28-decision-tree-cho-set",
+              "level": 3
+            },
+            {
+              "id": "sec-27",
+              "title": "2.9 Ví dụ thực tế: phép toán tập hợp",
+              "slug": "29-v-d-thc-t-php-ton-tp-hp",
+              "level": 3
+            },
+            {
+              "id": "sec-28",
+              "title": "2.10 ✅ Checklist Set",
+              "slug": "210-checklist-set",
+              "level": 3
+            },
+            {
+              "id": "sec-29",
+              "title": "Phần 3 — MAP — Ánh Xạ Key → Value",
+              "slug": "phn-3-map-nh-x-key-value",
+              "level": 2
+            },
+            {
+              "id": "sec-30",
+              "title": "3.1 Vì sao cần `Map`?",
+              "slug": "31-v-sao-cn-map",
+              "level": 3
+            },
+            {
+              "id": "sec-31",
+              "title": "3.2 ⭐ Mổ xẻ `HashMap` — cấu trúc dữ liệu quan trọng nhất Java",
+              "slug": "32-m-x-hashmap-cu-trc-d-liu-quan-trng-nht-java",
+              "level": 3
+            },
+            {
+              "id": "sec-32",
+              "title": "3.3 API hiện đại của `Map` (Java 8+) — viết ít, đúng nhiều",
+              "slug": "33-api-hin-i-ca-map-java-8-vit-t-ng-nhiu",
+              "level": 3
+            },
+            {
+              "id": "sec-33",
+              "title": "3.4 `LinkedHashMap` — giữ thứ tự + xây LRU Cache",
+              "slug": "34-linkedhashmap-gi-th-t-xy-lru-cache",
+              "level": 3
+            },
+            {
+              "id": "sec-34",
+              "title": "3.5 `TreeMap` — Map luôn được sắp xếp theo key",
+              "slug": "35-treemap-map-lun-c-sp-xp-theo-key",
+              "level": 3
+            },
+            {
+              "id": "sec-35",
+              "title": "3.6 Các Map đặc biệt nên biết",
+              "slug": "36-cc-map-c-bit-nn-bit",
+              "level": 3
+            },
+            {
+              "id": "sec-36",
+              "title": "3.7 📊 Bảng so sánh nhóm Map",
+              "slug": "37-bng-so-snh-nhm-map",
+              "level": 3
+            },
+            {
+              "id": "sec-37",
+              "title": "3.8 🎯 Decision tree cho Map",
+              "slug": "38-decision-tree-cho-map",
+              "level": 3
+            },
+            {
+              "id": "sec-38",
+              "title": "3.9 Ví dụ thực tế tổng hợp: thống kê đơn hàng",
+              "slug": "39-v-d-thc-t-tng-hp-thng-k-n-hng",
+              "level": 3
+            },
+            {
+              "id": "sec-39",
+              "title": "3.10 ✅ Checklist Map",
+              "slug": "310-checklist-map",
+              "level": 3
+            },
+            {
+              "id": "sec-40",
+              "title": "Phần 4 — QUEUE & DEQUE — Hàng Đợi Và Ngăn Xếp",
+              "slug": "phn-4-queue-deque-hng-i-v-ngn-xp",
+              "level": 2
+            },
+            {
+              "id": "sec-41",
+              "title": "4.1 Hai mô hình xử lý: FIFO và LIFO",
+              "slug": "41-hai-m-hnh-x-l-fifo-v-lifo",
+              "level": 3
+            },
+            {
+              "id": "sec-42",
+              "title": "4.2 API của `Queue` — hai bộ phương thức, khác nhau ở cách báo lỗi",
+              "slug": "42-api-ca-queue-hai-b-phng-thc-khc-nhau-cch-bo-li",
+              "level": 3
+            },
+            {
+              "id": "sec-43",
+              "title": "4.3 `Deque` — hàng đợi hai đầu, \"công cụ đa năng\"",
+              "slug": "43-deque-hng-i-hai-u-cng-c-a-nng",
+              "level": 3
+            },
+            {
+              "id": "sec-44",
+              "title": "4.4 `ArrayDeque` — lựa chọn số 1 cho Queue và Stack",
+              "slug": "44-arraydeque-la-chn-s-1-cho-queue-v-stack",
+              "level": 3
+            },
+            {
+              "id": "sec-45",
+              "title": "4.5 `PriorityQueue` — hàng đợi ưu tiên (binary heap)",
+              "slug": "45-priorityqueue-hng-i-u-tin-binary-heap",
+              "level": 3
+            },
+            {
+              "id": "sec-46",
+              "title": "4.6 `BlockingQueue` — dành cho đa luồng (giới thiệu)",
+              "slug": "46-blockingqueue-dnh-cho-a-lung-gii-thiu",
+              "level": 3
+            },
+            {
+              "id": "sec-47",
+              "title": "4.7 📊 Bảng so sánh nhóm Queue/Deque",
+              "slug": "47-bng-so-snh-nhm-queuedeque",
+              "level": 3
+            },
+            {
+              "id": "sec-48",
+              "title": "4.8 🎯 Decision tree cho Queue/Deque",
+              "slug": "48-decision-tree-cho-queuedeque",
+              "level": 3
+            },
+            {
+              "id": "sec-49",
+              "title": "4.9 Ví dụ thực tế: kiểm tra ngoặc cân bằng (Stack)",
+              "slug": "49-v-d-thc-t-kim-tra-ngoc-cn-bng-stack",
+              "level": 3
+            },
+            {
+              "id": "sec-50",
+              "title": "4.10 ✅ Checklist Queue/Deque",
+              "slug": "410-checklist-queuedeque",
+              "level": 3
+            },
+            {
+              "id": "sec-51",
+              "title": "Phần 5 — Công Cụ Xung Quanh Collections",
+              "slug": "phn-5-cng-c-xung-quanh-collections",
+              "level": 2
+            },
+            {
+              "id": "sec-52",
+              "title": "5.1 `Iterator` — cỗ máy đằng sau vòng lặp for-each",
+              "slug": "51-iterator-c-my-ng-sau-vng-lp-for-each",
+              "level": 3
+            },
+            {
+              "id": "sec-53",
+              "title": "5.2 `Comparable` vs `Comparator` — hai cách định nghĩa \"thứ tự\"",
+              "slug": "52-comparable-vs-comparator-hai-cch-nh-ngha-th-t",
+              "level": 3
+            },
+            {
+              "id": "sec-54",
+              "title": "5.3 Generics & Wildcards — vì sao `List<String>` không phải `List<Object>`",
+              "slug": "53-generics-wildcards-v-sao-liststring-khng-phi-listobject",
+              "level": 3
+            },
+            {
+              "id": "sec-55",
+              "title": "5.4 Lớp tiện ích `Collections` và các factory bất biến",
+              "slug": "54-lp-tin-ch-collections-v-cc-factory-bt-bin",
+              "level": 3
+            },
+            {
+              "id": "sec-56",
+              "title": "5.5 Stream API + Collectors — cầu nối hiện đại",
+              "slug": "55-stream-api-collectors-cu-ni-hin-i",
+              "level": 3
+            },
+            {
+              "id": "sec-57",
+              "title": "Phần 6 — Bảng Quyết Định & Bảng Hiệu Năng Tổng Hợp",
+              "slug": "phn-6-bng-quyt-nh-bng-hiu-nng-tng-hp",
+              "level": 2
+            },
+            {
+              "id": "sec-58",
+              "title": "6.1 🌳 Cây quyết định tổng — in ra dán bàn",
+              "slug": "61-cy-quyt-nh-tng-in-ra-dn-bn",
+              "level": 3
+            },
+            {
+              "id": "sec-59",
+              "title": "6.2 Bảng quyết định dạng câu hỏi nhanh",
+              "slug": "62-bng-quyt-nh-dng-cu-hi-nhanh",
+              "level": 3
+            },
+            {
+              "id": "sec-60",
+              "title": "6.3 📊 BẢNG HIỆU NĂNG TỔNG HỢP — tất cả collections",
+              "slug": "63-bng-hiu-nng-tng-hp-tt-c-collections",
+              "level": 3
+            },
+            {
+              "id": "sec-61",
+              "title": "6.4 Chi phí bộ nhớ thực tế (JVM 64-bit, bật nén con trỏ)",
+              "slug": "64-chi-ph-b-nh-thc-t-jvm-64-bit-bt-nn-con-tr",
+              "level": 3
+            },
+            {
+              "id": "sec-62",
+              "title": "6.5 Thread-safety — bảng tra cứu",
+              "slug": "65-thread-safety-bng-tra-cu",
+              "level": 3
+            },
+            {
+              "id": "sec-63",
+              "title": "Phần 7 — Collections Trong Spring Boot",
+              "slug": "phn-7-collections-trong-spring-boot",
+              "level": 2
+            },
+            {
+              "id": "sec-64",
+              "title": "7.1 Repository luôn trả `List`, không phải `Set`",
+              "slug": "71-repository-lun-tr-list-khng-phi-set",
+              "level": 3
+            },
+            {
+              "id": "sec-65",
+              "title": "7.2 `@OneToMany` nên dùng `Set` — và tại sao",
+              "slug": "72-onetomany-nn-dng-set-v-ti-sao",
+              "level": 3
+            },
+            {
+              "id": "sec-66",
+              "title": "7.3 DTO: `List` hay `Set`?",
+              "slug": "73-dto-list-hay-set",
+              "level": 3
+            },
+            {
+              "id": "sec-67",
+              "title": "7.4 Cache key phải bất biến",
+              "slug": "74-cache-key-phi-bt-bin",
+              "level": 3
+            },
+            {
+              "id": "sec-68",
+              "title": "7.5 Collections trong cấu hình",
+              "slug": "75-collections-trong-cu-hnh",
+              "level": 3
+            },
+            {
+              "id": "sec-69",
+              "title": "7.6 Ba lỗi Collections hay gặp trong Spring Boot",
+              "slug": "76-ba-li-collections-hay-gp-trong-spring-boot",
+              "level": 3
+            },
+            {
+              "id": "sec-70",
+              "title": "Phần 8 — 15 Lỗi Collections Kinh Điển",
+              "slug": "phn-8-15-li-collections-kinh-in",
+              "level": 2
+            },
+            {
+              "id": "sec-71",
+              "title": "Lỗi 1 — `ConcurrentModificationException` khi sửa lúc đang duyệt",
+              "slug": "li-1-concurrentmodificationexception-khi-sa-lc-ang-duyt",
+              "level": 3
+            },
+            {
+              "id": "sec-72",
+              "title": "Lỗi 2 — Object thay đổi được (mutable) làm phần tử Set / key Map",
+              "slug": "li-2-object-thay-i-c-mutable-lm-phn-t-set-key-map",
+              "level": 3
+            },
+            {
+              "id": "sec-73",
+              "title": "Lỗi 3 — Quên `equals()` và `hashCode()` cho object tự viết",
+              "slug": "li-3-qun-equals-v-hashcode-cho-object-t-vit",
+              "level": 3
+            },
+            {
+              "id": "sec-74",
+              "title": "Lỗi 4 — Override `equals` mà quên `hashCode` (hoặc ngược lại)",
+              "slug": "li-4-override-equals-m-qun-hashcode-hoc-ngc-li",
+              "level": 3
+            },
+            {
+              "id": "sec-75",
+              "title": "Lỗi 5 — Sửa `List.of()` hoặc `Arrays.asList()`",
+              "slug": "li-5-sa-listof-hoc-arraysaslist",
+              "level": 3
+            },
+            {
+              "id": "sec-76",
+              "title": "Lỗi 6 — `list.remove(int)` vs `list.remove(Object)`",
+              "slug": "li-6-listremoveint-vs-listremoveobject",
+              "level": 3
+            },
+            {
+              "id": "sec-77",
+              "title": "Lỗi 7 — Chọn `LinkedList` vì \"chèn/xóa nhanh\"",
+              "slug": "li-7-chn-linkedlist-v-chnxa-nhanh",
+              "level": 3
+            },
+            {
+              "id": "sec-78",
+              "title": "Lỗi 8 — Dùng `==` để so sánh phần tử trong collection",
+              "slug": "li-8-dng-so-snh-phn-t-trong-collection",
+              "level": 3
+            },
+            {
+              "id": "sec-79",
+              "title": "Lỗi 9 — Hiểu sai về `null` trong các collection",
+              "slug": "li-9-hiu-sai-v-null-trong-cc-collection",
+              "level": 3
+            },
+            {
+              "id": "sec-80",
+              "title": "Lỗi 10 — Dùng raw type",
+              "slug": "li-10-dng-raw-type",
+              "level": 3
+            },
+            {
+              "id": "sec-81",
+              "title": "Lỗi 11 — Tưởng `HashMap` an toàn đa luồng",
+              "slug": "li-11-tng-hashmap-an-ton-a-lung",
+              "level": 3
+            },
+            {
+              "id": "sec-82",
+              "title": "Lỗi 12 — `compareTo` không nhất quán với `equals`",
+              "slug": "li-12-compareto-khng-nht-qun-vi-equals",
+              "level": 3
+            },
+            {
+              "id": "sec-83",
+              "title": "Lỗi 13 — Duyệt Map bằng `keySet()` + `get()`",
+              "slug": "li-13-duyt-map-bng-keyset-get",
+              "level": 3
+            },
+            {
+              "id": "sec-84",
+              "title": "Lỗi 14 — `Collectors.toMap` với key trùng hoặc value null",
+              "slug": "li-14-collectorstomap-vi-key-trng-hoc-value-null",
+              "level": 3
+            },
+            {
+              "id": "sec-85",
+              "title": "Lỗi 15 — Tưởng `PriorityQueue` đã sắp xếp / `HashSet` có thứ tự cố định",
+              "slug": "li-15-tng-priorityqueue-sp-xp-hashset-c-th-t-c-nh",
+              "level": 3
+            },
+            {
+              "id": "sec-86",
+              "title": "📋 Bảng tổng kết 15 lỗi",
+              "slug": "-bng-tng-kt-15-li",
+              "level": 3
+            },
+            {
+              "id": "sec-87",
+              "title": "Phần 9 — Best Practices",
+              "slug": "phn-9-best-practices",
+              "level": 2
+            },
+            {
+              "id": "sec-88",
+              "title": "9.1 Mười hai nguyên tắc cốt lõi",
+              "slug": "91-mi-hai-nguyn-tc-ct-li",
+              "level": 3
+            },
+            {
+              "id": "sec-89",
+              "title": "9.2 Thư viện bên ngoài đáng cân nhắc",
+              "slug": "92-th-vin-bn-ngoi-ng-cn-nhc",
+              "level": 3
+            },
+            {
+              "id": "sec-90",
+              "title": "9.3 Checklist trước khi commit",
+              "slug": "93-checklist-trc-khi-commit",
+              "level": 3
+            },
+            {
+              "id": "sec-91",
+              "title": "Phần 10 — Bài Tập Thực Hành",
+              "slug": "phn-10-bi-tp-thc-hnh",
+              "level": 2
+            },
+            {
+              "id": "sec-92",
+              "title": "🟢 Bài 1 (Dễ) — Sổ điểm danh sinh viên với `List`",
+              "slug": "-bi-1-d-s-im-danh-sinh-vin-vi-list",
+              "level": 3
+            },
+            {
+              "id": "sec-93",
+              "title": "🟢 Bài 2 (Dễ) — Bộ lọc email trùng với `Set`",
+              "slug": "-bi-2-d-b-lc-email-trng-vi-set",
+              "level": 3
+            },
+            {
+              "id": "sec-94",
+              "title": "🟡 Bài 3 (Trung bình) — Thống kê đơn hàng bằng `Map`",
+              "slug": "-bi-3-trung-bnh-thng-k-n-hng-bng-map",
+              "level": 3
+            },
+            {
+              "id": "sec-95",
+              "title": "🟡 Bài 4 (Trung bình) — Xây LRU Cache bằng `LinkedHashMap`",
+              "slug": "-bi-4-trung-bnh-xy-lru-cache-bng-linkedhashmap",
+              "level": 3
+            },
+            {
+              "id": "sec-96",
+              "title": "🔴 Bài 5 (Khó) — `TreeSet` với `Comparator` tùy chỉnh: bảng xếp hạng",
+              "slug": "-bi-5-kh-treeset-vi-comparator-ty-chnh-bng-xp-hng",
+              "level": 3
+            },
+            {
+              "id": "sec-97",
+              "title": "🔴 Bài 6 (Khó) — Benchmark: `ArrayList` vs `LinkedList` vs `int[]`",
+              "slug": "-bi-6-kh-benchmark-arraylist-vs-linkedlist-vs-int",
+              "level": 3
+            },
+            {
+              "id": "sec-98",
+              "title": "Phần 11 — Tóm Tắt & Chương Tiếp Theo",
+              "slug": "phn-11-tm-tt-chng-tip-theo",
+              "level": 2
+            },
+            {
+              "id": "sec-99",
+              "title": "11.1 Những điểm cần nhớ mãi",
+              "slug": "111-nhng-im-cn-nh-mi",
+              "level": 3
+            },
+            {
+              "id": "sec-100",
+              "title": "11.2 Sơ đồ tổng kết một trang",
+              "slug": "112-s-tng-kt-mt-trang",
+              "level": 3
+            },
+            {
+              "id": "sec-101",
+              "title": "11.3 Tự đánh giá — bạn đã sẵn sàng chưa?",
+              "slug": "113-t-nh-gi-bn-sn-sng-cha",
+              "level": 3
+            },
+            {
+              "id": "sec-102",
+              "title": "11.4 Chương tiếp theo",
+              "slug": "114-chng-tip-theo",
+              "level": 3
+            },
+            {
+              "id": "sec-103",
+              "title": "📎 Phụ Lục A — Bảng Tra Nhanh API",
+              "slug": "-ph-lc-a-bng-tra-nhanh-api",
+              "level": 2
+            },
+            {
+              "id": "sec-104",
+              "title": "Collection (chung cho List/Set/Queue)",
+              "slug": "collection-chung-cho-listsetqueue",
+              "level": 3
+            },
+            {
+              "id": "sec-105",
+              "title": "List (bổ sung)",
+              "slug": "list-b-sung",
+              "level": 3
+            },
+            {
+              "id": "sec-106",
+              "title": "Map",
+              "slug": "map",
+              "level": 3
+            },
+            {
+              "id": "sec-107",
+              "title": "NavigableSet / NavigableMap (Tree*)",
+              "slug": "navigableset-navigablemap-tree",
+              "level": 3
+            },
+            {
+              "id": "sec-108",
+              "title": "Deque",
+              "slug": "deque",
+              "level": 3
+            },
+            {
+              "id": "sec-109",
+              "title": "📎 Phụ Lục B — Thuật Ngữ Việt–Anh",
+              "slug": "-ph-lc-b-thut-ng-vitanh",
+              "level": 2
+            }
+          ]
         },
         {
           "id": "chap-3",
           "number": 3,
           "title": "Generics & Lambda - DEEP DIVE",
           "slug": "generics-lambda-deep-dive",
-          "dataFile": "sources/tier-1/generics-lambda-deep-dive/generics-lambda-deep-dive.json"
+          "dataFile": "sources/tier-1/generics-lambda-deep-dive/generics-lambda-deep-dive.json",
+          "sections": [
+            {
+              "id": "sec-0",
+              "title": "🎯 Mục Tiêu Học",
+              "slug": "-mc-tiu-hc",
+              "level": 2
+            },
+            {
+              "id": "sec-1",
+              "title": "📚 Mục Lục",
+              "slug": "-mc-lc",
+              "level": 2
+            },
+            {
+              "id": "sec-2",
+              "title": "Phần 0 — Tại Sao Cần Generics?",
+              "slug": "phn-0-ti-sao-cn-generics",
+              "level": 2
+            },
+            {
+              "id": "sec-3",
+              "title": "0.1 Java trước năm 2004: thời kỳ \"hộp đựng mọi thứ\"",
+              "slug": "01-java-trc-nm-2004-thi-k-hp-ng-mi-th",
+              "level": 3
+            },
+            {
+              "id": "sec-4",
+              "title": "0.2 Cũng đoạn code đó, viết bằng Generics",
+              "slug": "02-cng-on-code-vit-bng-generics",
+              "level": 3
+            },
+            {
+              "id": "sec-5",
+              "title": "0.3 Lợi ích thứ 3 — Tái sử dụng: minh họa bằng ví dụ",
+              "slug": "03-li-ch-th-3-ti-s-dng-minh-ha-bng-v-d",
+              "level": 3
+            },
+            {
+              "id": "sec-6",
+              "title": "0.4 Generics chính xác là gì? — Định nghĩa",
+              "slug": "04-generics-chnh-xc-l-g-nh-ngha",
+              "level": 3
+            },
+            {
+              "id": "sec-7",
+              "title": "0.5 Bốn thuật ngữ phải phân biệt được ngay từ đầu",
+              "slug": "05-bn-thut-ng-phi-phn-bit-c-ngay-t-u",
+              "level": 3
+            },
+            {
+              "id": "sec-8",
+              "title": "0.6 Quy ước đặt tên type parameter",
+              "slug": "06-quy-c-t-tn-type-parameter",
+              "level": 3
+            },
+            {
+              "id": "sec-9",
+              "title": "0.7 Generics KHÔNG phải là gì — dọn dẹp hiểu lầm sớm",
+              "slug": "07-generics-khng-phi-l-g-dn-dp-hiu-lm-sm",
+              "level": 3
+            },
+            {
+              "id": "sec-10",
+              "title": "Phần 1 — Type Parameters & Bounded Types",
+              "slug": "phn-1-type-parameters-bounded-types",
+              "level": 2
+            },
+            {
+              "id": "sec-11",
+              "title": "1.1 Khai báo type parameter — cú pháp cơ bản",
+              "slug": "11-khai-bo-type-parameter-c-php-c-bn",
+              "level": 3
+            },
+            {
+              "id": "sec-12",
+              "title": "1.2 Một ví dụ hoàn chỉnh: class `Pair<A, B>`",
+              "slug": "12-mt-v-d-hon-chnh-class-paira-b",
+              "level": 3
+            },
+            {
+              "id": "sec-13",
+              "title": "1.3 Vấn đề: type parameter \"trần\" quá yếu",
+              "slug": "13-vn-type-parameter-trn-qu-yu",
+              "level": 3
+            },
+            {
+              "id": "sec-14",
+              "title": "1.4 Upper bound — `<T extends X>`",
+              "slug": "14-upper-bound-t-extends-x",
+              "level": 3
+            },
+            {
+              "id": "sec-15",
+              "title": "1.5 ⚠️ Bẫy từ khoá: `extends` ở đây không phải \"kế thừa\"",
+              "slug": "15-by-t-kho-extends-y-khng-phi-k-tha",
+              "level": 3
+            },
+            {
+              "id": "sec-16",
+              "title": "1.6 Multiple bounds — `<T extends A & B & C>`",
+              "slug": "16-multiple-bounds-t-extends-a-b-c",
+              "level": 3
+            },
+            {
+              "id": "sec-17",
+              "title": "1.7 Bound tự tham chiếu — `<T extends Comparable<T>>`",
+              "slug": "17-bound-t-tham-chiu-t-extends-comparablet",
+              "level": 3
+            },
+            {
+              "id": "sec-18",
+              "title": "1.8 Bound trên class vs bound trên method",
+              "slug": "18-bound-trn-class-vs-bound-trn-method",
+              "level": 3
+            },
+            {
+              "id": "sec-19",
+              "title": "1.9 Nhiều type parameter kèm bound",
+              "slug": "19-nhiu-type-parameter-km-bound",
+              "level": 3
+            },
+            {
+              "id": "sec-20",
+              "title": "1.10 Ví dụ thực tế: Repository generic (tiền đề của Spring Data)",
+              "slug": "110-v-d-thc-t-repository-generic-tin-ca-spring-data",
+              "level": 3
+            },
+            {
+              "id": "sec-21",
+              "title": "1.11 ✅ Checklist Phần 1",
+              "slug": "111-checklist-phn-1",
+              "level": 3
+            },
+            {
+              "id": "sec-22",
+              "title": "Phần 2 — Generic Classes & Generic Methods",
+              "slug": "phn-2-generic-classes-generic-methods",
+              "level": 2
+            },
+            {
+              "id": "sec-23",
+              "title": "2.1 Anatomy — mổ xẻ một generic class hoàn chỉnh",
+              "slug": "21-anatomy-m-x-mt-generic-class-hon-chnh",
+              "level": 3
+            },
+            {
+              "id": "sec-24",
+              "title": "2.2 Generic class có thể có method không generic — và ngược lại",
+              "slug": "22-generic-class-c-th-c-method-khng-generic-v-ngc-li",
+              "level": 3
+            },
+            {
+              "id": "sec-25",
+              "title": "2.3 Generic interface",
+              "slug": "23-generic-interface",
+              "level": 3
+            },
+            {
+              "id": "sec-26",
+              "title": "2.4 Kế thừa với generic class — 4 kiểu",
+              "slug": "24-k-tha-vi-generic-class-4-kiu",
+              "level": 3
+            },
+            {
+              "id": "sec-27",
+              "title": "2.5 Generic method — khai báo và suy luận kiểu",
+              "slug": "25-generic-method-khai-bo-v-suy-lun-kiu",
+              "level": 3
+            },
+            {
+              "id": "sec-28",
+              "title": "2.6 Explicit type argument — khi suy luận không đủ",
+              "slug": "26-explicit-type-argument-khi-suy-lun-khng-",
+              "level": 3
+            },
+            {
+              "id": "sec-29",
+              "title": "2.7 Generic constructor",
+              "slug": "27-generic-constructor",
+              "level": 3
+            },
+            {
+              "id": "sec-30",
+              "title": "2.8 Generic method vs Generic class — khi nào dùng cái nào?",
+              "slug": "28-generic-method-vs-generic-class-khi-no-dng-ci-no",
+              "level": 3
+            },
+            {
+              "id": "sec-31",
+              "title": "2.9 Diamond operator `<>` — lịch sử tiến hoá",
+              "slug": "29-diamond-operator-lch-s-tin-ho",
+              "level": 3
+            },
+            {
+              "id": "sec-32",
+              "title": "2.10 ⚠️ Raw types — di sản không bao giờ nên dùng",
+              "slug": "210-raw-types-di-sn-khng-bao-gi-nn-dng",
+              "level": 3
+            },
+            {
+              "id": "sec-33",
+              "title": "2.11 ✅ Checklist Phần 2",
+              "slug": "211-checklist-phn-2",
+              "level": 3
+            },
+            {
+              "id": "sec-34",
+              "title": "Phần 3 — Type Erasure & Sự Thật Lúc Runtime",
+              "slug": "phn-3-type-erasure-s-tht-lc-runtime",
+              "level": 2
+            },
+            {
+              "id": "sec-35",
+              "title": "3.1 Thí nghiệm gây sốc",
+              "slug": "31-th-nghim-gy-sc",
+              "level": 3
+            },
+            {
+              "id": "sec-36",
+              "title": "3.2 Vì sao Java lại thiết kế như vậy? — Bài toán tương thích ngược",
+              "slug": "32-v-sao-java-li-thit-k-nh-vy-bi-ton-tng-thch-ngc",
+              "level": 3
+            },
+            {
+              "id": "sec-37",
+              "title": "3.3 Quy tắc xoá kiểu — chính xác",
+              "slug": "33-quy-tc-xo-kiu-chnh-xc",
+              "level": 3
+            },
+            {
+              "id": "sec-38",
+              "title": "3.4 🔬 Bytecode visualization — nhìn tận mắt bằng `javap`",
+              "slug": "34-bytecode-visualization-nhn-tn-mt-bng-javap",
+              "level": 3
+            },
+            {
+              "id": "sec-39",
+              "title": "3.5 Compiler tự chèn cast — bằng chứng bytecode",
+              "slug": "35-compiler-t-chn-cast-bng-chng-bytecode",
+              "level": 3
+            },
+            {
+              "id": "sec-40",
+              "title": "3.6 Mười hệ quả của type erasure — bảng tổng hợp",
+              "slug": "36-mi-h-qu-ca-type-erasure-bng-tng-hp",
+              "level": 3
+            },
+            {
+              "id": "sec-41",
+              "title": "3.7 Chi tiết từng hệ quả — kèm code",
+              "slug": "37-chi-tit-tng-h-qu-km-code",
+              "level": 3
+            },
+            {
+              "id": "sec-42",
+              "title": "3.8 Heap pollution — ô nhiễm heap",
+              "slug": "38-heap-pollution-nhim-heap",
+              "level": 3
+            },
+            {
+              "id": "sec-43",
+              "title": "3.9 Reifiable vs Non-reifiable types",
+              "slug": "39-reifiable-vs-non-reifiable-types",
+              "level": 3
+            },
+            {
+              "id": "sec-44",
+              "title": "3.10 Reflection có \"cứu\" được không? — Có, một phần",
+              "slug": "310-reflection-c-cu-c-khng-c-mt-phn",
+              "level": 3
+            },
+            {
+              "id": "sec-45",
+              "title": "3.11 ✅ Checklist Phần 3",
+              "slug": "311-checklist-phn-3",
+              "level": 3
+            },
+            {
+              "id": "sec-46",
+              "title": "Phần 4 — Wildcards & PECS",
+              "slug": "phn-4-wildcards-pecs",
+              "level": 2
+            },
+            {
+              "id": "sec-47",
+              "title": "4.1 Vấn đề gốc: Generics là INVARIANT (bất biến)",
+              "slug": "41-vn-gc-generics-l-invariant-bt-bin",
+              "level": 3
+            },
+            {
+              "id": "sec-48",
+              "title": "4.2 So sánh với mảng — mảng thì COVARIANT (và đó là một sai lầm)",
+              "slug": "42-so-snh-vi-mng-mng-th-covariant-v-l-mt-sai-lm",
+              "level": 3
+            },
+            {
+              "id": "sec-49",
+              "title": "4.3 Nhưng invariance quá cứng nhắc — vấn đề thực tế",
+              "slug": "43-nhng-invariance-qu-cng-nhc-vn-thc-t",
+              "level": 3
+            },
+            {
+              "id": "sec-50",
+              "title": "4.4 Ba loại wildcard",
+              "slug": "44-ba-loi-wildcard",
+              "level": 3
+            },
+            {
+              "id": "sec-51",
+              "title": "4.5 `? extends T` — Producer (nguồn cung cấp dữ liệu)",
+              "slug": "45-extends-t-producer-ngun-cung-cp-d-liu",
+              "level": 3
+            },
+            {
+              "id": "sec-52",
+              "title": "4.6 `? super T` — Consumer (nơi tiêu thụ dữ liệu)",
+              "slug": "46-super-t-consumer-ni-tiu-th-d-liu",
+              "level": 3
+            },
+            {
+              "id": "sec-53",
+              "title": "4.7 ⭐ PECS — Producer Extends, Consumer Super",
+              "slug": "47-pecs-producer-extends-consumer-super",
+              "level": 3
+            },
+            {
+              "id": "sec-54",
+              "title": "4.8 Bảng quyết định PECS — dán bàn làm việc",
+              "slug": "48-bng-quyt-nh-pecs-dn-bn-lm-vic",
+              "level": 3
+            },
+            {
+              "id": "sec-55",
+              "title": "4.9 PECS trong JDK — nhận diện ở khắp nơi",
+              "slug": "49-pecs-trong-jdk-nhn-din-khp-ni",
+              "level": 3
+            },
+            {
+              "id": "sec-56",
+              "title": "4.10 Unbounded wildcard `<?>` — khi nào dùng",
+              "slug": "410-unbounded-wildcard-khi-no-dng",
+              "level": 3
+            },
+            {
+              "id": "sec-57",
+              "title": "4.11 Wildcard capture — mẹo để \"làm việc được\" với `<?>`",
+              "slug": "411-wildcard-capture-mo-lm-vic-c-vi-",
+              "level": 3
+            },
+            {
+              "id": "sec-58",
+              "title": "4.12 Wildcard **không nên** dùng ở kiểu trả về",
+              "slug": "412-wildcard-khng-nn-dng-kiu-tr-v",
+              "level": 3
+            },
+            {
+              "id": "sec-59",
+              "title": "4.13 Nested wildcard — wildcard lồng nhau",
+              "slug": "413-nested-wildcard-wildcard-lng-nhau",
+              "level": 3
+            },
+            {
+              "id": "sec-60",
+              "title": "4.14 Ví dụ tổng hợp — thư viện xử lý collection theo PECS",
+              "slug": "414-v-d-tng-hp-th-vin-x-l-collection-theo-pecs",
+              "level": 3
+            },
+            {
+              "id": "sec-61",
+              "title": "4.15 ✅ Checklist Phần 4",
+              "slug": "415-checklist-phn-4",
+              "level": 3
+            },
+            {
+              "id": "sec-62",
+              "title": "Phần 5 — Generic Methods Nâng Cao & Bridge Methods",
+              "slug": "phn-5-generic-methods-nng-cao-bridge-methods",
+              "level": 2
+            },
+            {
+              "id": "sec-63",
+              "title": "5.1 Type inference — compiler suy luận kiểu như thế nào",
+              "slug": "51-type-inference-compiler-suy-lun-kiu-nh-th-no",
+              "level": 3
+            },
+            {
+              "id": "sec-64",
+              "title": "5.2 Chuỗi suy luận qua nhiều tầng (Java 8+)",
+              "slug": "52-chui-suy-lun-qua-nhiu-tng-java-8",
+              "level": 3
+            },
+            {
+              "id": "sec-65",
+              "title": "5.3 Bridge methods — cỗ máy vô hình",
+              "slug": "53-bridge-methods-c-my-v-hnh",
+              "level": 3
+            },
+            {
+              "id": "sec-66",
+              "title": "5.4 Recursive generic — Builder pattern kế thừa được",
+              "slug": "54-recursive-generic-builder-pattern-k-tha-c",
+              "level": 3
+            },
+            {
+              "id": "sec-67",
+              "title": "5.5 Generic type + Interface: Enum tự tham chiếu",
+              "slug": "55-generic-type-interface-enum-t-tham-chiu",
+              "level": 3
+            },
+            {
+              "id": "sec-68",
+              "title": "5.6 ✅ Checklist Phần 5",
+              "slug": "56-checklist-phn-5",
+              "level": 3
+            },
+            {
+              "id": "sec-69",
+              "title": "Phần 6 — Từ Anonymous Inner Class Đến Lambda",
+              "slug": "phn-6-t-anonymous-inner-class-n-lambda",
+              "level": 2
+            },
+            {
+              "id": "sec-70",
+              "title": "6.1 Nỗi đau có thật: sắp xếp một danh sách",
+              "slug": "61-ni-au-c-tht-sp-xp-mt-danh-sch",
+              "level": 3
+            },
+            {
+              "id": "sec-71",
+              "title": "6.2 Bốn cách viết cùng một thứ — tiến hoá qua thời gian",
+              "slug": "62-bn-cch-vit-cng-mt-th-tin-ho-qua-thi-gian",
+              "level": 3
+            },
+            {
+              "id": "sec-72",
+              "title": "6.3 Lambda thực chất là gì?",
+              "slug": "63-lambda-thc-cht-l-g",
+              "level": 3
+            },
+            {
+              "id": "sec-73",
+              "title": "6.4 🔬 Lambda KHÔNG phải anonymous class — bằng chứng bytecode",
+              "slug": "64-lambda-khng-phi-anonymous-class-bng-chng-bytecode",
+              "level": 3
+            },
+            {
+              "id": "sec-74",
+              "title": "6.5 📊 Bảng so sánh đầy đủ: Anonymous Inner Class vs Lambda",
+              "slug": "65-bng-so-snh-y-anonymous-inner-class-vs-lambda",
+              "level": 3
+            },
+            {
+              "id": "sec-75",
+              "title": "6.6 ⚠️ Khác biệt quan trọng nhất: ý nghĩa của `this`",
+              "slug": "66-khc-bit-quan-trng-nht-ngha-ca-this",
+              "level": 3
+            },
+            {
+              "id": "sec-76",
+              "title": "6.7 Shadowing — lambda không cho biến trùng tên",
+              "slug": "67-shadowing-lambda-khng-cho-bin-trng-tn",
+              "level": 3
+            },
+            {
+              "id": "sec-77",
+              "title": "6.8 Ba trường hợp KHÔNG thay được anonymous class bằng lambda",
+              "slug": "68-ba-trng-hp-khng-thay-c-anonymous-class-bng-lambda",
+              "level": 3
+            },
+            {
+              "id": "sec-78",
+              "title": "6.9 🎯 Cây quyết định: dùng lambda, anonymous class hay named class?",
+              "slug": "69-cy-quyt-nh-dng-lambda-anonymous-class-hay-named-class",
+              "level": 3
+            },
+            {
+              "id": "sec-79",
+              "title": "6.10 ✅ Checklist Phần 6",
+              "slug": "610-checklist-phn-6",
+              "level": 3
+            },
+            {
+              "id": "sec-80",
+              "title": "Phần 7 — Cú Pháp Lambda & Type Inference",
+              "slug": "phn-7-c-php-lambda-type-inference",
+              "level": 2
+            },
+            {
+              "id": "sec-81",
+              "title": "7.1 Toàn bộ biến thể cú pháp",
+              "slug": "71-ton-b-bin-th-c-php",
+              "level": 3
+            },
+            {
+              "id": "sec-82",
+              "title": "7.2 Bẫy: biểu thức void và expression body",
+              "slug": "72-by-biu-thc-void-v-expression-body",
+              "level": 3
+            },
+            {
+              "id": "sec-83",
+              "title": "7.3 Target typing — kiểu đích quyết định tất cả",
+              "slug": "73-target-typing-kiu-ch-quyt-nh-tt-c",
+              "level": 3
+            },
+            {
+              "id": "sec-84",
+              "title": "7.4 Ambiguity — khi compiler không quyết được",
+              "slug": "74-ambiguity-khi-compiler-khng-quyt-c",
+              "level": 3
+            },
+            {
+              "id": "sec-85",
+              "title": "7.5 Generic method + lambda — suy luận hai chiều",
+              "slug": "75-generic-method-lambda-suy-lun-hai-chiu",
+              "level": 3
+            },
+            {
+              "id": "sec-86",
+              "title": "7.6 Lambda và checked exception — điểm đau lớn",
+              "slug": "76-lambda-v-checked-exception-im-au-ln",
+              "level": 3
+            },
+            {
+              "id": "sec-87",
+              "title": "7.7 So sánh 3 kiểu viết cùng một logic",
+              "slug": "77-so-snh-3-kiu-vit-cng-mt-logic",
+              "level": 3
+            },
+            {
+              "id": "sec-88",
+              "title": "7.8 ✅ Checklist Phần 7",
+              "slug": "78-checklist-phn-7",
+              "level": 3
+            },
+            {
+              "id": "sec-89",
+              "title": "Phần 8 — Functional Interfaces",
+              "slug": "phn-8-functional-interfaces",
+              "level": 2
+            },
+            {
+              "id": "sec-90",
+              "title": "8.1 Định nghĩa và `@FunctionalInterface`",
+              "slug": "81-nh-ngha-v-functionalinterface",
+              "level": 3
+            },
+            {
+              "id": "sec-91",
+              "title": "8.2 Bản đồ toàn bộ `java.util.function`",
+              "slug": "82-bn-ton-b-javautilfunction",
+              "level": 3
+            },
+            {
+              "id": "sec-92",
+              "title": "8.3 `Function<T, R>` — biến đổi",
+              "slug": "83-functiont-r-bin-i",
+              "level": 3
+            },
+            {
+              "id": "sec-93",
+              "title": "8.4 `Consumer<T>` — tiêu thụ (side effect)",
+              "slug": "84-consumert-tiu-th-side-effect",
+              "level": 3
+            },
+            {
+              "id": "sec-94",
+              "title": "8.5 `Supplier<T>` — cung cấp (lazy)",
+              "slug": "85-suppliert-cung-cp-lazy",
+              "level": 3
+            },
+            {
+              "id": "sec-95",
+              "title": "8.6 `Predicate<T>` — kiểm tra điều kiện",
+              "slug": "86-predicatet-kim-tra-iu-kin",
+              "level": 3
+            },
+            {
+              "id": "sec-96",
+              "title": "8.7 Biến thể 2 tham số: `BiFunction`, `BiConsumer`, `BiPredicate`",
+              "slug": "87-bin-th-2-tham-s-bifunction-biconsumer-bipredicate",
+              "level": 3
+            },
+            {
+              "id": "sec-97",
+              "title": "8.8 `UnaryOperator` & `BinaryOperator` — trường hợp đặc biệt",
+              "slug": "88-unaryoperator-binaryoperator-trng-hp-c-bit",
+              "level": 3
+            },
+            {
+              "id": "sec-98",
+              "title": "8.9 Biến thể primitive — quan trọng cho hiệu năng",
+              "slug": "89-bin-th-primitive-quan-trng-cho-hiu-nng",
+              "level": 3
+            },
+            {
+              "id": "sec-99",
+              "title": "8.10 Functional interface có sẵn NGOÀI `java.util.function`",
+              "slug": "810-functional-interface-c-sn-ngoi-javautilfunction",
+              "level": 3
+            },
+            {
+              "id": "sec-100",
+              "title": "8.11 `Comparator` — functional interface mạnh nhất",
+              "slug": "811-comparator-functional-interface-mnh-nht",
+              "level": 3
+            },
+            {
+              "id": "sec-101",
+              "title": "8.12 Tự viết functional interface — khi nào và như thế nào",
+              "slug": "812-t-vit-functional-interface-khi-no-v-nh-th-no",
+              "level": 3
+            },
+            {
+              "id": "sec-102",
+              "title": "8.13 ✅ Checklist Phần 8",
+              "slug": "813-checklist-phn-8",
+              "level": 3
+            },
+            {
+              "id": "sec-103",
+              "title": "Phần 9 — Method References — 4 Loại",
+              "slug": "phn-9-method-references-4-loi",
+              "level": 2
+            },
+            {
+              "id": "sec-104",
+              "title": "9.1 Ý tưởng: lambda chỉ gọi một method có sẵn",
+              "slug": "91-tng-lambda-ch-gi-mt-method-c-sn",
+              "level": 3
+            },
+            {
+              "id": "sec-105",
+              "title": "9.2 Bốn loại method reference — bảng tổng quan",
+              "slug": "92-bn-loi-method-reference-bng-tng-quan",
+              "level": 3
+            },
+            {
+              "id": "sec-106",
+              "title": "9.3 Loại 1 — Static method reference: `Class::staticMethod`",
+              "slug": "93-loi-1-static-method-reference-classstaticmethod",
+              "level": 3
+            },
+            {
+              "id": "sec-107",
+              "title": "9.4 Loại 2 — Instance method của object cụ thể: `object::method`",
+              "slug": "94-loi-2-instance-method-ca-object-c-th-objectmethod",
+              "level": 3
+            },
+            {
+              "id": "sec-108",
+              "title": "9.5 Loại 3 — Instance method của object bất kỳ: `Class::instanceMethod`",
+              "slug": "95-loi-3-instance-method-ca-object-bt-k-classinstancemethod",
+              "level": 3
+            },
+            {
+              "id": "sec-109",
+              "title": "9.6 Loại 4 — Constructor reference: `Class::new`",
+              "slug": "96-loi-4-constructor-reference-classnew",
+              "level": 3
+            },
+            {
+              "id": "sec-110",
+              "title": "9.7 Method reference với generic",
+              "slug": "97-method-reference-vi-generic",
+              "level": 3
+            },
+            {
+              "id": "sec-111",
+              "title": "9.8 🎯 Cây quyết định: khi nào dùng method reference?",
+              "slug": "98-cy-quyt-nh-khi-no-dng-method-reference",
+              "level": 3
+            },
+            {
+              "id": "sec-112",
+              "title": "9.9 Bảng tra: chuyển lambda → method reference",
+              "slug": "99-bng-tra-chuyn-lambda-method-reference",
+              "level": 3
+            },
+            {
+              "id": "sec-113",
+              "title": "9.10 ✅ Checklist Phần 9",
+              "slug": "910-checklist-phn-9",
+              "level": 3
+            },
+            {
+              "id": "sec-114",
+              "title": "Phần 10 — Variable Capture & Effectively Final",
+              "slug": "phn-10-variable-capture-effectively-final",
+              "level": 2
+            },
+            {
+              "id": "sec-115",
+              "title": "10.1 Lambda \"nhìn thấy\" những gì?",
+              "slug": "101-lambda-nhn-thy-nhng-g",
+              "level": 3
+            },
+            {
+              "id": "sec-116",
+              "title": "10.2 \"Effectively final\" nghĩa là gì?",
+              "slug": "102-effectively-final-ngha-l-g",
+              "level": 3
+            },
+            {
+              "id": "sec-117",
+              "title": "10.3 ⭐ VÌ SAO Java yêu cầu điều này? — Giải thích tận gốc",
+              "slug": "103-v-sao-java-yu-cu-iu-ny-gii-thch-tn-gc",
+              "level": 3
+            },
+            {
+              "id": "sec-118",
+              "title": "10.4 Bẫy: đối tượng bị capture VẪN thay đổi được",
+              "slug": "104-by-i-tng-b-capture-vn-thay-i-c",
+              "level": 3
+            },
+            {
+              "id": "sec-119",
+              "title": "10.5 Sáu cách \"lách\" giới hạn effectively final",
+              "slug": "105-su-cch-lch-gii-hn-effectively-final",
+              "level": 3
+            },
+            {
+              "id": "sec-120",
+              "title": "10.6 Bẫy kinh điển: biến của vòng lặp `for`",
+              "slug": "106-by-kinh-in-bin-ca-vng-lp-for",
+              "level": 3
+            },
+            {
+              "id": "sec-121",
+              "title": "10.7 🔬 Bytecode — capture thực sự trông như thế nào",
+              "slug": "107-bytecode-capture-thc-s-trng-nh-th-no",
+              "level": 3
+            },
+            {
+              "id": "sec-122",
+              "title": "10.8 Hiệu năng: capture có tốn kém không?",
+              "slug": "108-hiu-nng-capture-c-tn-km-khng",
+              "level": 3
+            },
+            {
+              "id": "sec-123",
+              "title": "10.9 ✅ Checklist Phần 10",
+              "slug": "109-checklist-phn-10",
+              "level": 3
+            },
+            {
+              "id": "sec-124",
+              "title": "Phần 11 — Functional Composition",
+              "slug": "phn-11-functional-composition",
+              "level": 2
+            },
+            {
+              "id": "sec-125",
+              "title": "11.1 Ý tưởng: ghép hàm nhỏ thành hàm lớn",
+              "slug": "111-tng-ghp-hm-nh-thnh-hm-ln",
+              "level": 3
+            },
+            {
+              "id": "sec-126",
+              "title": "11.2 `Function.andThen()` vs `Function.compose()`",
+              "slug": "112-functionandthen-vs-functioncompose",
+              "level": 3
+            },
+            {
+              "id": "sec-127",
+              "title": "11.3 `Consumer.andThen()`",
+              "slug": "113-consumerandthen",
+              "level": 3
+            },
+            {
+              "id": "sec-128",
+              "title": "11.4 `Predicate.and() / or() / negate()`",
+              "slug": "114-predicateand-or-negate",
+              "level": 3
+            },
+            {
+              "id": "sec-129",
+              "title": "11.5 `Comparator` composition",
+              "slug": "115-comparator-composition",
+              "level": 3
+            },
+            {
+              "id": "sec-130",
+              "title": "11.6 Tự viết composition cho functional interface của mình",
+              "slug": "116-t-vit-composition-cho-functional-interface-ca-mnh",
+              "level": 3
+            },
+            {
+              "id": "sec-131",
+              "title": "11.7 Currying & Partial Application (nâng cao)",
+              "slug": "117-currying-partial-application-nng-cao",
+              "level": 3
+            },
+            {
+              "id": "sec-132",
+              "title": "11.8 Bảng tổng hợp mọi method composition trong JDK",
+              "slug": "118-bng-tng-hp-mi-method-composition-trong-jdk",
+              "level": 3
+            },
+            {
+              "id": "sec-133",
+              "title": "11.9 ✅ Checklist Phần 11",
+              "slug": "119-checklist-phn-11",
+              "level": 3
+            },
+            {
+              "id": "sec-134",
+              "title": "Phần 12 — Lambda + Collections + Generics",
+              "slug": "phn-12-lambda-collections-generics",
+              "level": 2
+            },
+            {
+              "id": "sec-135",
+              "title": "12.1 Các default method nhận lambda trong Collections",
+              "slug": "121-cc-default-method-nhn-lambda-trong-collections",
+              "level": 3
+            },
+            {
+              "id": "sec-136",
+              "title": "12.2 `removeIf` — thay thế Iterator thủ công",
+              "slug": "122-removeif-thay-th-iterator-th-cng",
+              "level": 3
+            },
+            {
+              "id": "sec-137",
+              "title": "12.3 `Map.computeIfAbsent` — mẫu quan trọng nhất",
+              "slug": "123-mapcomputeifabsent-mu-quan-trng-nht",
+              "level": 3
+            },
+            {
+              "id": "sec-138",
+              "title": "12.4 `Map.merge` — đếm và gộp",
+              "slug": "124-mapmerge-m-v-gp",
+              "level": 3
+            },
+            {
+              "id": "sec-139",
+              "title": "12.5 `List.replaceAll` và `Map.replaceAll`",
+              "slug": "125-listreplaceall-v-mapreplaceall",
+              "level": 3
+            },
+            {
+              "id": "sec-140",
+              "title": "12.6 `Optional` + lambda — chuỗi xử lý an toàn",
+              "slug": "126-optional-lambda-chui-x-l-an-ton",
+              "level": 3
+            },
+            {
+              "id": "sec-141",
+              "title": "12.7 Generic + Lambda: viết utility linh hoạt",
+              "slug": "127-generic-lambda-vit-utility-linh-hot",
+              "level": 3
+            },
+            {
+              "id": "sec-142",
+              "title": "12.8 Strategy pattern với lambda — trước và sau",
+              "slug": "128-strategy-pattern-vi-lambda-trc-v-sau",
+              "level": 3
+            },
+            {
+              "id": "sec-143",
+              "title": "12.9 Template Method với lambda",
+              "slug": "129-template-method-vi-lambda",
+              "level": 3
+            },
+            {
+              "id": "sec-144",
+              "title": "12.10 ✅ Checklist Phần 12",
+              "slug": "1210-checklist-phn-12",
+              "level": 3
+            },
+            {
+              "id": "sec-145",
+              "title": "Phần 13 — Type Tokens — Vượt Qua Type Erasure",
+              "slug": "phn-13-type-tokens-vt-qua-type-erasure",
+              "level": 2
+            },
+            {
+              "id": "sec-146",
+              "title": "13.1 Vấn đề: deserialize JSON thành `List<User>`",
+              "slug": "131-vn-deserialize-json-thnh-listuser",
+              "level": 3
+            },
+            {
+              "id": "sec-147",
+              "title": "13.2 Type token đơn giản — `Class<T>`",
+              "slug": "132-type-token-n-gin-classt",
+              "level": 3
+            },
+            {
+              "id": "sec-148",
+              "title": "13.3 Super Type Token — giải quyết generic lồng nhau",
+              "slug": "133-super-type-token-gii-quyt-generic-lng-nhau",
+              "level": 3
+            },
+            {
+              "id": "sec-149",
+              "title": "13.4 Type token trong thư viện thực tế",
+              "slug": "134-type-token-trong-th-vin-thc-t",
+              "level": 3
+            },
+            {
+              "id": "sec-150",
+              "title": "13.5 Đọc generic của superclass — mẫu Repository",
+              "slug": "135-c-generic-ca-superclass-mu-repository",
+              "level": 3
+            },
+            {
+              "id": "sec-151",
+              "title": "13.6 Bảng tổng hợp các cách \"cầm\" kiểu generic",
+              "slug": "136-bng-tng-hp-cc-cch-cm-kiu-generic",
+              "level": 3
+            },
+            {
+              "id": "sec-152",
+              "title": "13.7 Ví dụ hoàn chỉnh: cache generic an toàn kiểu",
+              "slug": "137-v-d-hon-chnh-cache-generic-an-ton-kiu",
+              "level": 3
+            },
+            {
+              "id": "sec-153",
+              "title": "13.8 ✅ Checklist Phần 13",
+              "slug": "138-checklist-phn-13",
+              "level": 3
+            },
+            {
+              "id": "sec-154",
+              "title": "Phần 14 — 14 Lỗi Kinh Điển",
+              "slug": "phn-14-14-li-kinh-in",
+              "level": 2
+            },
+            {
+              "id": "sec-155",
+              "title": "Lỗi 1 — Dùng raw type",
+              "slug": "li-1-dng-raw-type",
+              "level": 3
+            },
+            {
+              "id": "sec-156",
+              "title": "Lỗi 2 — Tưởng `List<Dog>` là `List<Animal>`",
+              "slug": "li-2-tng-listdog-l-listanimal",
+              "level": 3
+            },
+            {
+              "id": "sec-157",
+              "title": "Lỗi 3 — Dùng sai `extends`/`super` (PECS ngược)",
+              "slug": "li-3-dng-sai-extendssuper-pecs-ngc",
+              "level": 3
+            },
+            {
+              "id": "sec-158",
+              "title": "Lỗi 4 — Thêm wildcard ở kiểu trả về",
+              "slug": "li-4-thm-wildcard-kiu-tr-v",
+              "level": 3
+            },
+            {
+              "id": "sec-159",
+              "title": "Lỗi 5 — Cố `new T()` hoặc `new T[]`",
+              "slug": "li-5-c-new-t-hoc-new-t",
+              "level": 3
+            },
+            {
+              "id": "sec-160",
+              "title": "Lỗi 6 — `@SuppressWarnings(\"unchecked\")` bừa bãi",
+              "slug": "li-6-suppresswarningsunchecked-ba-bi",
+              "level": 3
+            },
+            {
+              "id": "sec-161",
+              "title": "Lỗi 7 — Overload bị trùng sau erasure",
+              "slug": "li-7-overload-b-trng-sau-erasure",
+              "level": 3
+            },
+            {
+              "id": "sec-162",
+              "title": "Lỗi 8 — Lambda dùng biến không effectively final",
+              "slug": "li-8-lambda-dng-bin-khng-effectively-final",
+              "level": 3
+            },
+            {
+              "id": "sec-163",
+              "title": "Lỗi 9 — Side effect trong lambda / Stream",
+              "slug": "li-9-side-effect-trong-lambda-stream",
+              "level": 3
+            },
+            {
+              "id": "sec-164",
+              "title": "Lỗi 10 — `orElse` với biểu thức tốn kém",
+              "slug": "li-10-orelse-vi-biu-thc-tn-km",
+              "level": 3
+            },
+            {
+              "id": "sec-165",
+              "title": "Lỗi 11 — Lambda quá dài, không đặt tên",
+              "slug": "li-11-lambda-qu-di-khng-t-tn",
+              "level": 3
+            },
+            {
+              "id": "sec-166",
+              "title": "Lỗi 12 — Nhầm loại method reference",
+              "slug": "li-12-nhm-loi-method-reference",
+              "level": 3
+            },
+            {
+              "id": "sec-167",
+              "title": "Lỗi 13 — Lambda capture object lớn gây memory leak",
+              "slug": "li-13-lambda-capture-object-ln-gy-memory-leak",
+              "level": 3
+            },
+            {
+              "id": "sec-168",
+              "title": "Lỗi 14 — Không xử lý checked exception, hoặc nuốt exception",
+              "slug": "li-14-khng-x-l-checked-exception-hoc-nut-exception",
+              "level": 3
+            },
+            {
+              "id": "sec-169",
+              "title": "Lỗi bổ sung 15 — So sánh lambda bằng `==` hoặc dùng làm key",
+              "slug": "li-b-sung-15-so-snh-lambda-bng-hoc-dng-lm-key",
+              "level": 3
+            },
+            {
+              "id": "sec-170",
+              "title": "Lỗi bổ sung 16 — Lạm dụng `Optional`",
+              "slug": "li-b-sung-16-lm-dng-optional",
+              "level": 3
+            },
+            {
+              "id": "sec-171",
+              "title": "📋 Bảng tổng kết 16 lỗi",
+              "slug": "-bng-tng-kt-16-li",
+              "level": 3
+            },
+            {
+              "id": "sec-172",
+              "title": "Phần 15 — Best Practices & Anti-patterns",
+              "slug": "phn-15-best-practices-anti-patterns",
+              "level": 2
+            },
+            {
+              "id": "sec-173",
+              "title": "15.1 Mười hai nguyên tắc Generics",
+              "slug": "151-mi-hai-nguyn-tc-generics",
+              "level": 3
+            },
+            {
+              "id": "sec-174",
+              "title": "15.2 Mười hai nguyên tắc Lambda",
+              "slug": "152-mi-hai-nguyn-tc-lambda",
+              "level": 3
+            },
+            {
+              "id": "sec-175",
+              "title": "15.3 Anti-patterns — nhận diện và sửa",
+              "slug": "153-anti-patterns-nhn-din-v-sa",
+              "level": 3
+            },
+            {
+              "id": "sec-176",
+              "title": "15.4 Bảng \"dùng cái nào?\" — tra nhanh",
+              "slug": "154-bng-dng-ci-no-tra-nhanh",
+              "level": 3
+            },
+            {
+              "id": "sec-177",
+              "title": "15.5 Checklist review code",
+              "slug": "155-checklist-review-code",
+              "level": 3
+            },
+            {
+              "id": "sec-178",
+              "title": "Phần 16 — Generics & Lambda Trong Spring Boot",
+              "slug": "phn-16-generics-lambda-trong-spring-boot",
+              "level": 2
+            },
+            {
+              "id": "sec-179",
+              "title": "16.1 `JpaRepository<T, ID>` — generic ở khắp nơi",
+              "slug": "161-jparepositoryt-id-generic-khp-ni",
+              "level": 3
+            },
+            {
+              "id": "sec-180",
+              "title": "16.2 `ResponseEntity<T>` — generic trong Controller",
+              "slug": "162-responseentityt-generic-trong-controller",
+              "level": 3
+            },
+            {
+              "id": "sec-181",
+              "title": "16.3 DTO bằng `record` generic",
+              "slug": "163-dto-bng-record-generic",
+              "level": 3
+            },
+            {
+              "id": "sec-182",
+              "title": "16.4 Service layer — generic + lambda + Optional",
+              "slug": "164-service-layer-generic-lambda-optional",
+              "level": 3
+            },
+            {
+              "id": "sec-183",
+              "title": "16.5 `Specification<T>` — functional interface của Spring Data JPA",
+              "slug": "165-specificationt-functional-interface-ca-spring-data-jpa",
+              "level": 3
+            },
+            {
+              "id": "sec-184",
+              "title": "16.6 `@RestControllerAdvice` — generic exception handling",
+              "slug": "166-restcontrolleradvice-generic-exception-handling",
+              "level": 3
+            },
+            {
+              "id": "sec-185",
+              "title": "16.7 Lambda trong cấu hình Spring",
+              "slug": "167-lambda-trong-cu-hnh-spring",
+              "level": 3
+            },
+            {
+              "id": "sec-186",
+              "title": "16.8 `RowMapper<T>` — JdbcTemplate",
+              "slug": "168-rowmappert-jdbctemplate",
+              "level": 3
+            },
+            {
+              "id": "sec-187",
+              "title": "16.9 Testing với generic & lambda",
+              "slug": "169-testing-vi-generic-lambda",
+              "level": 3
+            },
+            {
+              "id": "sec-188",
+              "title": "16.10 Bảng: kiến thức chương này dùng ở đâu trong Spring Boot",
+              "slug": "1610-bng-kin-thc-chng-ny-dng-u-trong-spring-boot",
+              "level": 3
+            },
+            {
+              "id": "sec-189",
+              "title": "Phần 17 — Bài Tập Thực Hành",
+              "slug": "phn-17-bi-tp-thc-hnh",
+              "level": 2
+            },
+            {
+              "id": "sec-190",
+              "title": "🟢 Bài 1 (Dễ) — Generic `Box` và `Pair`",
+              "slug": "-bi-1-d-generic-box-v-pair",
+              "level": 3
+            },
+            {
+              "id": "sec-191",
+              "title": "🟢 Bài 2 (Dễ) — Thư viện `FunctionUtils`",
+              "slug": "-bi-2-d-th-vin-functionutils",
+              "level": 3
+            },
+            {
+              "id": "sec-192",
+              "title": "🟡 Bài 3 (Trung bình) — Repository generic in-memory",
+              "slug": "-bi-3-trung-bnh-repository-generic-in-memory",
+              "level": 3
+            },
+            {
+              "id": "sec-193",
+              "title": "🟡 Bài 4 (Trung bình) — Validation framework",
+              "slug": "-bi-4-trung-bnh-validation-framework",
+              "level": 3
+            },
+            {
+              "id": "sec-194",
+              "title": "🔴 Bài 5 (Khó) — Event bus generic + type-safe",
+              "slug": "-bi-5-kh-event-bus-generic-type-safe",
+              "level": 3
+            },
+            {
+              "id": "sec-195",
+              "title": "🔴 Bài 6 (Khó) — Query DSL generic",
+              "slug": "-bi-6-kh-query-dsl-generic",
+              "level": 3
+            },
+            {
+              "id": "sec-196",
+              "title": "📊 Bảng độ khó & kỹ năng rèn luyện",
+              "slug": "-bng-kh-k-nng-rn-luyn",
+              "level": 3
+            },
+            {
+              "id": "sec-197",
+              "title": "Phần 18 — Tóm Tắt & Chương Tiếp Theo",
+              "slug": "phn-18-tm-tt-chng-tip-theo",
+              "level": 2
+            },
+            {
+              "id": "sec-198",
+              "title": "18.1 Hai mươi điều cần nhớ mãi",
+              "slug": "181-hai-mi-iu-cn-nh-mi",
+              "level": 3
+            },
+            {
+              "id": "sec-199",
+              "title": "18.2 Sơ đồ tổng kết một trang",
+              "slug": "182-s-tng-kt-mt-trang",
+              "level": 3
+            },
+            {
+              "id": "sec-200",
+              "title": "18.3 Tự đánh giá — bạn đã sẵn sàng chưa?",
+              "slug": "183-t-nh-gi-bn-sn-sng-cha",
+              "level": 3
+            },
+            {
+              "id": "sec-201",
+              "title": "18.4 Liên kết với các chương khác",
+              "slug": "184-lin-kt-vi-cc-chng-khc",
+              "level": 3
+            },
+            {
+              "id": "sec-202",
+              "title": "18.5 Chương tiếp theo — Chương 4: Streams API",
+              "slug": "185-chng-tip-theo-chng-4-streams-api",
+              "level": 3
+            },
+            {
+              "id": "sec-203",
+              "title": "📎 Phụ Lục A — Bảng Tra Nhanh Functional Interfaces",
+              "slug": "-ph-lc-a-bng-tra-nhanh-functional-interfaces",
+              "level": 2
+            },
+            {
+              "id": "sec-204",
+              "title": "Bốn trụ cột và họ hàng",
+              "slug": "bn-tr-ct-v-h-hng",
+              "level": 3
+            },
+            {
+              "id": "sec-205",
+              "title": "Biến thể primitive — đầy đủ",
+              "slug": "bin-th-primitive-y-",
+              "level": 3
+            },
+            {
+              "id": "sec-206",
+              "title": "Functional interface ngoài `java.util.function`",
+              "slug": "functional-interface-ngoi-javautilfunction",
+              "level": 3
+            },
+            {
+              "id": "sec-207",
+              "title": "📎 Phụ Lục B — Bảng Tra Nhanh Cú Pháp Generics",
+              "slug": "-ph-lc-b-bng-tra-nhanh-c-php-generics",
+              "level": 2
+            },
+            {
+              "id": "sec-208",
+              "title": "Erasure — bảng tra",
+              "slug": "erasure-bng-tra",
+              "level": 3
+            },
+            {
+              "id": "sec-209",
+              "title": "📎 Phụ Lục C — Thuật Ngữ Việt–Anh",
+              "slug": "-ph-lc-c-thut-ng-vitanh",
+              "level": 2
+            }
+          ]
         },
         {
           "id": "chap-4",
           "number": 4,
           "title": "Streams API",
           "slug": "streams-api",
-          "dataFile": "sources/tier-1/streams-api/streams-api.json"
+          "dataFile": "sources/tier-1/streams-api/streams-api.json",
+          "sections": []
         },
         {
           "id": "chap-5",
           "number": 5,
           "title": "Exception Handling",
           "slug": "exception-handling",
-          "dataFile": "sources/tier-1/exception-handling/exception-handling.json"
+          "dataFile": "sources/tier-1/exception-handling/exception-handling.json",
+          "sections": []
         },
         {
           "id": "chap-6",
           "number": 6,
           "title": "File I/O & Serialization",
           "slug": "file-io-serialization",
-          "dataFile": "sources/tier-1/file-io-serialization/file-io-serialization.json"
+          "dataFile": "sources/tier-1/file-io-serialization/file-io-serialization.json",
+          "sections": []
         },
         {
           "id": "chap-7",
           "number": 7,
           "title": "Concurrency & Multithreading",
           "slug": "concurrency-multithreading",
-          "dataFile": "sources/tier-1/concurrency-multithreading/concurrency-multithreading.json"
+          "dataFile": "sources/tier-1/concurrency-multithreading/concurrency-multithreading.json",
+          "sections": []
         },
         {
           "id": "chap-8",
           "number": 8,
           "title": "Maven",
           "slug": "maven",
-          "dataFile": "sources/tier-1/maven/maven.json"
+          "dataFile": "sources/tier-1/maven/maven.json",
+          "sections": []
         },
         {
           "id": "chap-9",
           "number": 9,
           "title": "Java 8+ Features",
           "slug": "java-8-features",
-          "dataFile": "sources/tier-1/java-8-features/java-8-features.json"
+          "dataFile": "sources/tier-1/java-8-features/java-8-features.json",
+          "sections": []
         }
       ]
     },
@@ -84,35 +2604,40 @@
           "number": 10,
           "title": "IoC & Dependency Injection",
           "slug": "ioc-dependency-injection",
-          "dataFile": "sources/tier-2/ioc-dependency-injection/ioc-dependency-injection.json"
+          "dataFile": "sources/tier-2/ioc-dependency-injection/ioc-dependency-injection.json",
+          "sections": []
         },
         {
           "id": "chap-11",
           "number": 11,
           "title": "REST API Basics",
           "slug": "rest-api-basics",
-          "dataFile": "sources/tier-2/rest-api-basics/rest-api-basics.json"
+          "dataFile": "sources/tier-2/rest-api-basics/rest-api-basics.json",
+          "sections": []
         },
         {
           "id": "chap-12",
           "number": 12,
           "title": "DTO Pattern & Validation",
           "slug": "dto-pattern-validation",
-          "dataFile": "sources/tier-2/dto-pattern-validation/dto-pattern-validation.json"
+          "dataFile": "sources/tier-2/dto-pattern-validation/dto-pattern-validation.json",
+          "sections": []
         },
         {
           "id": "chap-13",
           "number": 13,
           "title": "Exception Handling",
           "slug": "exception-handling",
-          "dataFile": "sources/tier-2/exception-handling/exception-handling.json"
+          "dataFile": "sources/tier-2/exception-handling/exception-handling.json",
+          "sections": []
         },
         {
           "id": "chap-14",
           "number": 14,
           "title": "Configuration & Profiles",
           "slug": "configuration-profiles",
-          "dataFile": "sources/tier-2/configuration-profiles/configuration-profiles.json"
+          "dataFile": "sources/tier-2/configuration-profiles/configuration-profiles.json",
+          "sections": []
         }
       ]
     },
@@ -128,28 +2653,32 @@
           "number": 15,
           "title": "REST Controllers Deep Dive",
           "slug": "rest-controllers-deep-dive",
-          "dataFile": "sources/tier-3/rest-controllers-deep-dive/rest-controllers-deep-dive.json"
+          "dataFile": "sources/tier-3/rest-controllers-deep-dive/rest-controllers-deep-dive.json",
+          "sections": []
         },
         {
           "id": "chap-16",
           "number": 16,
           "title": "Spring Data JPA",
           "slug": "spring-data-jpa",
-          "dataFile": "sources/tier-3/spring-data-jpa/spring-data-jpa.json"
+          "dataFile": "sources/tier-3/spring-data-jpa/spring-data-jpa.json",
+          "sections": []
         },
         {
           "id": "chap-17",
           "number": 17,
           "title": "Transactions & ACID",
           "slug": "transactions-acid",
-          "dataFile": "sources/tier-3/transactions-acid/transactions-acid.json"
+          "dataFile": "sources/tier-3/transactions-acid/transactions-acid.json",
+          "sections": []
         },
         {
           "id": "chap-18",
           "number": 18,
           "title": "Pagination & Sorting",
           "slug": "pagination-sorting",
-          "dataFile": "sources/tier-3/pagination-sorting/pagination-sorting.json"
+          "dataFile": "sources/tier-3/pagination-sorting/pagination-sorting.json",
+          "sections": []
         }
       ]
     },
@@ -165,21 +2694,24 @@
           "number": 19,
           "title": "Spring Security 6",
           "slug": "spring-security-6",
-          "dataFile": "sources/tier-4/spring-security-6/spring-security-6.json"
+          "dataFile": "sources/tier-4/spring-security-6/spring-security-6.json",
+          "sections": []
         },
         {
           "id": "chap-20",
           "number": 20,
           "title": "JWT Authentication",
           "slug": "jwt-authentication",
-          "dataFile": "sources/tier-4/jwt-authentication/jwt-authentication.json"
+          "dataFile": "sources/tier-4/jwt-authentication/jwt-authentication.json",
+          "sections": []
         },
         {
           "id": "chap-21",
           "number": 21,
           "title": "Authorization & Role-Based Access",
           "slug": "authorization-rbac",
-          "dataFile": "sources/tier-4/authorization-rbac/authorization-rbac.json"
+          "dataFile": "sources/tier-4/authorization-rbac/authorization-rbac.json",
+          "sections": []
         }
       ]
     },
@@ -195,21 +2727,24 @@
           "number": 22,
           "title": "Caching Strategies",
           "slug": "caching-strategies",
-          "dataFile": "sources/tier-5/caching-strategies/caching-strategies.json"
+          "dataFile": "sources/tier-5/caching-strategies/caching-strategies.json",
+          "sections": []
         },
         {
           "id": "chap-23",
           "number": 23,
           "title": "Redis Integration",
           "slug": "redis-integration",
-          "dataFile": "sources/tier-5/redis-integration/redis-integration.json"
+          "dataFile": "sources/tier-5/redis-integration/redis-integration.json",
+          "sections": []
         },
         {
           "id": "chap-24",
           "number": 24,
           "title": "Performance Optimization",
           "slug": "performance-optimization",
-          "dataFile": "sources/tier-5/performance-optimization/performance-optimization.json"
+          "dataFile": "sources/tier-5/performance-optimization/performance-optimization.json",
+          "sections": []
         }
       ]
     },
@@ -225,21 +2760,24 @@
           "number": 25,
           "title": "Unit Testing",
           "slug": "unit-testing",
-          "dataFile": "sources/tier-6/unit-testing/unit-testing.json"
+          "dataFile": "sources/tier-6/unit-testing/unit-testing.json",
+          "sections": []
         },
         {
           "id": "chap-26",
           "number": 26,
           "title": "Integration Testing",
           "slug": "integration-testing",
-          "dataFile": "sources/tier-6/integration-testing/integration-testing.json"
+          "dataFile": "sources/tier-6/integration-testing/integration-testing.json",
+          "sections": []
         },
         {
           "id": "chap-27",
           "number": 27,
           "title": "Test Coverage & Best Practices",
           "slug": "test-coverage-practices",
-          "dataFile": "sources/tier-6/test-coverage-practices/test-coverage-practices.json"
+          "dataFile": "sources/tier-6/test-coverage-practices/test-coverage-practices.json",
+          "sections": []
         }
       ]
     },
@@ -255,21 +2793,24 @@
           "number": 28,
           "title": "HTTP Clients & REST Templates",
           "slug": "http-clients-rest-templates",
-          "dataFile": "sources/tier-7/http-clients-rest-templates/http-clients-rest-templates.json"
+          "dataFile": "sources/tier-7/http-clients-rest-templates/http-clients-rest-templates.json",
+          "sections": []
         },
         {
           "id": "chap-29",
           "number": 29,
           "title": "Feign Client",
           "slug": "feign-client",
-          "dataFile": "sources/tier-7/feign-client/feign-client.json"
+          "dataFile": "sources/tier-7/feign-client/feign-client.json",
+          "sections": []
         },
         {
           "id": "chap-30",
           "number": 30,
           "title": "API Integration",
           "slug": "api-integration",
-          "dataFile": "sources/tier-7/api-integration/api-integration.json"
+          "dataFile": "sources/tier-7/api-integration/api-integration.json",
+          "sections": []
         }
       ]
     },
@@ -285,42 +2826,48 @@
           "number": 31,
           "title": "Microservices Architecture",
           "slug": "microservices-architecture",
-          "dataFile": "sources/tier-8/microservices-architecture/microservices-architecture.json"
+          "dataFile": "sources/tier-8/microservices-architecture/microservices-architecture.json",
+          "sections": []
         },
         {
           "id": "chap-32",
           "number": 32,
           "title": "Service Discovery with Eureka",
           "slug": "service-discovery-eureka",
-          "dataFile": "sources/tier-8/service-discovery-eureka/service-discovery-eureka.json"
+          "dataFile": "sources/tier-8/service-discovery-eureka/service-discovery-eureka.json",
+          "sections": []
         },
         {
           "id": "chap-33",
           "number": 33,
           "title": "API Gateway & Routing",
           "slug": "api-gateway-routing",
-          "dataFile": "sources/tier-8/api-gateway-routing/api-gateway-routing.json"
+          "dataFile": "sources/tier-8/api-gateway-routing/api-gateway-routing.json",
+          "sections": []
         },
         {
           "id": "chap-34",
           "number": 34,
           "title": "Circuit Breaker Pattern",
           "slug": "circuit-breaker-pattern",
-          "dataFile": "sources/tier-8/circuit-breaker-pattern/circuit-breaker-pattern.json"
+          "dataFile": "sources/tier-8/circuit-breaker-pattern/circuit-breaker-pattern.json",
+          "sections": []
         },
         {
           "id": "chap-35",
           "number": 35,
           "title": "Message Queue with Kafka",
           "slug": "kafka-message-queue",
-          "dataFile": "sources/tier-8/kafka-message-queue/kafka-message-queue.json"
+          "dataFile": "sources/tier-8/kafka-message-queue/kafka-message-queue.json",
+          "sections": []
         },
         {
           "id": "chap-36",
           "number": 36,
           "title": "Event-Driven Architecture",
           "slug": "event-driven-architecture",
-          "dataFile": "sources/tier-8/event-driven-architecture/event-driven-architecture.json"
+          "dataFile": "sources/tier-8/event-driven-architecture/event-driven-architecture.json",
+          "sections": []
         }
       ]
     },
@@ -336,49 +2883,56 @@
           "number": 37,
           "title": "Docker Containerization",
           "slug": "docker-containerization",
-          "dataFile": "sources/tier-9/docker-containerization/docker-containerization.json"
+          "dataFile": "sources/tier-9/docker-containerization/docker-containerization.json",
+          "sections": []
         },
         {
           "id": "chap-38",
           "number": 38,
           "title": "Docker Compose",
           "slug": "docker-compose",
-          "dataFile": "sources/tier-9/docker-compose/docker-compose.json"
+          "dataFile": "sources/tier-9/docker-compose/docker-compose.json",
+          "sections": []
         },
         {
           "id": "chap-39",
           "number": 39,
           "title": "Database Migration with Flyway",
           "slug": "database-migration-flyway",
-          "dataFile": "sources/tier-9/database-migration-flyway/database-migration-flyway.json"
+          "dataFile": "sources/tier-9/database-migration-flyway/database-migration-flyway.json",
+          "sections": []
         },
         {
           "id": "chap-40",
           "number": 40,
           "title": "Monitoring & Observability",
           "slug": "monitoring-observability",
-          "dataFile": "sources/tier-9/monitoring-observability/monitoring-observability.json"
+          "dataFile": "sources/tier-9/monitoring-observability/monitoring-observability.json",
+          "sections": []
         },
         {
           "id": "chap-41",
           "number": 41,
           "title": "Logging & Structured Logging",
           "slug": "logging-structured-logging",
-          "dataFile": "sources/tier-9/logging-structured-logging/logging-structured-logging.json"
+          "dataFile": "sources/tier-9/logging-structured-logging/logging-structured-logging.json",
+          "sections": []
         },
         {
           "id": "chap-42",
           "number": 42,
           "title": "Kubernetes Basics",
           "slug": "kubernetes-basics",
-          "dataFile": "sources/tier-9/kubernetes-basics/kubernetes-basics.json"
+          "dataFile": "sources/tier-9/kubernetes-basics/kubernetes-basics.json",
+          "sections": []
         },
         {
           "id": "chap-43",
           "number": 43,
           "title": "CI/CD with GitHub Actions",
           "slug": "cicd-github-actions",
-          "dataFile": "sources/tier-9/cicd-github-actions/cicd-github-actions.json"
+          "dataFile": "sources/tier-9/cicd-github-actions/cicd-github-actions.json",
+          "sections": []
         }
       ]
     },
@@ -394,49 +2948,56 @@
           "number": 44,
           "title": "Reactive Programming",
           "slug": "reactive-programming",
-          "dataFile": "sources/tier-10/reactive-programming/reactive-programming.json"
+          "dataFile": "sources/tier-10/reactive-programming/reactive-programming.json",
+          "sections": []
         },
         {
           "id": "chap-45",
           "number": 45,
           "title": "WebFlux",
           "slug": "webflux",
-          "dataFile": "sources/tier-10/webflux/webflux.json"
+          "dataFile": "sources/tier-10/webflux/webflux.json",
+          "sections": []
         },
         {
           "id": "chap-46",
           "number": 46,
           "title": "Clean Architecture",
           "slug": "clean-architecture",
-          "dataFile": "sources/tier-10/clean-architecture/clean-architecture.json"
+          "dataFile": "sources/tier-10/clean-architecture/clean-architecture.json",
+          "sections": []
         },
         {
           "id": "chap-47",
           "number": 47,
           "title": "Hexagonal Architecture",
           "slug": "hexagonal-architecture",
-          "dataFile": "sources/tier-10/hexagonal-architecture/hexagonal-architecture.json"
+          "dataFile": "sources/tier-10/hexagonal-architecture/hexagonal-architecture.json",
+          "sections": []
         },
         {
           "id": "chap-48",
           "number": 48,
           "title": "Event Sourcing",
           "slug": "event-sourcing",
-          "dataFile": "sources/tier-10/event-sourcing/event-sourcing.json"
+          "dataFile": "sources/tier-10/event-sourcing/event-sourcing.json",
+          "sections": []
         },
         {
           "id": "chap-49",
           "number": 49,
           "title": "CQRS Pattern",
           "slug": "cqrs-pattern",
-          "dataFile": "sources/tier-10/cqrs-pattern/cqrs-pattern.json"
+          "dataFile": "sources/tier-10/cqrs-pattern/cqrs-pattern.json",
+          "sections": []
         },
         {
           "id": "chap-50",
           "number": 50,
           "title": "Domain-Driven Design",
           "slug": "domain-driven-design",
-          "dataFile": "sources/tier-10/domain-driven-design/domain-driven-design.json"
+          "dataFile": "sources/tier-10/domain-driven-design/domain-driven-design.json",
+          "sections": []
         }
       ]
     }

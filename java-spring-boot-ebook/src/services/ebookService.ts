@@ -39,8 +39,8 @@ class EbookService {
               title: ch.title,
               tier: tier.number,
               slug: ch.slug,
-              content: '', // Content will be loaded on-demand
-              sections: [],
+              content: '', // Nội dung sẽ được tải theo yêu cầu
+              sections: ch.sections || [], // Lấy sections từ navigation index
               keywords: [],
             }))
           )

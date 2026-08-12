@@ -1,5 +1,14 @@
 # Lộ Trình Java Spring Boot — Cơ Bản Đến Nâng Cao
 
+
+# Quy Tắc Chung
+1. Luôn luôn trả lời bằng Tiếng Việt.
+2. Luôn luôn trả lời code bằng Tiếng Việt.
+3. Luôn luôn comment code bằng Tiếng Việt.
+4. **KHÔNG tự ý commit code** (Quy tắc quan trọng bắt buộc)
+5. **Làm tất cả công việc cần thiết (fix code, update files, etc.) nhưng KHÔNG commit**
+6. **KHÔNG hỏi lại "có được commit không?"** - Chỉ làm việc, user sẽ tự commit
+7. Commit sẽ được thực hiện bởi user, không phải bởi AI
 ## Tầng 1 — Nền Tảng Java
 
 Trước khi học Spring Boot, cần vững các kiến thức Java core sau:

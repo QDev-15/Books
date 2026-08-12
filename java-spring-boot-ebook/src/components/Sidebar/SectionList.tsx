@@ -1,3 +1,4 @@
+import { ChevronRight } from 'lucide-react'
 import { useEbookStore } from '../../store/useEbookStore'
 import type { Section } from '../../types'
 
