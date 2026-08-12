@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 let oldActiveSection = ""
+let isScrollUp = false;
 // Lưu trạng thái section hiện đang active trong viewport
 export function useScrollHighlight() {
   const [activeSection, setActiveSection] = useState<string>('')
@@ -50,18 +51,30 @@ export function useScrollHighlight() {
       // ========== CẬP NHẬT STATE ==========
       // Nếu tìm được heading nào, cập nhật activeSection state
       // SectionList component sẽ so sánh activeSection với sectionSlug để highlight
+      console.log('📖 SCROLL ←', isScrollUp)
       if (activeId) {
         setActiveSection(activeId)
         oldActiveSection = activeId
       } else {
+        console.log('no header', oldActiveSection)
         setActiveSection(oldActiveSection)
       }
-
     }
 
     // =============== BƯỚC 3: Attach scroll listener và gọi lần đầu ===============
     // Lắng nghe scroll event trên container (không phải window, vì nội dung scroll trong div)
-    container.addEventListener('scroll', handleScroll, { passive: true })
+    let lastScrollTop = 0
+    const handleScrollWithDirection = () => {
+      const currentScrollTop = container.scrollTop
+      if (currentScrollTop > lastScrollTop) {
+        isScrollUp = false
+      } else if (currentScrollTop < lastScrollTop) {
+        isScrollUp = true
+      }
+      lastScrollTop = currentScrollTop
+      handleScroll()
+    }
+    container.addEventListener('scroll', handleScrollWithDirection, { passive: true })
 
     // Gọi handleScroll() ngay khi mount để active section đầu tiên visible
     handleScroll()
@@ -69,7 +82,7 @@ export function useScrollHighlight() {
     // =============== BƯỚC 4: Cleanup ===============
     // Khi component unmount, remove event listener để tránh memory leak
     return () => {
-      container.removeEventListener('scroll', handleScroll)
+      container.removeEventListener('scroll', handleScrollWithDirection)
     }
   }, [])
   // console.log(activeSection, 'activeSection')
