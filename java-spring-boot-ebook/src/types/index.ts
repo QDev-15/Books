@@ -23,8 +23,22 @@ export interface TableOfContentsItem {
 }
 
 export interface EbookData {
-  chapters: Chapter[]
-  tableOfContents: TableOfContentsItem[]
+  chapters?: Chapter[] // Old format (monolithic)
+  tiers?: Array<{ // New format (modular)
+    id: string
+    number: number
+    name: string
+    slug: string
+    metadataFile: string
+    chapters: Array<{
+      id: string
+      number: number
+      title: string
+      slug: string
+      dataFile: string
+    }>
+  }>
+  tableOfContents?: TableOfContentsItem[]
   lastUpdated?: string
 }
 

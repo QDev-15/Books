@@ -19,17 +19,45 @@ class EbookService {
   }
 
   /**
-   * Get all chapters
+   * Get all chapters (flattened from tiers in navigation index)
    */
   getAllChapters(): Chapter[] {
-    return this.ebookData.chapters
+    // Handle both old (chapters array) and new (tiers array) formats
+    if ('chapters' in this.ebookData && Array.isArray((this.ebookData as any).chapters)) {
+      return (this.ebookData as any).chapters
+    }
+
+    // New format: flatten tiers into chapters
+    if ('tiers' in this.ebookData && Array.isArray((this.ebookData as any).tiers)) {
+      const allChapters: any[] = []
+      ;(this.ebookData as any).tiers.forEach((tier: any) => {
+        if (tier.chapters && Array.isArray(tier.chapters)) {
+          allChapters.push(
+            ...tier.chapters.map((ch: any) => ({
+              id: ch.id,
+              number: ch.number,
+              title: ch.title,
+              tier: tier.number,
+              slug: ch.slug,
+              content: '', // Content will be loaded on-demand
+              sections: [],
+              keywords: [],
+            }))
+          )
+        }
+      })
+      return allChapters
+    }
+
+    return []
   }
 
   /**
-   * Get chapter by ID
+   * Get chapter by ID from navigation index (metadata only, no full content)
    */
   getChapterById(id: string): Chapter | undefined {
-    return this.ebookData.chapters.find(ch => ch.id === id)
+    const chapters = this.getAllChapters()
+    return chapters.find(ch => ch.id === id)
   }
 
   /**
