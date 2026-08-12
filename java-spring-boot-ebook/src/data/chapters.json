@@ -2545,10 +2545,1115 @@
         {
           "id": "chap-4",
           "number": 4,
-          "title": "Streams API",
+          "title": "Streams API - DEEP DIVE",
           "slug": "streams-api",
           "dataFile": "sources/tier-1/streams-api/streams-api.json",
-          "sections": []
+          "sections": [
+            {
+              "id": "sec-0",
+              "title": "🎯 Mục Tiêu Học",
+              "slug": "🎯-mục-tiêu-học",
+              "level": 2
+            },
+            {
+              "id": "sec-1",
+              "title": "📚 Mục Lục",
+              "slug": "📚-mục-lục",
+              "level": 2
+            },
+            {
+              "id": "sec-2",
+              "title": "📦 Bộ Dữ Liệu Dùng Chung Cả Chương",
+              "slug": "📦-bộ-dữ-liệu-dùng-chung-cả-chương",
+              "level": 2
+            },
+            {
+              "id": "sec-3",
+              "title": "Phần 0 — Tại Sao Cần Streams?",
+              "slug": "phần-0--tại-sao-cần-streams",
+              "level": 2
+            },
+            {
+              "id": "sec-4",
+              "title": "0.1 Một buổi sáng thứ Hai bình thường",
+              "slug": "0-1-một-buổi-sáng-thứ-hai-bình-thường",
+              "level": 3
+            },
+            {
+              "id": "sec-5",
+              "title": "0.2 Bảng đối chiếu Imperative ⟷ Declarative",
+              "slug": "0-2-bảng-đối-chiếu-imperative-⟷-declarative",
+              "level": 3
+            },
+            {
+              "id": "sec-6",
+              "title": "0.3 Khái niệm cốt lõi: External vs Internal Iteration",
+              "slug": "0-3-khái-niệm-cốt-lõi--external-vs-internal-iteration",
+              "level": 3
+            },
+            {
+              "id": "sec-7",
+              "title": "0.4 Năm ví dụ Before/After — độ khó tăng dần",
+              "slug": "0-4-năm-ví-dụ-before-after--độ-khó-tăng-dần",
+              "level": 3
+            },
+            {
+              "id": "sec-8",
+              "title": "Phần 1 — Giải Phẫu Một Stream Pipeline",
+              "slug": "phần-1--giải-phẫu-một-stream-pipeline",
+              "level": 2
+            },
+            {
+              "id": "sec-9",
+              "title": "1.1 Định nghĩa chính xác: Stream KHÔNG phải là gì",
+              "slug": "1-1-định-nghĩa-chính-xác--stream-không-phải-là-gì",
+              "level": 3
+            },
+            {
+              "id": "sec-10",
+              "title": "1.2 Ba phần của mọi pipeline",
+              "slug": "1-2-ba-phần-của-mọi-pipeline",
+              "level": 3
+            },
+            {
+              "id": "sec-11",
+              "title": "1.3 Cây thừa kế: `BaseStream` và họ hàng",
+              "slug": "1-3-cây-thừa-kế--basestream--và-họ-hàng",
+              "level": 3
+            },
+            {
+              "id": "sec-12",
+              "title": "1.4 Ba đặc tính bất biến của Stream",
+              "slug": "1-4-ba-đặc-tính-bất-biến-của-stream",
+              "level": 3
+            },
+            {
+              "id": "sec-13",
+              "title": "1.5 Bên trong: pipeline được biểu diễn thế nào?",
+              "slug": "1-5-bên-trong--pipeline-được-biểu-diễn-thế-nào",
+              "level": 3
+            },
+            {
+              "id": "sec-14",
+              "title": "Phần 2 — Lazy Evaluation — Trái Tim Của Streams",
+              "slug": "phần-2--lazy-evaluation--trái-tim-của-streams",
+              "level": 2
+            },
+            {
+              "id": "sec-15",
+              "title": "2.1 Thí nghiệm 1: Toán tử trung gian KHÔNG chạy gì cả",
+              "slug": "2-1-thí-nghiệm-1--toán-tử-trung-gian-không-chạy-gì-cả",
+              "level": 3
+            },
+            {
+              "id": "sec-16",
+              "title": "2.2 Phát hiện chấn động: dữ liệu chảy theo CHIỀU DỌC",
+              "slug": "2-2-phát-hiện-chấn-động--dữ-liệu-chảy-theo-chiều-dọc",
+              "level": 3
+            },
+            {
+              "id": "sec-17",
+              "title": "2.3 Thí nghiệm 2: Short-circuiting — sức mạnh của lười",
+              "slug": "2-3-thí-nghiệm-2--short-circuiting--sức-mạnh-của-lười",
+              "level": 3
+            },
+            {
+              "id": "sec-18",
+              "title": "2.4 Trường hợp cực đoan: stream vô hạn",
+              "slug": "2-4-trường-hợp-cực-đoan--stream-vô-hạn",
+              "level": 3
+            },
+            {
+              "id": "sec-19",
+              "title": "2.5 Thí nghiệm 3: Thứ tự toán tử ảnh hưởng số lần gọi",
+              "slug": "2-5-thí-nghiệm-3--thứ-tự-toán-tử-ảnh-hưởng-số-lần-gọi",
+              "level": 3
+            },
+            {
+              "id": "sec-20",
+              "title": "2.6 Thí nghiệm 4: JDK còn tự tối ưu giúp bạn",
+              "slug": "2-6-thí-nghiệm-4--jdk-còn-tự-tối-ưu-giúp-bạn",
+              "level": 3
+            },
+            {
+              "id": "sec-21",
+              "title": "2.7 Bảng tổng kết: điều gì kích hoạt điều gì",
+              "slug": "2-7-bảng-tổng-kết--điều-gì-kích-hoạt-điều-gì",
+              "level": 3
+            },
+            {
+              "id": "sec-22",
+              "title": "Phần 3 — Tạo Stream — Mọi Nguồn Dữ Liệu",
+              "slug": "phần-3--tạo-stream--mọi-nguồn-dữ-liệu",
+              "level": 2
+            },
+            {
+              "id": "sec-23",
+              "title": "3.1 Từ Collection — cách phổ biến nhất (99% trường hợp)",
+              "slug": "3-1-từ-collection--cách-phổ-biến-nhất--99--trường-hợp",
+              "level": 3
+            },
+            {
+              "id": "sec-24",
+              "title": "3.2 Từ mảng",
+              "slug": "3-2-từ-mảng",
+              "level": 3
+            },
+            {
+              "id": "sec-25",
+              "title": "3.3 Từ giá trị rời rạc",
+              "slug": "3-3-từ-giá-trị-rời-rạc",
+              "level": 3
+            },
+            {
+              "id": "sec-26",
+              "title": "3.4 Stream nguyên thuỷ và dãy số",
+              "slug": "3-4-stream-nguyên-thuỷ-và-dãy-số",
+              "level": 3
+            },
+            {
+              "id": "sec-27",
+              "title": "3.5 Stream vô hạn — `iterate` và `generate`",
+              "slug": "3-5-stream-vô-hạn--iterate--và--generate",
+              "level": 3
+            },
+            {
+              "id": "sec-28",
+              "title": "3.6 Từ chuỗi ký tự",
+              "slug": "3-6-từ-chuỗi-ký-tự",
+              "level": 3
+            },
+            {
+              "id": "sec-29",
+              "title": "3.7 Từ file và I/O",
+              "slug": "3-7-từ-file-và-i-o",
+              "level": 3
+            },
+            {
+              "id": "sec-30",
+              "title": "3.8 Các nguồn khác (ít gặp nhưng đáng biết)",
+              "slug": "3-8-các-nguồn-khác--ít-gặp-nhưng-đáng-biết",
+              "level": 3
+            },
+            {
+              "id": "sec-31",
+              "title": "3.9 Bảng tra nhanh nguồn stream",
+              "slug": "3-9-bảng-tra-nhanh-nguồn-stream",
+              "level": 3
+            },
+            {
+              "id": "sec-32",
+              "title": "Phần 4 — Intermediate Operations (Toán Tử Trung Gian)",
+              "slug": "phần-4--intermediate-operations--toán-tử-trung-gian",
+              "level": 2
+            },
+            {
+              "id": "sec-33",
+              "title": "4.1 `map` — biến đổi từng phần tử",
+              "slug": "4-1--map--biến-đổi-từng-phần-tử",
+              "level": 3
+            },
+            {
+              "id": "sec-34",
+              "title": "4.2 `filter` — giữ lại phần tử thoả điều kiện",
+              "slug": "4-2--filter--giữ-lại-phần-tử-thoả-điều-kiện",
+              "level": 3
+            },
+            {
+              "id": "sec-35",
+              "title": "4.3 `flatMap` — san phẳng cấu trúc lồng nhau ⭐",
+              "slug": "4-3--flatmap--san-phẳng-cấu-trúc-lồng-nhau-⭐",
+              "level": 3
+            },
+            {
+              "id": "sec-36",
+              "title": "4.4 `distinct` — khử trùng lặp",
+              "slug": "4-4--distinct--khử-trùng-lặp",
+              "level": 3
+            },
+            {
+              "id": "sec-37",
+              "title": "4.5 `sorted` — sắp xếp",
+              "slug": "4-5--sorted--sắp-xếp",
+              "level": 3
+            },
+            {
+              "id": "sec-38",
+              "title": "4.6 `limit` và `skip` — cắt lát (phân trang)",
+              "slug": "4-6--limit--và--skip--cắt-lát--phân-trang",
+              "level": 3
+            },
+            {
+              "id": "sec-39",
+              "title": "4.7 `takeWhile` / `dropWhile` (Java 9+) — cắt theo điều kiện",
+              "slug": "4-7--takewhile--dropwhile--java-9--cắt-theo-điều-kiện",
+              "level": 3
+            },
+            {
+              "id": "sec-40",
+              "title": "4.8 `peek` — cửa sổ quan sát (DEBUG ONLY)",
+              "slug": "4-8--peek--cửa-sổ-quan-sát--debug-only",
+              "level": 3
+            },
+            {
+              "id": "sec-41",
+              "title": "4.9 Các toán tử trung gian khác",
+              "slug": "4-9-các-toán-tử-trung-gian-khác",
+              "level": 3
+            },
+            {
+              "id": "sec-42",
+              "title": "Phần 5 — Terminal Operations (Toán Tử Kết Thúc)",
+              "slug": "phần-5--terminal-operations--toán-tử-kết-thúc",
+              "level": 2
+            },
+            {
+              "id": "sec-43",
+              "title": "5.1 `forEach` và `forEachOrdered`",
+              "slug": "5-1--foreach--và--foreachordered",
+              "level": 3
+            },
+            {
+              "id": "sec-44",
+              "title": "5.2 `count` — đếm",
+              "slug": "5-2--count--đếm",
+              "level": 3
+            },
+            {
+              "id": "sec-45",
+              "title": "5.3 `findFirst` / `findAny` — tìm một phần tử",
+              "slug": "5-3--findfirst--findany--tìm-một-phần-tử",
+              "level": 3
+            },
+            {
+              "id": "sec-46",
+              "title": "5.4 `anyMatch` / `allMatch` / `noneMatch` — kiểm tra điều kiện",
+              "slug": "5-4--anymatch--allmatch--nonematch--kiểm-tra-điều-kiện",
+              "level": 3
+            },
+            {
+              "id": "sec-47",
+              "title": "5.5 `min` / `max` — cực trị",
+              "slug": "5-5--min--max--cực-trị",
+              "level": 3
+            },
+            {
+              "id": "sec-48",
+              "title": "5.6 `reduce` — thu gọn về một giá trị",
+              "slug": "5-6--reduce--thu-gọn-về-một-giá-trị",
+              "level": 3
+            },
+            {
+              "id": "sec-49",
+              "title": "5.7 `toArray` — chuyển về mảng",
+              "slug": "5-7--toarray--chuyển-về-mảng",
+              "level": 3
+            },
+            {
+              "id": "sec-50",
+              "title": "5.8 `collect` và `toList` — gom kết quả",
+              "slug": "5-8--collect--và--tolist--gom-kết-quả",
+              "level": 3
+            },
+            {
+              "id": "sec-51",
+              "title": "5.9 `iterator` / `spliterator` — thoát ra khỏi thế giới stream",
+              "slug": "5-9--iterator--spliterator--thoát-ra-khỏi-thế-giới-stream",
+              "level": 3
+            },
+            {
+              "id": "sec-52",
+              "title": "Phần 6 — Collectors — Bộ Công Cụ Quyền Lực",
+              "slug": "phần-6--collectors--bộ-công-cụ-quyền-lực",
+              "level": 2
+            },
+            {
+              "id": "sec-53",
+              "title": "6.0 Bản đồ tổng quan 6 nhóm Collector",
+              "slug": "6-0-bản-đồ-tổng-quan-6-nhóm-collector",
+              "level": 3
+            },
+            {
+              "id": "sec-54",
+              "title": "6.1 Nhóm ① — Gom vào Collection",
+              "slug": "6-1-nhóm-①--gom-vào-collection",
+              "level": 3
+            },
+            {
+              "id": "sec-55",
+              "title": "6.2 Nhóm ① (tiếp) — `toMap`, cạm bẫy lớn nhất",
+              "slug": "6-2-nhóm-①--tiếp--tomap--cạm-bẫy-lớn-nhất",
+              "level": 3
+            },
+            {
+              "id": "sec-56",
+              "title": "6.3 Nhóm ② — `groupingBy`: vũ khí mạnh nhất ⭐⭐⭐",
+              "slug": "6-3-nhóm-②--groupingby--vũ-khí-mạnh-nhất-⭐⭐⭐",
+              "level": 3
+            },
+            {
+              "id": "sec-57",
+              "title": "6.4 Nhóm ② (tiếp) — `partitioningBy`: chia đôi",
+              "slug": "6-4-nhóm-②--tiếp--partitioningby--chia-đôi",
+              "level": 3
+            },
+            {
+              "id": "sec-58",
+              "title": "6.5 Nhóm ③ — `joining`: nối chuỗi",
+              "slug": "6-5-nhóm-③--joining--nối-chuỗi",
+              "level": 3
+            },
+            {
+              "id": "sec-59",
+              "title": "6.6 Nhóm ④ — Thống kê",
+              "slug": "6-6-nhóm-④--thống-kê",
+              "level": 3
+            },
+            {
+              "id": "sec-60",
+              "title": "6.7 Nhóm ⑤ — Biến đổi kết quả",
+              "slug": "6-7-nhóm-⑤--biến-đổi-kết-quả",
+              "level": 3
+            },
+            {
+              "id": "sec-61",
+              "title": "6.8 Nhóm ⑥ — `teeing` (Java 12+): hai collector, một lần duyệt ⭐",
+              "slug": "6-8-nhóm-⑥--teeing--java-12--hai-collector--một-lần-duyệt-⭐",
+              "level": 3
+            },
+            {
+              "id": "sec-62",
+              "title": "6.9 Kết hợp Collector — ví dụ \"trùm cuối\"",
+              "slug": "6-9-kết-hợp-collector--ví-dụ--trùm-cuối",
+              "level": 3
+            },
+            {
+              "id": "sec-63",
+              "title": "Phần 7 — Viết Collector Của Riêng Bạn",
+              "slug": "phần-7--viết-collector-của-riêng-bạn",
+              "level": 2
+            },
+            {
+              "id": "sec-64",
+              "title": "7.1 Giải phẫu interface `Collector`",
+              "slug": "7-1-giải-phẫu-interface--collector",
+              "level": 3
+            },
+            {
+              "id": "sec-65",
+              "title": "7.2 Năm `Characteristics` — gợi ý tối ưu",
+              "slug": "7-2-năm--characteristics--gợi-ý-tối-ưu",
+              "level": 3
+            },
+            {
+              "id": "sec-66",
+              "title": "7.3 Ví dụ 1 (dễ) — Tự cài `toList` để hiểu cơ chế",
+              "slug": "7-3-ví-dụ-1--dễ--tự-cài--tolist--để-hiểu-cơ-chế",
+              "level": 3
+            },
+            {
+              "id": "sec-67",
+              "title": "7.4 Ví dụ 2 (trung bình) — `toUnmodifiableList` với finisher",
+              "slug": "7-4-ví-dụ-2--trung-bình--tounmodifiablelist--với-finisher",
+              "level": 3
+            },
+            {
+              "id": "sec-68",
+              "title": "7.5 Ví dụ 3 (trung bình) — Collector đếm tần suất",
+              "slug": "7-5-ví-dụ-3--trung-bình--collector-đếm-tần-suất",
+              "level": 3
+            },
+            {
+              "id": "sec-69",
+              "title": "7.6 Ví dụ 4 (khó) — Collector tính trung vị (median)",
+              "slug": "7-6-ví-dụ-4--khó--collector-tính-trung-vị--median",
+              "level": 3
+            },
+            {
+              "id": "sec-70",
+              "title": "7.7 Ví dụ 5 (khó) — Collector viết bằng class đầy đủ",
+              "slug": "7-7-ví-dụ-5--khó--collector-viết-bằng-class-đầy-đủ",
+              "level": 3
+            },
+            {
+              "id": "sec-71",
+              "title": "7.8 Checklist khi viết Collector",
+              "slug": "7-8-checklist-khi-viết-collector",
+              "level": 3
+            },
+            {
+              "id": "sec-72",
+              "title": "Phần 8 — Primitive Streams — `IntStream`, `LongStream`, `DoubleStream`",
+              "slug": "phần-8--primitive-streams--intstream--longstream--doublestream",
+              "level": 2
+            },
+            {
+              "id": "sec-73",
+              "title": "8.1 Vấn đề: cái giá của Boxing",
+              "slug": "8-1-vấn-đề--cái-giá-của-boxing",
+              "level": 3
+            },
+            {
+              "id": "sec-74",
+              "title": "8.2 Các method độc quyền của primitive stream",
+              "slug": "8-2-các-method-độc-quyền-của-primitive-stream",
+              "level": 3
+            },
+            {
+              "id": "sec-75",
+              "title": "8.3 Cạm bẫy với `average()` và stream rỗng",
+              "slug": "8-3-cạm-bẫy-với--average--và-stream-rỗng",
+              "level": 3
+            },
+            {
+              "id": "sec-76",
+              "title": "8.4 `IntStream` thay thế vòng `for` cổ điển",
+              "slug": "8-4--intstream--thay-thế-vòng--for--cổ-điển",
+              "level": 3
+            },
+            {
+              "id": "sec-77",
+              "title": "8.5 Bảng so sánh 3 primitive stream",
+              "slug": "8-5-bảng-so-sánh-3-primitive-stream",
+              "level": 3
+            },
+            {
+              "id": "sec-78",
+              "title": "Phần 9 — Stateless vs Stateful & Chi Phí Thật Sự",
+              "slug": "phần-9--stateless-vs-stateful--chi-phí-thật-sự",
+              "level": 2
+            },
+            {
+              "id": "sec-79",
+              "title": "9.1 Ba loại toán tử theo trạng thái",
+              "slug": "9-1-ba-loại-toán-tử-theo-trạng-thái",
+              "level": 3
+            },
+            {
+              "id": "sec-80",
+              "title": "9.2 Vì sao `sorted` và `distinct` đắt đỏ",
+              "slug": "9-2-vì-sao--sorted--và--distinct--đắt-đỏ",
+              "level": 3
+            },
+            {
+              "id": "sec-81",
+              "title": "9.3 Thứ tự toán tử — quy tắc tối ưu",
+              "slug": "9-3-thứ-tự-toán-tử--quy-tắc-tối-ưu",
+              "level": 3
+            },
+            {
+              "id": "sec-82",
+              "title": "9.4 Bảng chi phí chi tiết từng toán tử",
+              "slug": "9-4-bảng-chi-phí-chi-tiết-từng-toán-tử",
+              "level": 3
+            },
+            {
+              "id": "sec-83",
+              "title": "Phần 10 — Parallel Streams — Sức Mạnh Và Cạm Bẫy",
+              "slug": "phần-10--parallel-streams--sức-mạnh-và-cạm-bẫy",
+              "level": 2
+            },
+            {
+              "id": "sec-84",
+              "title": "10.1 Cú pháp — đơn giản đến nguy hiểm",
+              "slug": "10-1-cú-pháp--đơn-giản-đến-nguy-hiểm",
+              "level": 3
+            },
+            {
+              "id": "sec-85",
+              "title": "10.2 Bên trong: Fork/Join Framework",
+              "slug": "10-2-bên-trong--fork-join-framework",
+              "level": 3
+            },
+            {
+              "id": "sec-86",
+              "title": "10.3 ☠️ Cạm bẫy #1 — Common pool là TÀI NGUYÊN DÙNG CHUNG",
+              "slug": "10-3-☠️-cạm-bẫy--1--common-pool-là-tài-nguyên-dùng-chung",
+              "level": 3
+            },
+            {
+              "id": "sec-87",
+              "title": "10.4 ☠️ Cạm bẫy #2 — Dữ liệu nhỏ thì parallel CHẬM HƠN",
+              "slug": "10-4-☠️-cạm-bẫy--2--dữ-liệu-nhỏ-thì-parallel-chậm-hơn",
+              "level": 3
+            },
+            {
+              "id": "sec-88",
+              "title": "10.5 ☠️ Cạm bẫy #3 — Nguồn dữ liệu quyết định khả năng chia",
+              "slug": "10-5-☠️-cạm-bẫy--3--nguồn-dữ-liệu-quyết-định-khả-năng-chia",
+              "level": 3
+            },
+            {
+              "id": "sec-89",
+              "title": "10.6 ☠️ Cạm bẫy #4 — Race condition với shared mutable state",
+              "slug": "10-6-☠️-cạm-bẫy--4--race-condition-với-shared-mutable-state",
+              "level": 3
+            },
+            {
+              "id": "sec-90",
+              "title": "10.7 ☠️ Cạm bẫy #5 — `reduce` không kết hợp / identity sai",
+              "slug": "10-7-☠️-cạm-bẫy--5--reduce--không-kết-hợp--identity-sai",
+              "level": 3
+            },
+            {
+              "id": "sec-91",
+              "title": "10.8 ☠️ Cạm bẫy #6 — Thứ tự và các toán tử đắt tiền khi parallel",
+              "slug": "10-8-☠️-cạm-bẫy--6--thứ-tự-và-các-toán-tử-đắt-tiền-khi-parallel",
+              "level": 3
+            },
+            {
+              "id": "sec-92",
+              "title": "10.9 ✅ Khi nào parallel THẬT SỰ đáng dùng",
+              "slug": "10-9-✅-khi-nào-parallel-thật-sự-đáng-dùng",
+              "level": 3
+            },
+            {
+              "id": "sec-93",
+              "title": "10.10 Cách đo đúng — đừng đoán",
+              "slug": "10-10-cách-đo-đúng--đừng-đoán",
+              "level": 3
+            },
+            {
+              "id": "sec-94",
+              "title": "10.11 Bảng tổng kết Parallel",
+              "slug": "10-11-bảng-tổng-kết-parallel",
+              "level": 3
+            },
+            {
+              "id": "sec-95",
+              "title": "Phần 11 — Infinite Streams & Spliterator Tuỳ Chỉnh",
+              "slug": "phần-11--infinite-streams--spliterator-tuỳ-chỉnh",
+              "level": 2
+            },
+            {
+              "id": "sec-96",
+              "title": "11.1 Stream vô hạn — ba cách tạo",
+              "slug": "11-1-stream-vô-hạn--ba-cách-tạo",
+              "level": 3
+            },
+            {
+              "id": "sec-97",
+              "title": "11.2 ⚠️ Bốn quy tắc sống còn với stream vô hạn",
+              "slug": "11-2-⚠️-bốn-quy-tắc-sống-còn-với-stream-vô-hạn",
+              "level": 3
+            },
+            {
+              "id": "sec-98",
+              "title": "11.3 `Spliterator` — nguồn stream tuỳ chỉnh",
+              "slug": "11-3--spliterator--nguồn-stream-tuỳ-chỉnh",
+              "level": 3
+            },
+            {
+              "id": "sec-99",
+              "title": "11.4 Ví dụ — viết `Spliterator` riêng",
+              "slug": "11-4-ví-dụ--viết--spliterator--riêng",
+              "level": 3
+            },
+            {
+              "id": "sec-100",
+              "title": "11.5 `Spliterator` có khả năng chia — bản nâng cao",
+              "slug": "11-5--spliterator--có-khả-năng-chia--bản-nâng-cao",
+              "level": 3
+            },
+            {
+              "id": "sec-101",
+              "title": "11.6 Chuyển `Iterator` bất kỳ thành Stream",
+              "slug": "11-6-chuyển--iterator--bất-kỳ-thành-stream",
+              "level": 3
+            },
+            {
+              "id": "sec-102",
+              "title": "Phần 12 — Bảng Phân Loại Toàn Bộ Operations",
+              "slug": "phần-12--bảng-phân-loại-toàn-bộ-operations",
+              "level": 2
+            },
+            {
+              "id": "sec-103",
+              "title": "12.1 Toán tử TRUNG GIAN (Intermediate) — trả về `Stream`",
+              "slug": "12-1-toán-tử-trung-gian--intermediate--trả-về--stream",
+              "level": 3
+            },
+            {
+              "id": "sec-104",
+              "title": "12.2 Toán tử KẾT THÚC (Terminal) — KHÔNG trả về `Stream`",
+              "slug": "12-2-toán-tử-kết-thúc--terminal--không-trả-về--stream",
+              "level": 3
+            },
+            {
+              "id": "sec-105",
+              "title": "12.3 Factory tạo Stream (static)",
+              "slug": "12-3-factory-tạo-stream--static",
+              "level": 3
+            },
+            {
+              "id": "sec-106",
+              "title": "12.4 Bản đồ trực quan",
+              "slug": "12-4-bản-đồ-trực-quan",
+              "level": 3
+            },
+            {
+              "id": "sec-107",
+              "title": "Phần 13 — Cây Quyết Định — Dùng Toán Tử Nào?",
+              "slug": "phần-13--cây-quyết-định--dùng-toán-tử-nào",
+              "level": 2
+            },
+            {
+              "id": "sec-108",
+              "title": "13.1 Cây quyết định chính",
+              "slug": "13-1-cây-quyết-định-chính",
+              "level": 3
+            },
+            {
+              "id": "sec-109",
+              "title": "13.2 Cây quyết định: Stream hay không Stream?",
+              "slug": "13-2-cây-quyết-định--stream-hay-không-stream",
+              "level": 3
+            },
+            {
+              "id": "sec-110",
+              "title": "Phần 14 — Bảng So Sánh Hiệu Năng",
+              "slug": "phần-14--bảng-so-sánh-hiệu-năng",
+              "level": 2
+            },
+            {
+              "id": "sec-111",
+              "title": "14.1 Stream vs Loop truyền thống",
+              "slug": "14-1-stream-vs-loop-truyền-thống",
+              "level": 3
+            },
+            {
+              "id": "sec-112",
+              "title": "14.2 `IntStream` vs `Stream<Integer>` — cái giá của boxing",
+              "slug": "14-2--intstream--vs--stream-integer--cái-giá-của-boxing",
+              "level": 3
+            },
+            {
+              "id": "sec-113",
+              "title": "14.3 Chi phí toán tử stateful",
+              "slug": "14-3-chi-phí-toán-tử-stateful",
+              "level": 3
+            },
+            {
+              "id": "sec-114",
+              "title": "14.4 Lợi ích của lazy evaluation",
+              "slug": "14-4-lợi-ích-của-lazy-evaluation",
+              "level": 3
+            },
+            {
+              "id": "sec-115",
+              "title": "14.5 `collect(toList())` vs `reduce` gom list",
+              "slug": "14-5--collect-tolist--vs--reduce--gom-list",
+              "level": 3
+            },
+            {
+              "id": "sec-116",
+              "title": "14.6 `joining` vs `reduce` nối chuỗi",
+              "slug": "14-6--joining--vs--reduce--nối-chuỗi",
+              "level": 3
+            },
+            {
+              "id": "sec-117",
+              "title": "14.7 Bảng \"cheat sheet\" hiệu năng",
+              "slug": "14-7-bảng--cheat-sheet--hiệu-năng",
+              "level": 3
+            },
+            {
+              "id": "sec-118",
+              "title": "Phần 15 — 16 Lỗi Streams Kinh Điển",
+              "slug": "phần-15--16-lỗi-streams-kinh-điển",
+              "level": 2
+            },
+            {
+              "id": "sec-119",
+              "title": "❌ Lỗi 1 — Quên toán tử kết thúc → pipeline KHÔNG chạy",
+              "slug": "❌-lỗi-1--quên-toán-tử-kết-thúc-→-pipeline-không-chạy",
+              "level": 3
+            },
+            {
+              "id": "sec-120",
+              "title": "❌ Lỗi 2 — Dùng lại stream đã tiêu thụ",
+              "slug": "❌-lỗi-2--dùng-lại-stream-đã-tiêu-thụ",
+              "level": 3
+            },
+            {
+              "id": "sec-121",
+              "title": "❌ Lỗi 3 — Sửa nguồn trong khi đang stream",
+              "slug": "❌-lỗi-3--sửa-nguồn-trong-khi-đang-stream",
+              "level": 3
+            },
+            {
+              "id": "sec-122",
+              "title": "❌ Lỗi 4 — Side effect trong toán tử trung gian",
+              "slug": "❌-lỗi-4--side-effect-trong-toán-tử-trung-gian",
+              "level": 3
+            },
+            {
+              "id": "sec-123",
+              "title": "❌ Lỗi 5 — Parallel stream với shared mutable state",
+              "slug": "❌-lỗi-5--parallel-stream-với-shared-mutable-state",
+              "level": 3
+            },
+            {
+              "id": "sec-124",
+              "title": "❌ Lỗi 6 — Parallel với dữ liệu nhỏ → chậm hơn nhiều",
+              "slug": "❌-lỗi-6--parallel-với-dữ-liệu-nhỏ-→-chậm-hơn-nhiều",
+              "level": 3
+            },
+            {
+              "id": "sec-125",
+              "title": "❌ Lỗi 7 — `collect(toList())` vs `toList()` — nhầm tính bất biến",
+              "slug": "❌-lỗi-7--collect-tolist--vs--tolist--nhầm-tính-bất-biến",
+              "level": 3
+            },
+            {
+              "id": "sec-126",
+              "title": "❌ Lỗi 8 — Kỳ vọng toán tử trung gian luôn chạy",
+              "slug": "❌-lỗi-8--kỳ-vọng-toán-tử-trung-gian-luôn-chạy",
+              "level": 3
+            },
+            {
+              "id": "sec-127",
+              "title": "❌ Lỗi 9 — `toMap` với khoá trùng → `IllegalStateException`",
+              "slug": "❌-lỗi-9--tomap--với-khoá-trùng-→--illegalstateexception",
+              "level": 3
+            },
+            {
+              "id": "sec-128",
+              "title": "❌ Lỗi 10 — Stream vô hạn không có toán tử giới hạn",
+              "slug": "❌-lỗi-10--stream-vô-hạn-không-có-toán-tử-giới-hạn",
+              "level": 3
+            },
+            {
+              "id": "sec-129",
+              "title": "❌ Lỗi 11 — `NullPointerException` do đánh giá trễ",
+              "slug": "❌-lỗi-11--nullpointerexception--do-đánh-giá-trễ",
+              "level": 3
+            },
+            {
+              "id": "sec-130",
+              "title": "❌ Lỗi 12 — Khoá `groupingBy` là object mutable",
+              "slug": "❌-lỗi-12--khoá--groupingby--là-object-mutable",
+              "level": 3
+            },
+            {
+              "id": "sec-131",
+              "title": "❌ Lỗi 13 — `sorted()` mà kiểu không `Comparable`",
+              "slug": "❌-lỗi-13--sorted--mà-kiểu-không--comparable",
+              "level": 3
+            },
+            {
+              "id": "sec-132",
+              "title": "❌ Lỗi 14 — Comparator đắt tiền trong `sorted()`",
+              "slug": "❌-lỗi-14--comparator-đắt-tiền-trong--sorted",
+              "level": 3
+            },
+            {
+              "id": "sec-133",
+              "title": "❌ Lỗi 15 — Sai chữ ký Collector khi làm downstream",
+              "slug": "❌-lỗi-15--sai-chữ-ký-collector-khi-làm-downstream",
+              "level": 3
+            },
+            {
+              "id": "sec-134",
+              "title": "❌ Lỗi 16 — Quên đóng stream từ tài nguyên hệ thống",
+              "slug": "❌-lỗi-16--quên-đóng-stream-từ-tài-nguyên-hệ-thống",
+              "level": 3
+            },
+            {
+              "id": "sec-135",
+              "title": "🎁 Lỗi bonus — `Optional.get()` không kiểm tra",
+              "slug": "🎁-lỗi-bonus--optional-get--không-kiểm-tra",
+              "level": 3
+            },
+            {
+              "id": "sec-136",
+              "title": "Phần 16 — Best Practices & Anti-patterns",
+              "slug": "phần-16--best-practices--anti-patterns",
+              "level": 2
+            },
+            {
+              "id": "sec-137",
+              "title": "16.1 ⭐ Ưu tiên Streams — nhưng ĐỪNG cuồng tín",
+              "slug": "16-1-⭐-ưu-tiên-streams--nhưng-đừng-cuồng-tín",
+              "level": 3
+            },
+            {
+              "id": "sec-138",
+              "title": "16.2 ⭐ Tránh Stream lồng nhau — dùng `flatMap`",
+              "slug": "16-2-⭐-tránh-stream-lồng-nhau--dùng--flatmap",
+              "level": 3
+            },
+            {
+              "id": "sec-139",
+              "title": "16.3 ⭐ Dùng method reference khi có thể",
+              "slug": "16-3-⭐-dùng-method-reference-khi-có-thể",
+              "level": 3
+            },
+            {
+              "id": "sec-140",
+              "title": "16.4 ⭐ Static import cho `Collectors` và `Comparator`",
+              "slug": "16-4-⭐-static-import-cho--collectors--và--comparator",
+              "level": 3
+            },
+            {
+              "id": "sec-141",
+              "title": "16.5 ⭐ Dùng `var` để giảm rối kiểu",
+              "slug": "16-5-⭐-dùng--var--để-giảm-rối-kiểu",
+              "level": 3
+            },
+            {
+              "id": "sec-142",
+              "title": "16.6 ⭐ Đặt tên cho Predicate/Function phức tạp",
+              "slug": "16-6-⭐-đặt-tên-cho-predicate-function-phức-tạp",
+              "level": 3
+            },
+            {
+              "id": "sec-143",
+              "title": "16.7 ⭐ Ưu tiên hàm thuần khiết, tránh side effect",
+              "slug": "16-7-⭐-ưu-tiên-hàm-thuần-khiết--tránh-side-effect",
+              "level": 3
+            },
+            {
+              "id": "sec-144",
+              "title": "16.8 ⭐ Ưu tiên stateless hơn stateful",
+              "slug": "16-8-⭐-ưu-tiên-stateless-hơn-stateful",
+              "level": 3
+            },
+            {
+              "id": "sec-145",
+              "title": "16.9 ⭐ Đo, đừng đoán khi dùng parallel",
+              "slug": "16-9-⭐-đo--đừng-đoán-khi-dùng-parallel",
+              "level": 3
+            },
+            {
+              "id": "sec-146",
+              "title": "16.10 ⭐ Chỉ viết custom Collector khi thực sự cần",
+              "slug": "16-10-⭐-chỉ-viết-custom-collector-khi-thực-sự-cần",
+              "level": 3
+            },
+            {
+              "id": "sec-147",
+              "title": "16.11 ⭐ Giới hạn độ dài pipeline",
+              "slug": "16-11-⭐-giới-hạn-độ-dài-pipeline",
+              "level": 3
+            },
+            {
+              "id": "sec-148",
+              "title": "16.12 ⭐ Xử lý checked exception trong lambda",
+              "slug": "16-12-⭐-xử-lý-checked-exception-trong-lambda",
+              "level": 3
+            },
+            {
+              "id": "sec-149",
+              "title": "16.13 Bảng tổng hợp Anti-patterns",
+              "slug": "16-13-bảng-tổng-hợp-anti-patterns",
+              "level": 3
+            },
+            {
+              "id": "sec-150",
+              "title": "Phần 17 — Streams Trong Spring Boot",
+              "slug": "phần-17--streams-trong-spring-boot",
+              "level": 2
+            },
+            {
+              "id": "sec-151",
+              "title": "17.1 Mẫu #1 — Entity → DTO (dùng nhiều nhất)",
+              "slug": "17-1-mẫu--1--entity-→-dto--dùng-nhiều-nhất",
+              "level": 3
+            },
+            {
+              "id": "sec-152",
+              "title": "17.2 Mẫu #2 — `Optional` từ repository và `findFirst`",
+              "slug": "17-2-mẫu--2--optional--từ-repository-và--findfirst",
+              "level": 3
+            },
+            {
+              "id": "sec-153",
+              "title": "17.3 Mẫu #3 — `groupingBy` cho báo cáo, thống kê",
+              "slug": "17-3-mẫu--3--groupingby--cho-báo-cáo--thống-kê",
+              "level": 3
+            },
+            {
+              "id": "sec-154",
+              "title": "17.4 Mẫu #4 — Validation và xử lý lỗi",
+              "slug": "17-4-mẫu--4--validation-và-xử-lý-lỗi",
+              "level": 3
+            },
+            {
+              "id": "sec-155",
+              "title": "17.5 Mẫu #5 — Spring Security: chuyển đổi quyền",
+              "slug": "17-5-mẫu--5--spring-security--chuyển-đổi-quyền",
+              "level": 3
+            },
+            {
+              "id": "sec-156",
+              "title": "17.6 🔥 QUAN TRỌNG NHẤT — Khi nào để DATABASE làm việc thay vì Stream",
+              "slug": "17-6-🔥-quan-trọng-nhất--khi-nào-để-database-làm-việc-thay-vì-stream",
+              "level": 3
+            },
+            {
+              "id": "sec-157",
+              "title": "17.7 `Stream` từ Spring Data JPA (nâng cao)",
+              "slug": "17-7--stream--từ-spring-data-jpa--nâng-cao",
+              "level": 3
+            },
+            {
+              "id": "sec-158",
+              "title": "17.8 Streams trong Testing",
+              "slug": "17-8-streams-trong-testing",
+              "level": 3
+            },
+            {
+              "id": "sec-159",
+              "title": "17.9 ⚠️ Streams và Transaction — cạm bẫy tinh vi",
+              "slug": "17-9-⚠️-streams-và-transaction--cạm-bẫy-tinh-vi",
+              "level": 3
+            },
+            {
+              "id": "sec-160",
+              "title": "17.10 ⚠️ Parallel Stream trong Spring Boot — ĐỪNG",
+              "slug": "17-10-⚠️-parallel-stream-trong-spring-boot--đừng",
+              "level": 3
+            },
+            {
+              "id": "sec-161",
+              "title": "Phần 18 — Bài Tập Thực Hành",
+              "slug": "phần-18--bài-tập-thực-hành",
+              "level": 2
+            },
+            {
+              "id": "sec-162",
+              "title": "🟢 Bài 1 (Dễ) — Lọc, biến đổi, gom",
+              "slug": "🟢-bài-1--dễ--lọc--biến-đổi--gom",
+              "level": 3
+            },
+            {
+              "id": "sec-163",
+              "title": "🟢 Bài 2 (Dễ) — Nhóm và thống kê",
+              "slug": "🟢-bài-2--dễ--nhóm-và-thống-kê",
+              "level": 3
+            },
+            {
+              "id": "sec-164",
+              "title": "🟡 Bài 3 (Trung bình) — `flatMap` với dữ liệu lồng nhau",
+              "slug": "🟡-bài-3--trung-bình--flatmap--với-dữ-liệu-lồng-nhau",
+              "level": 3
+            },
+            {
+              "id": "sec-165",
+              "title": "🟡 Bài 4 (Trung bình) — Viết Collector riêng",
+              "slug": "🟡-bài-4--trung-bình--viết-collector-riêng",
+              "level": 3
+            },
+            {
+              "id": "sec-166",
+              "title": "🔴 Bài 5 (Khó) — Benchmark: loop vs stream vs parallelStream",
+              "slug": "🔴-bài-5--khó--benchmark--loop-vs-stream-vs-parallelstream",
+              "level": 3
+            },
+            {
+              "id": "sec-167",
+              "title": "🔴 Bài 6 (Khó) — Hệ thống báo cáo thống kê",
+              "slug": "🔴-bài-6--khó--hệ-thống-báo-cáo-thống-kê",
+              "level": 3
+            },
+            {
+              "id": "sec-168",
+              "title": "Phần 19 — Tóm Tắt & Chương Tiếp Theo",
+              "slug": "phần-19--tóm-tắt--chương-tiếp-theo",
+              "level": 2
+            },
+            {
+              "id": "sec-169",
+              "title": "19.1 Mười điều quan trọng nhất — nếu chỉ nhớ được 10 điều",
+              "slug": "19-1-mười-điều-quan-trọng-nhất--nếu-chỉ-nhớ-được-10-điều",
+              "level": 3
+            },
+            {
+              "id": "sec-170",
+              "title": "19.2 Bản đồ kiến thức đã đi qua",
+              "slug": "19-2-bản-đồ-kiến-thức-đã-đi-qua",
+              "level": 3
+            },
+            {
+              "id": "sec-171",
+              "title": "19.3 Liên kết với các chương trước",
+              "slug": "19-3-liên-kết-với-các-chương-trước",
+              "level": 3
+            },
+            {
+              "id": "sec-172",
+              "title": "19.4 Chương tiếp theo học gì?",
+              "slug": "19-4-chương-tiếp-theo-học-gì",
+              "level": 3
+            },
+            {
+              "id": "sec-173",
+              "title": "19.5 So sánh trước để hình dung Chương WebFlux",
+              "slug": "19-5-so-sánh-trước-để-hình-dung-chương-webflux",
+              "level": 3
+            },
+            {
+              "id": "sec-174",
+              "title": "📎 Phụ Lục A — Bảng Tra Nhanh Collectors",
+              "slug": "📎-phụ-lục-a--bảng-tra-nhanh-collectors",
+              "level": 2
+            },
+            {
+              "id": "sec-175",
+              "title": "A.1 Gom vào Collection",
+              "slug": "a-1-gom-vào-collection",
+              "level": 3
+            },
+            {
+              "id": "sec-176",
+              "title": "A.2 Nhóm & Chia",
+              "slug": "a-2-nhóm--chia",
+              "level": 3
+            },
+            {
+              "id": "sec-177",
+              "title": "A.3 Chuỗi",
+              "slug": "a-3-chuỗi",
+              "level": 3
+            },
+            {
+              "id": "sec-178",
+              "title": "A.4 Thống kê",
+              "slug": "a-4-thống-kê",
+              "level": 3
+            },
+            {
+              "id": "sec-179",
+              "title": "A.5 Biến đổi & Kết hợp",
+              "slug": "a-5-biến-đổi--kết-hợp",
+              "level": 3
+            },
+            {
+              "id": "sec-180",
+              "title": "📎 Phụ Lục B — Bảng Tra Nhanh Operations",
+              "slug": "📎-phụ-lục-b--bảng-tra-nhanh-operations",
+              "level": 2
+            },
+            {
+              "id": "sec-181",
+              "title": "B.1 Cú pháp thường dùng — copy & sửa",
+              "slug": "b-1-cú-pháp-thường-dùng--copy--sửa",
+              "level": 3
+            },
+            {
+              "id": "sec-182",
+              "title": "B.2 Bảng \"nếu — thì\"",
+              "slug": "b-2-bảng--nếu--thì",
+              "level": 3
+            },
+            {
+              "id": "sec-183",
+              "title": "📎 Phụ Lục C — Thuật Ngữ Việt–Anh",
+              "slug": "📎-phụ-lục-c--thuật-ngữ-việt--anh",
+              "level": 2
+            }
+          ]
         },
         {
           "id": "chap-5",
