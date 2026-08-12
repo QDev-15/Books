@@ -1,0 +1,12 @@
+{
+  "id": "tier-8",
+  "number": 8,
+  "name": "Tầng 8: Microservices",
+  "description": "Thiết kế kiến trúc microservices với Spring Cloud",
+  "estimatedTime": "3-4 tháng",
+  "difficulty": "advanced",
+  "prerequisites": [
+    "tier-7"
+  ],
+  "chapters": 6
+}

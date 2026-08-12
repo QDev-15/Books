@@ -1,9 +1,11 @@
 import type { Chapter, EbookData, TableOfContentsItem } from '../types'
 import ebookDataJson from '../data/chapters.json'
+import { dataLoader, type TierMetadata } from '../utils/dataLoader'
 
 class EbookService {
   private static instance: EbookService
   private ebookData: EbookData
+  private loadedChapters: Map<string, Chapter> = new Map()
 
   private constructor() {
     this.ebookData = ebookDataJson as unknown as EbookData
@@ -110,6 +112,56 @@ class EbookService {
       ch.keywords.some(k => k.toLowerCase().includes(lowerKeyword)) ||
       ch.content.toLowerCase().includes(lowerKeyword)
     )
+  }
+
+  /**
+   * Load full chapter content from modular JSON file (async)
+   * Uses caching to avoid refetching the same chapter
+   */
+  async loadFullChapter(id: string): Promise<Chapter> {
+    // Check in-memory cache first
+    if (this.loadedChapters.has(id)) {
+      return this.loadedChapters.get(id)!
+    }
+
+    // Get chapter metadata from index
+    const chapter = this.getChapterById(id)
+    if (!chapter) {
+      throw new Error(`Chapter not found: ${id}`)
+    }
+
+    // Load full content from modular file
+    const fullChapter = await dataLoader.loadChapter(chapter.tier, id)
+
+    // Cache loaded chapter
+    this.loadedChapters.set(id, fullChapter)
+
+    return fullChapter
+  }
+
+  /**
+   * Load tier metadata (async)
+   */
+  async loadTierMetadata(tier: number): Promise<TierMetadata> {
+    return dataLoader.loadTierMetadata(tier)
+  }
+
+  /**
+   * Preload next chapter for better UX
+   */
+  async preloadNextChapter(currentId: string): Promise<void> {
+    const next = this.getNextChapter(currentId)
+    if (next) {
+      await dataLoader.preloadChapter(next.tier, next.id)
+    }
+  }
+
+  /**
+   * Clear chapter cache (useful on app reload)
+   */
+  clearChapterCache(): void {
+    this.loadedChapters.clear()
+    dataLoader.clearCache()
   }
 
   /**

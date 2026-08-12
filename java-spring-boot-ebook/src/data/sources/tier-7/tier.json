@@ -1,0 +1,12 @@
+{
+  "id": "tier-7",
+  "number": 7,
+  "name": "Tầng 7: APIs & Integration",
+  "description": "Tích hợp API với các dịch vụ bên ngoài",
+  "estimatedTime": "2-3 tháng",
+  "difficulty": "advanced",
+  "prerequisites": [
+    "tier-6"
+  ],
+  "chapters": 3
+}

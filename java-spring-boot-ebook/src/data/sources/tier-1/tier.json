@@ -1,0 +1,10 @@
+{
+  "id": "tier-1",
+  "number": 1,
+  "name": "Tầng 1: Java Fundamentals",
+  "description": "Nền tảng Java core cần vững trước khi học Spring Boot",
+  "estimatedTime": "1-2 tuần",
+  "difficulty": "beginner",
+  "prerequisites": [],
+  "chapters": 9
+}

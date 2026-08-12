@@ -1,0 +1,15 @@
+{
+  "id": "chap-6",
+  "number": 6,
+  "title": "File I/O & Serialization",
+  "tier": 1,
+  "slug": "file-io-serialization",
+  "keywords": [
+    "File I/O",
+    "Serialization",
+    "Streams",
+    "Data"
+  ],
+  "sections": [],
+  "content": "[To be written with deep-dive content like Chapter 1]"
+}

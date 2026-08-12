@@ -1,0 +1,12 @@
+{
+  "id": "tier-5",
+  "number": 5,
+  "name": "Tầng 5: Performance & Caching",
+  "description": "Tối ưu hiệu năng và caching với Redis",
+  "estimatedTime": "1-2 tháng",
+  "difficulty": "intermediate",
+  "prerequisites": [
+    "tier-4"
+  ],
+  "chapters": 3
+}

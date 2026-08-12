@@ -1,0 +1,12 @@
+{
+  "id": "tier-3",
+  "number": 3,
+  "name": "Tầng 3: REST & Data Access",
+  "description": "Xây dựng REST API với Spring MVC và truy cập dữ liệu",
+  "estimatedTime": "1-2 tháng",
+  "difficulty": "beginner",
+  "prerequisites": [
+    "tier-2"
+  ],
+  "chapters": 4
+}

@@ -1,0 +1,12 @@
+{
+  "id": "tier-9",
+  "number": 9,
+  "name": "Tầng 9: DevOps & Infrastructure",
+  "description": "DevOps, containerization, deployment, monitoring",
+  "estimatedTime": "2-3 tháng",
+  "difficulty": "advanced",
+  "prerequisites": [
+    "tier-8"
+  ],
+  "chapters": 7
+}

@@ -1,0 +1,12 @@
+{
+  "id": "tier-4",
+  "number": 4,
+  "name": "Tầng 4: Security & Authentication",
+  "description": "Implement xác thực và phân quyền trong ứng dụng",
+  "estimatedTime": "2-3 tháng",
+  "difficulty": "intermediate",
+  "prerequisites": [
+    "tier-3"
+  ],
+  "chapters": 3
+}

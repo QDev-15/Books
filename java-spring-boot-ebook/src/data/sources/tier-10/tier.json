@@ -1,0 +1,12 @@
+{
+  "id": "tier-10",
+  "number": 10,
+  "name": "Tầng 10: Advanced Patterns",
+  "description": "Các pattern nâng cao: Reactive, Clean Architecture, Event Sourcing",
+  "estimatedTime": "3-4 tháng",
+  "difficulty": "advanced",
+  "prerequisites": [
+    "tier-9"
+  ],
+  "chapters": 7
+}

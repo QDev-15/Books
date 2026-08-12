@@ -1,0 +1,12 @@
+{
+  "id": "tier-2",
+  "number": 2,
+  "name": "Tầng 2: Spring Boot Basics",
+  "description": "Học cách sử dụng Spring Boot để xây dựng ứng dụng cơ bản",
+  "estimatedTime": "2-4 tuần",
+  "difficulty": "beginner",
+  "prerequisites": [
+    "tier-1"
+  ],
+  "chapters": 5
+}

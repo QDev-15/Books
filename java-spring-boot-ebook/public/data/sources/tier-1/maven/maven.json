@@ -1,0 +1,15 @@
+{
+  "id": "chap-8",
+  "number": 8,
+  "title": "Maven",
+  "tier": 1,
+  "slug": "maven",
+  "keywords": [
+    "Maven",
+    "Build",
+    "Dependencies",
+    "Tools"
+  ],
+  "sections": [],
+  "content": "[To be written with deep-dive content like Chapter 1]"
+}

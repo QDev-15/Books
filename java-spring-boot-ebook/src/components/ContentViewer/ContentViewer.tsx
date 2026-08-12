@@ -1,10 +1,11 @@
 import { Bookmark } from 'lucide-react'
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import DOMPurify from 'dompurify'
 import { useEbookStore } from '../../store/useEbookStore'
 import { useKeyboard, useSwipe, useHashScroll } from '../../hooks'
 import { renderMarkdown } from '../../utils'
 import { Pagination } from './Pagination'
+import { ebookService } from '../../services/ebookService'
 import type { Chapter } from '../../types'
 
 interface ContentViewerProps {
@@ -17,6 +18,11 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ chapters, currentC
   const { goToNextChapter, goToPreviousChapter, isBookmarked, toggleBookmark, markChapterAsRead } =
     useEbookStore()
 
+  // Track full chapter content loading
+  const [loadedChapter, setLoadedChapter] = useState<Chapter | null>(null)
+  const [isLoadingContent, setIsLoadingContent] = useState(false)
+  const [loadError, setLoadError] = useState<string | null>(null)
+
   // Setup keyboard navigation
   useKeyboard(chapters, () => goToNextChapter(chapters), () => goToPreviousChapter(chapters))
 
@@ -28,6 +34,41 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ chapters, currentC
 
   // Setup hash-based anchor scrolling
   useHashScroll(containerRef)
+
+  // Load full chapter content when chapter changes
+  useEffect(() => {
+    if (!currentChapter) {
+      setLoadedChapter(null)
+      setLoadError(null)
+      return
+    }
+
+    // If content is already loaded (from old monolithic structure), use it
+    if (currentChapter.content && currentChapter.content.length > 100) {
+      setLoadedChapter(currentChapter)
+      setLoadError(null)
+      return
+    }
+
+    // Otherwise, load from modular JSON file
+    setIsLoadingContent(true)
+    setLoadError(null)
+
+    ebookService.loadFullChapter(currentChapter.id)
+      .then(fullChapter => {
+        setLoadedChapter(fullChapter)
+        setLoadError(null)
+      })
+      .catch(error => {
+        console.error('Failed to load chapter:', error)
+        setLoadError(`Failed to load chapter: ${error instanceof Error ? error.message : 'Unknown error'}`)
+        // Fallback to chapter from index if loading fails
+        setLoadedChapter(currentChapter)
+      })
+      .finally(() => {
+        setIsLoadingContent(false)
+      })
+  }, [currentChapter?.id])
 
   // Scroll to top when chapter changes
   useEffect(() => {
@@ -45,18 +86,40 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ chapters, currentC
 
   // Memoize sanitized HTML to prevent unnecessary re-renders (before early return)
   const sanitizedHtml = useMemo(() => {
-    if (!currentChapter) return ''
-    const html = renderMarkdown(currentChapter.content)
+    if (!loadedChapter) return ''
+    const html = renderMarkdown(loadedChapter.content)
     return DOMPurify.sanitize(html, {
       ALLOWED_TAGS: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'br', 'strong', 'em', 'code', 'pre', 'ul', 'ol', 'li', 'blockquote', 'a', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'span'],
       ALLOWED_ATTR: ['class', 'href', 'title', 'id'],  // Allow 'id' for anchor links
     })
-  }, [currentChapter])
+  }, [loadedChapter])
 
   if (!currentChapter) {
     return (
       <div className="flex items-center justify-center h-96">
         <p className="text-gray-500 dark:text-gray-400">Select a chapter to start reading</p>
+      </div>
+    )
+  }
+
+  if (isLoadingContent) {
+    return (
+      <div className="flex-1 overflow-y-auto bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+          <p className="text-gray-600 dark:text-gray-400">Loading chapter content...</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (loadError) {
+    return (
+      <div className="flex-1 overflow-y-auto bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900 flex items-center justify-center">
+        <div className="text-center max-w-md">
+          <p className="text-red-600 dark:text-red-400 mb-2">⚠️ Error loading chapter</p>
+          <p className="text-gray-600 dark:text-gray-400 text-sm">{loadError}</p>
+        </div>
       </div>
     )
   }
@@ -92,7 +155,7 @@ export const ContentViewer: React.FC<ContentViewerProps> = ({ chapters, currentC
           </div>
 
           {/* Keywords */}
-          {currentChapter.keywords.length > 0 && (
+          {currentChapter.keywords && currentChapter.keywords.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {currentChapter.keywords.map(keyword => (
                 <span
