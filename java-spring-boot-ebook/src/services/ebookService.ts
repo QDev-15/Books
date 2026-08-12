@@ -64,14 +64,16 @@ class EbookService {
    * Get chapters by tier
    */
   getChaptersByTier(tier: number): Chapter[] {
-    return this.ebookData.chapters.filter(ch => ch.tier === tier)
+    const chapters = this.getAllChapters()
+    return chapters.filter(ch => ch.tier === tier)
   }
 
   /**
    * Get all unique tiers
    */
   getAllTiers(): number[] {
-    const tiers = new Set(this.ebookData.chapters.map(ch => ch.tier))
+    const chapters = this.getAllChapters()
+    const tiers = new Set(chapters.map(ch => ch.tier))
     return Array.from(tiers).sort((a, b) => a - b)
   }
 
@@ -98,16 +100,17 @@ class EbookService {
    * Get total chapters count
    */
   getTotalChapters(): number {
-    return this.ebookData.chapters.length
+    return this.getAllChapters().length
   }
 
   /**
    * Get next chapter
    */
   getNextChapter(currentId: string): Chapter | undefined {
-    const currentIndex = this.ebookData.chapters.findIndex(ch => ch.id === currentId)
-    if (currentIndex >= 0 && currentIndex < this.ebookData.chapters.length - 1) {
-      return this.ebookData.chapters[currentIndex + 1]
+    const chapters = this.getAllChapters()
+    const currentIndex = chapters.findIndex(ch => ch.id === currentId)
+    if (currentIndex >= 0 && currentIndex < chapters.length - 1) {
+      return chapters[currentIndex + 1]
     }
     return undefined
   }
@@ -116,9 +119,10 @@ class EbookService {
    * Get previous chapter
    */
   getPreviousChapter(currentId: string): Chapter | undefined {
-    const currentIndex = this.ebookData.chapters.findIndex(ch => ch.id === currentId)
+    const chapters = this.getAllChapters()
+    const currentIndex = chapters.findIndex(ch => ch.id === currentId)
     if (currentIndex > 0) {
-      return this.ebookData.chapters[currentIndex - 1]
+      return chapters[currentIndex - 1]
     }
     return undefined
   }
@@ -127,7 +131,7 @@ class EbookService {
    * Get chapter index
    */
   getChapterIndex(id: string): number {
-    return this.ebookData.chapters.findIndex(ch => ch.id === id)
+    return this.getAllChapters().findIndex(ch => ch.id === id)
   }
 
   /**
@@ -135,7 +139,8 @@ class EbookService {
    */
   searchChapters(keyword: string): Chapter[] {
     const lowerKeyword = keyword.toLowerCase()
-    return this.ebookData.chapters.filter(ch =>
+    const chapters = this.getAllChapters()
+    return chapters.filter(ch =>
       ch.title.toLowerCase().includes(lowerKeyword) ||
       ch.keywords.some(k => k.toLowerCase().includes(lowerKeyword)) ||
       ch.content.toLowerCase().includes(lowerKeyword)
