@@ -51,13 +51,15 @@ export function useScrollHighlight() {
       // ========== CẬP NHẬT STATE ==========
       // Nếu tìm được heading nào, cập nhật activeSection state
       // SectionList component sẽ so sánh activeSection với sectionSlug để highlight
-      console.log('📖 SCROLL ←', isScrollUp)
+      // Tìm heading phía trên (previous heading)
+      const headingIds = Array.from(headings).map(h => h.id)
       if (activeId) {
         setActiveSection(activeId)
         oldActiveSection = activeId
       } else {
-        console.log('no header', oldActiveSection)
-        setActiveSection(oldActiveSection)
+        const currentIndex = headingIds.indexOf(oldActiveSection)
+        const previousId = currentIndex > 0 ? headingIds[currentIndex - 1] : ''
+        setActiveSection(previousId)
       }
     }
 
