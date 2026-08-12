@@ -3658,10 +3658,821 @@
         {
           "id": "chap-5",
           "number": 5,
-          "title": "Exception Handling",
+          "title": "Exception Handling - DEEP DIVE",
           "slug": "exception-handling",
           "dataFile": "sources/tier-1/exception-handling/exception-handling.json",
-          "sections": []
+          "sections": [
+            {
+              "id": "sec-0",
+              "title": "🎯 Mục Tiêu Học",
+              "slug": "🎯-mục-tiêu-học",
+              "level": 2
+            },
+            {
+              "id": "sec-1",
+              "title": "📚 Mục Lục",
+              "slug": "📚-mục-lục",
+              "level": 2
+            },
+            {
+              "id": "sec-2",
+              "title": "📦 Bộ Mã Nguồn Dùng Chung Cả Chương",
+              "slug": "📦-bộ-mã-nguồn-dùng-chung-cả-chương",
+              "level": 2
+            },
+            {
+              "id": "sec-3",
+              "title": "Phần 0 — Tại Sao Cần Exception Handling?",
+              "slug": "phần-0--tại-sao-cần-exception-handling",
+              "level": 2
+            },
+            {
+              "id": "sec-4",
+              "title": "0.1 Một buổi chiều thứ Sáu có thật",
+              "slug": "0-1-một-buổi-chiều-thứ-sáu-có-thật",
+              "level": 3
+            },
+            {
+              "id": "sec-5",
+              "title": "0.2 Bốn nỗi đau của mô hình \"mã lỗi\"",
+              "slug": "0-2-bốn-nỗi-đau-của-mô-hình--mã-lỗi",
+              "level": 3
+            },
+            {
+              "id": "sec-6",
+              "title": "0.3 Exception ra đời để làm gì?",
+              "slug": "0-3-exception-ra-đời-để-làm-gì",
+              "level": 3
+            },
+            {
+              "id": "sec-7",
+              "title": "0.4 Triết lý \"Fail fast, fail loud\"",
+              "slug": "0-4-triết-lý--fail-fast--fail-loud",
+              "level": 3
+            },
+            {
+              "id": "sec-8",
+              "title": "0.5 Exception propagation — hành trình ngược lên stack",
+              "slug": "0-5-exception-propagation--hành-trình-ngược-lên-stack",
+              "level": 3
+            },
+            {
+              "id": "sec-9",
+              "title": "Phần 1 — Cây Phân Cấp Throwable",
+              "slug": "phần-1--cây-phân-cấp-throwable",
+              "level": 2
+            },
+            {
+              "id": "sec-10",
+              "title": "1.1 Sơ đồ cây đầy đủ",
+              "slug": "1-1-sơ-đồ-cây-đầy-đủ",
+              "level": 3
+            },
+            {
+              "id": "sec-11",
+              "title": "1.2 `Throwable` — bên trong có gì?",
+              "slug": "1-2--throwable--bên-trong-có-gì",
+              "level": 3
+            },
+            {
+              "id": "sec-12",
+              "title": "1.3 `Error` — vùng cấm",
+              "slug": "1-3--error--vùng-cấm",
+              "level": 3
+            },
+            {
+              "id": "sec-13",
+              "title": "1.4 `Exception` và `RuntimeException`",
+              "slug": "1-4--exception--và--runtimeexception",
+              "level": 3
+            },
+            {
+              "id": "sec-14",
+              "title": "1.5 Bảng các exception JDK gặp nhiều nhất",
+              "slug": "1-5-bảng-các-exception-jdk-gặp-nhiều-nhất",
+              "level": 3
+            },
+            {
+              "id": "sec-15",
+              "title": "1.6 `StackTraceElement[]` — mổ xẻ stack trace",
+              "slug": "1-6--stacktraceelement--mổ-xẻ-stack-trace",
+              "level": 3
+            },
+            {
+              "id": "sec-16",
+              "title": "1.7 Vì sao chỉ `Throwable` mới ném được?",
+              "slug": "1-7-vì-sao-chỉ--throwable--mới-ném-được",
+              "level": 3
+            },
+            {
+              "id": "sec-17",
+              "title": "Phần 2 — Checked vs Unchecked Exceptions",
+              "slug": "phần-2--checked-vs-unchecked-exceptions",
+              "level": 2
+            },
+            {
+              "id": "sec-18",
+              "title": "2.1 Luật \"handle-or-declare\" của compiler",
+              "slug": "2-1-luật--handle-or-declare--của-compiler",
+              "level": 3
+            },
+            {
+              "id": "sec-19",
+              "title": "2.2 Checked Exception — sự cố ngoại cảnh",
+              "slug": "2-2-checked-exception--sự-cố-ngoại-cảnh",
+              "level": 3
+            },
+            {
+              "id": "sec-20",
+              "title": "2.3 Unchecked Exception — lỗi lập trình",
+              "slug": "2-3-unchecked-exception--lỗi-lập-trình",
+              "level": 3
+            },
+            {
+              "id": "sec-21",
+              "title": "2.4 Cây quyết định — chọn checked hay unchecked?",
+              "slug": "2-4-cây-quyết-định--chọn-checked-hay-unchecked",
+              "level": 3
+            },
+            {
+              "id": "sec-22",
+              "title": "2.5 Bảng so sánh tổng hợp",
+              "slug": "2-5-bảng-so-sánh-tổng-hợp",
+              "level": 3
+            },
+            {
+              "id": "sec-23",
+              "title": "2.6 \"Checked exception hell\" và cách thoát ra",
+              "slug": "2-6--checked-exception-hell--và-cách-thoát-ra",
+              "level": 3
+            },
+            {
+              "id": "sec-24",
+              "title": "2.7 `InterruptedException` — ca đặc biệt phải biết",
+              "slug": "2-7--interruptedexception--ca-đặc-biệt-phải-biết",
+              "level": 3
+            },
+            {
+              "id": "sec-25",
+              "title": "Phần 3 — try / catch / finally",
+              "slug": "phần-3--try--catch--finally",
+              "level": 2
+            },
+            {
+              "id": "sec-26",
+              "title": "3.1 Cú pháp đầy đủ",
+              "slug": "3-1-cú-pháp-đầy-đủ",
+              "level": 3
+            },
+            {
+              "id": "sec-27",
+              "title": "3.2 Luồng thực thi — ba kịch bản",
+              "slug": "3-2-luồng-thực-thi--ba-kịch-bản",
+              "level": 3
+            },
+            {
+              "id": "sec-28",
+              "title": "3.3 Nhiều khối `catch` — thứ tự CỰC KỲ quan trọng",
+              "slug": "3-3-nhiều-khối--catch--thứ-tự-cực-kỳ-quan-trọng",
+              "level": 3
+            },
+            {
+              "id": "sec-29",
+              "title": "3.4 Multi-catch (Java 7+)",
+              "slug": "3-4-multi-catch--java-7",
+              "level": 3
+            },
+            {
+              "id": "sec-30",
+              "title": "3.5 `finally` — luôn chạy, trừ 4 trường hợp",
+              "slug": "3-5--finally--luôn-chạy--trừ-4-trường-hợp",
+              "level": 3
+            },
+            {
+              "id": "sec-31",
+              "title": "3.6 `return` trong `try` vs `return` trong `finally` — bẫy kinh điển",
+              "slug": "3-6--return--trong--try--vs--return--trong--finally--bẫy-kinh-điển",
+              "level": 3
+            },
+            {
+              "id": "sec-32",
+              "title": "3.7 Exception ném từ `finally` — nuốt mất exception gốc",
+              "slug": "3-7-exception-ném-từ--finally--nuốt-mất-exception-gốc",
+              "level": 3
+            },
+            {
+              "id": "sec-33",
+              "title": "3.8 Bảng tra cứu luồng thực thi",
+              "slug": "3-8-bảng-tra-cứu-luồng-thực-thi",
+              "level": 3
+            },
+            {
+              "id": "sec-34",
+              "title": "Phần 4 — try-with-resources",
+              "slug": "phần-4--try-with-resources",
+              "level": 2
+            },
+            {
+              "id": "sec-35",
+              "title": "4.1 Vấn đề: đóng tài nguyên bằng `finally` khó hơn bạn tưởng",
+              "slug": "4-1-vấn-đề--đóng-tài-nguyên-bằng--finally--khó-hơn-bạn-tưởng",
+              "level": 3
+            },
+            {
+              "id": "sec-36",
+              "title": "4.2 `AutoCloseable` và `Closeable`",
+              "slug": "4-2--autocloseable--và--closeable",
+              "level": 3
+            },
+            {
+              "id": "sec-37",
+              "title": "4.3 Cú pháp và thứ tự đóng LIFO",
+              "slug": "4-3-cú-pháp-và-thứ-tự-đóng-lifo",
+              "level": 3
+            },
+            {
+              "id": "sec-38",
+              "title": "4.4 Suppressed Exceptions — tính năng \"sát thủ\"",
+              "slug": "4-4-suppressed-exceptions--tính-năng--sát-thủ",
+              "level": 3
+            },
+            {
+              "id": "sec-39",
+              "title": "4.5 Java 9 — dùng biến có sẵn (effectively final)",
+              "slug": "4-5-java-9--dùng-biến-có-sẵn--effectively-final",
+              "level": 3
+            },
+            {
+              "id": "sec-40",
+              "title": "4.6 Compiler thực sự sinh ra gì? (de-sugaring)",
+              "slug": "4-6-compiler-thực-sự-sinh-ra-gì--de-sugaring",
+              "level": 3
+            },
+            {
+              "id": "sec-41",
+              "title": "4.7 Bảng so sánh try-finally vs try-with-resources",
+              "slug": "4-7-bảng-so-sánh-try-finally-vs-try-with-resources",
+              "level": 3
+            },
+            {
+              "id": "sec-42",
+              "title": "4.8 Tự viết tài nguyên của riêng bạn",
+              "slug": "4-8-tự-viết-tài-nguyên-của-riêng-bạn",
+              "level": 3
+            },
+            {
+              "id": "sec-43",
+              "title": "Phần 5 — Từ Khoá throw và throws",
+              "slug": "phần-5--từ-khoá-throw-và-throws",
+              "level": 2
+            },
+            {
+              "id": "sec-44",
+              "title": "5.1 Phân biệt trong 30 giây",
+              "slug": "5-1-phân-biệt-trong-30-giây",
+              "level": 3
+            },
+            {
+              "id": "sec-45",
+              "title": "5.2 `throw` — ném exception",
+              "slug": "5-2--throw--ném-exception",
+              "level": 3
+            },
+            {
+              "id": "sec-46",
+              "title": "5.3 `throws` — khai báo",
+              "slug": "5-3--throws--khai-báo",
+              "level": 3
+            },
+            {
+              "id": "sec-47",
+              "title": "5.4 `catch` tại chỗ hay `throws` lên trên? — tiêu chí quyết định",
+              "slug": "5-4--catch--tại-chỗ-hay--throws--lên-trên--tiêu-chí-quyết-định",
+              "level": 3
+            },
+            {
+              "id": "sec-48",
+              "title": "5.5 Ràng buộc khi override method",
+              "slug": "5-5-ràng-buộc-khi-override-method",
+              "level": 3
+            },
+            {
+              "id": "sec-49",
+              "title": "5.6 Precise rethrow (Java 7+)",
+              "slug": "5-6-precise-rethrow--java-7",
+              "level": 3
+            },
+            {
+              "id": "sec-50",
+              "title": "Phần 6 — Custom Exceptions",
+              "slug": "phần-6--custom-exceptions",
+              "level": 2
+            },
+            {
+              "id": "sec-51",
+              "title": "6.1 Khi nào cần tự tạo exception?",
+              "slug": "6-1-khi-nào-cần-tự-tạo-exception",
+              "level": 3
+            },
+            {
+              "id": "sec-52",
+              "title": "6.2 Bốn constructor chuẩn",
+              "slug": "6-2-bốn-constructor-chuẩn",
+              "level": 3
+            },
+            {
+              "id": "sec-53",
+              "title": "6.3 Thêm dữ liệu nghiệp vụ — sức mạnh thật của custom exception",
+              "slug": "6-3-thêm-dữ-liệu-nghiệp-vụ--sức-mạnh-thật-của-custom-exception",
+              "level": 3
+            },
+            {
+              "id": "sec-54",
+              "title": "6.4 Thiết kế cây exception cho ứng dụng",
+              "slug": "6-4-thiết-kế-cây-exception-cho-ứng-dụng",
+              "level": 3
+            },
+            {
+              "id": "sec-55",
+              "title": "6.5 Checked hay unchecked cho custom exception?",
+              "slug": "6-5-checked-hay-unchecked-cho-custom-exception",
+              "level": 3
+            },
+            {
+              "id": "sec-56",
+              "title": "6.6 Chi tiết kỹ thuật cần biết",
+              "slug": "6-6-chi-tiết-kỹ-thuật-cần-biết",
+              "level": 3
+            },
+            {
+              "id": "sec-57",
+              "title": "Phần 7 — Exception Chaining & Root Cause",
+              "slug": "phần-7--exception-chaining--root-cause",
+              "level": 2
+            },
+            {
+              "id": "sec-58",
+              "title": "7.1 Vấn đề: mất dấu vết nguyên nhân gốc",
+              "slug": "7-1-vấn-đề--mất-dấu-vết-nguyên-nhân-gốc",
+              "level": 3
+            },
+            {
+              "id": "sec-59",
+              "title": "7.2 Chuỗi nguyên nhân nhiều tầng",
+              "slug": "7-2-chuỗi-nguyên-nhân-nhiều-tầng",
+              "level": 3
+            },
+            {
+              "id": "sec-60",
+              "title": "7.3 `getCause()` và `initCause()`",
+              "slug": "7-3--getcause--và--initcause",
+              "level": 3
+            },
+            {
+              "id": "sec-61",
+              "title": "7.4 Tìm root cause bằng code",
+              "slug": "7-4-tìm-root-cause-bằng-code",
+              "level": 3
+            },
+            {
+              "id": "sec-62",
+              "title": "7.5 Khi nào WRAP, khi nào RETHROW nguyên bản?",
+              "slug": "7-5-khi-nào-wrap--khi-nào-rethrow-nguyên-bản",
+              "level": 3
+            },
+            {
+              "id": "sec-63",
+              "title": "7.6 `printStackTrace()` vs Logger",
+              "slug": "7-6--printstacktrace--vs-logger",
+              "level": 3
+            },
+            {
+              "id": "sec-64",
+              "title": "Phần 8 — Quản Lý Tài Nguyên Chuyên Sâu",
+              "slug": "phần-8--quản-lý-tài-nguyên-chuyên-sâu",
+              "level": 2
+            },
+            {
+              "id": "sec-65",
+              "title": "8.1 Hợp đồng của `close()`",
+              "slug": "8-1-hợp-đồng-của--close",
+              "level": 3
+            },
+            {
+              "id": "sec-66",
+              "title": "8.2 `getSuppressed()` — khai thác trong thực tế",
+              "slug": "8-2--getsuppressed--khai-thác-trong-thực-tế",
+              "level": 3
+            },
+            {
+              "id": "sec-67",
+              "title": "8.3 Bẫy: `Stream` cũng là `AutoCloseable`",
+              "slug": "8-3-bẫy--stream--cũng-là--autocloseable",
+              "level": 3
+            },
+            {
+              "id": "sec-68",
+              "title": "8.4 Nhiều tài nguyên phụ thuộc lẫn nhau",
+              "slug": "8-4-nhiều-tài-nguyên-phụ-thuộc-lẫn-nhau",
+              "level": 3
+            },
+            {
+              "id": "sec-69",
+              "title": "8.5 `finalize()` đã chết — dùng `Cleaner` nếu thật sự cần",
+              "slug": "8-5--finalize--đã-chết--dùng--cleaner--nếu-thật-sự-cần",
+              "level": 3
+            },
+            {
+              "id": "sec-70",
+              "title": "Phần 9 — 15 Lỗi Exception Kinh Điển",
+              "slug": "phần-9--15-lỗi-exception-kinh-điển",
+              "level": 2
+            },
+            {
+              "id": "sec-71",
+              "title": "Lỗi 1 — Nuốt exception (empty catch block)",
+              "slug": "lỗi-1--nuốt-exception--empty-catch-block",
+              "level": 3
+            },
+            {
+              "id": "sec-72",
+              "title": "Lỗi 2 — `catch (Exception e)` hoặc `catch (Throwable t)` quá rộng",
+              "slug": "lỗi-2--catch--exception-e--hoặc--catch--throwable-t--quá-rộng",
+              "level": 3
+            },
+            {
+              "id": "sec-73",
+              "title": "Lỗi 3 — Ném `Exception` chung chung từ code của mình",
+              "slug": "lỗi-3--ném--exception--chung-chung-từ-code-của-mình",
+              "level": 3
+            },
+            {
+              "id": "sec-74",
+              "title": "Lỗi 4 — `return` trong `finally`",
+              "slug": "lỗi-4--return--trong--finally",
+              "level": 3
+            },
+            {
+              "id": "sec-75",
+              "title": "Lỗi 5 — Đóng tài nguyên bằng `finally` thay vì try-with-resources",
+              "slug": "lỗi-5--đóng-tài-nguyên-bằng--finally--thay-vì-try-with-resources",
+              "level": 3
+            },
+            {
+              "id": "sec-76",
+              "title": "Lỗi 6 — Bọc exception mà vứt cause",
+              "slug": "lỗi-6--bọc-exception-mà-vứt-cause",
+              "level": 3
+            },
+            {
+              "id": "sec-77",
+              "title": "Lỗi 7 — Catch `NullPointerException` để kiểm tra null",
+              "slug": "lỗi-7--catch--nullpointerexception--để-kiểm-tra-null",
+              "level": 3
+            },
+            {
+              "id": "sec-78",
+              "title": "Lỗi 8 — Dùng exception làm control flow",
+              "slug": "lỗi-8--dùng-exception-làm-control-flow",
+              "level": 3
+            },
+            {
+              "id": "sec-79",
+              "title": "Lỗi 9 — Log rồi lại ném (log-and-throw)",
+              "slug": "lỗi-9--log-rồi-lại-ném--log-and-throw",
+              "level": 3
+            },
+            {
+              "id": "sec-80",
+              "title": "Lỗi 10 — `catch` rồi `throw new RuntimeException(e)` không có message",
+              "slug": "lỗi-10--catch--rồi--throw-new-runtimeexception-e--không-có-message",
+              "level": 3
+            },
+            {
+              "id": "sec-81",
+              "title": "Lỗi 11 — Exception trong vòng lặp làm dừng cả lô",
+              "slug": "lỗi-11--exception-trong-vòng-lặp-làm-dừng-cả-lô",
+              "level": 3
+            },
+            {
+              "id": "sec-82",
+              "title": "Lỗi 12 — Không đặt HTTP status đúng trong REST",
+              "slug": "lỗi-12--không-đặt-http-status-đúng-trong-rest",
+              "level": 3
+            },
+            {
+              "id": "sec-83",
+              "title": "Lỗi 13 — Lộ thông tin nội bộ ra client (lỗ hổng bảo mật)",
+              "slug": "lỗi-13--lộ-thông-tin-nội-bộ-ra-client--lỗ-hổng-bảo-mật",
+              "level": 3
+            },
+            {
+              "id": "sec-84",
+              "title": "Lỗi 14 — Bắt exception mà không thể xảy ra (hoặc bắt sai lớp)",
+              "slug": "lỗi-14--bắt-exception-mà-không-thể-xảy-ra--hoặc-bắt-sai-lớp",
+              "level": 3
+            },
+            {
+              "id": "sec-85",
+              "title": "Lỗi 15 — Quên khôi phục cờ interrupt",
+              "slug": "lỗi-15--quên-khôi-phục-cờ-interrupt",
+              "level": 3
+            },
+            {
+              "id": "sec-86",
+              "title": "Phần 10 — Best Practices & Anti-patterns",
+              "slug": "phần-10--best-practices--anti-patterns",
+              "level": 2
+            },
+            {
+              "id": "sec-87",
+              "title": "10.1 Mười quy tắc vàng",
+              "slug": "10-1-mười-quy-tắc-vàng",
+              "level": 3
+            },
+            {
+              "id": "sec-88",
+              "title": "10.2 Bảng anti-pattern",
+              "slug": "10-2-bảng-anti-pattern",
+              "level": 3
+            },
+            {
+              "id": "sec-89",
+              "title": "10.3 Quy ước message exception tốt",
+              "slug": "10-3-quy-ước-message-exception-tốt",
+              "level": 3
+            },
+            {
+              "id": "sec-90",
+              "title": "Phần 11 — Exception Handling Trong Spring Boot",
+              "slug": "phần-11--exception-handling-trong-spring-boot",
+              "level": 2
+            },
+            {
+              "id": "sec-91",
+              "title": "11.1 Mặc định của Spring Boot — và vì sao không đủ dùng",
+              "slug": "11-1-mặc-định-của-spring-boot--và-vì-sao-không-đủ-dùng",
+              "level": 3
+            },
+            {
+              "id": "sec-92",
+              "title": "11.2 `@ExceptionHandler` ở cấp controller",
+              "slug": "11-2--exceptionhandler--ở-cấp-controller",
+              "level": 3
+            },
+            {
+              "id": "sec-93",
+              "title": "11.3 `@RestControllerAdvice` — xử lý tập trung",
+              "slug": "11-3--restcontrolleradvice--xử-lý-tập-trung",
+              "level": 3
+            },
+            {
+              "id": "sec-94",
+              "title": "11.4 `ErrorResponse` DTO — định dạng lỗi nhất quán",
+              "slug": "11-4--errorresponse--dto--định-dạng-lỗi-nhất-quán",
+              "level": 3
+            },
+            {
+              "id": "sec-95",
+              "title": "11.5 `ProblemDetail` (RFC 7807) — chuẩn công nghiệp",
+              "slug": "11-5--problemdetail--rfc-7807--chuẩn-công-nghiệp",
+              "level": 3
+            },
+            {
+              "id": "sec-96",
+              "title": "11.6 Bảng ánh xạ HTTP status",
+              "slug": "11-6-bảng-ánh-xạ-http-status",
+              "level": 3
+            },
+            {
+              "id": "sec-97",
+              "title": "11.7 `@ResponseStatus` — cách nhanh cho dự án nhỏ",
+              "slug": "11-7--responsestatus--cách-nhanh-cho-dự-án-nhỏ",
+              "level": 3
+            },
+            {
+              "id": "sec-98",
+              "title": "11.8 Exception và `@Transactional` — cái bẫy chết người",
+              "slug": "11-8-exception-và--transactional--cái-bẫy-chết-người",
+              "level": 3
+            },
+            {
+              "id": "sec-99",
+              "title": "11.9 Logging có ngữ cảnh — Correlation ID",
+              "slug": "11-9-logging-có-ngữ-cảnh--correlation-id",
+              "level": 3
+            },
+            {
+              "id": "sec-100",
+              "title": "11.10 Kiến trúc phân tầng cho exception",
+              "slug": "11-10-kiến-trúc-phân-tầng-cho-exception",
+              "level": 3
+            },
+            {
+              "id": "sec-101",
+              "title": "Phần 12 — Chủ Đề Nâng Cao",
+              "slug": "phần-12--chủ-đề-nâng-cao",
+              "level": 2
+            },
+            {
+              "id": "sec-102",
+              "title": "12.1 `StackWalker` (Java 9+) — duyệt stack hiệu quả",
+              "slug": "12-1--stackwalker--java-9--duyệt-stack-hiệu-quả",
+              "level": 3
+            },
+            {
+              "id": "sec-103",
+              "title": "12.2 Helpful NullPointerException (Java 14+)",
+              "slug": "12-2-helpful-nullpointerexception--java-14",
+              "level": 3
+            },
+            {
+              "id": "sec-104",
+              "title": "12.3 Sealed exception hierarchy (Java 17+)",
+              "slug": "12-3-sealed-exception-hierarchy--java-17",
+              "level": 3
+            },
+            {
+              "id": "sec-105",
+              "title": "12.4 Exception trong Lambda và Stream — nỗi đau kinh điển",
+              "slug": "12-4-exception-trong-lambda-và-stream--nỗi-đau-kinh-điển",
+              "level": 3
+            },
+            {
+              "id": "sec-106",
+              "title": "12.5 Exception trong `CompletableFuture`",
+              "slug": "12-5-exception-trong--completablefuture",
+              "level": 3
+            },
+            {
+              "id": "sec-107",
+              "title": "12.6 Retry với exponential backoff",
+              "slug": "12-6-retry-với-exponential-backoff",
+              "level": 3
+            },
+            {
+              "id": "sec-108",
+              "title": "12.7 Exception và Virtual Threads (Java 21+)",
+              "slug": "12-7-exception-và-virtual-threads--java-21",
+              "level": 3
+            },
+            {
+              "id": "sec-109",
+              "title": "Phần 13 — Kiểm Thử Đường Thất Bại",
+              "slug": "phần-13--kiểm-thử-đường-thất-bại",
+              "level": 2
+            },
+            {
+              "id": "sec-110",
+              "title": "13.1 JUnit 5 — `assertThrows`",
+              "slug": "13-1-junit-5--assertthrows",
+              "level": 3
+            },
+            {
+              "id": "sec-111",
+              "title": "13.2 Bảng API kiểm thử exception",
+              "slug": "13-2-bảng-api-kiểm-thử-exception",
+              "level": 3
+            },
+            {
+              "id": "sec-112",
+              "title": "13.3 Integration test cho `@RestControllerAdvice`",
+              "slug": "13-3-integration-test-cho--restcontrolleradvice",
+              "level": 3
+            },
+            {
+              "id": "sec-113",
+              "title": "13.4 Test transaction rollback",
+              "slug": "13-4-test-transaction-rollback",
+              "level": 3
+            },
+            {
+              "id": "sec-114",
+              "title": "Phần 14 — Bài Tập Thực Hành",
+              "slug": "phần-14--bài-tập-thực-hành",
+              "level": 2
+            },
+            {
+              "id": "sec-115",
+              "title": "Bài 1 (Dễ) — Chia số an toàn",
+              "slug": "bài-1--dễ--chia-số-an-toàn",
+              "level": 3
+            },
+            {
+              "id": "sec-116",
+              "title": "Bài 2 (Dễ) — Custom Exception `TuoiKhongHopLeException`",
+              "slug": "bài-2--dễ--custom-exception--tuoikhonghopleexception",
+              "level": 3
+            },
+            {
+              "id": "sec-117",
+              "title": "Bài 3 (Trung bình) — Đọc file cấu hình với try-with-resources",
+              "slug": "bài-3--trung-bình--đọc-file-cấu-hình-với-try-with-resources",
+              "level": 3
+            },
+            {
+              "id": "sec-118",
+              "title": "Bài 4 (Trung bình) — `@RestControllerAdvice` hoàn chỉnh",
+              "slug": "bài-4--trung-bình--restcontrolleradvice--hoàn-chỉnh",
+              "level": 3
+            },
+            {
+              "id": "sec-119",
+              "title": "Bài 5 (Khó) — Exception chaining nhiều tầng + root cause",
+              "slug": "bài-5--khó--exception-chaining-nhiều-tầng--root-cause",
+              "level": 3
+            },
+            {
+              "id": "sec-120",
+              "title": "Bài 6 (Khó) — Retry với exponential backoff + circuit breaker mini",
+              "slug": "bài-6--khó--retry-với-exponential-backoff--circuit-breaker-mini",
+              "level": 3
+            },
+            {
+              "id": "sec-121",
+              "title": "Phần 15 — Tóm Tắt & Chương Tiếp Theo",
+              "slug": "phần-15--tóm-tắt--chương-tiếp-theo",
+              "level": 2
+            },
+            {
+              "id": "sec-122",
+              "title": "15.1 Mười lăm điều cốt lõi",
+              "slug": "15-1-mười-lăm-điều-cốt-lõi",
+              "level": 3
+            },
+            {
+              "id": "sec-123",
+              "title": "15.2 Cây quyết định tổng hợp",
+              "slug": "15-2-cây-quyết-định-tổng-hợp",
+              "level": 3
+            },
+            {
+              "id": "sec-124",
+              "title": "15.3 Checklist trước khi merge code",
+              "slug": "15-3-checklist-trước-khi-merge-code",
+              "level": 3
+            },
+            {
+              "id": "sec-125",
+              "title": "15.4 Chương tiếp theo",
+              "slug": "15-4-chương-tiếp-theo",
+              "level": 3
+            },
+            {
+              "id": "sec-126",
+              "title": "📎 Phụ Lục A — Bảng Tra Nhanh Exception JDK",
+              "slug": "📎-phụ-lục-a--bảng-tra-nhanh-exception-jdk",
+              "level": 2
+            },
+            {
+              "id": "sec-127",
+              "title": "A.1 Unchecked (`RuntimeException`)",
+              "slug": "a-1-unchecked--runtimeexception",
+              "level": 3
+            },
+            {
+              "id": "sec-128",
+              "title": "A.2 Checked",
+              "slug": "a-2-checked",
+              "level": 3
+            },
+            {
+              "id": "sec-129",
+              "title": "A.3 Error (không bắt)",
+              "slug": "a-3-error--không-bắt",
+              "level": 3
+            },
+            {
+              "id": "sec-130",
+              "title": "📎 Phụ Lục B — Checklist Review Code",
+              "slug": "📎-phụ-lục-b--checklist-review-code",
+              "level": 2
+            },
+            {
+              "id": "sec-131",
+              "title": "B.1 Tìm bằng regex trong IDE / CI",
+              "slug": "b-1-tìm-bằng-regex-trong-ide--ci",
+              "level": 3
+            },
+            {
+              "id": "sec-132",
+              "title": "B.2 Cấu hình công cụ phân tích tĩnh",
+              "slug": "b-2-cấu-hình-công-cụ-phân-tích-tĩnh",
+              "level": 3
+            },
+            {
+              "id": "sec-133",
+              "title": "B.3 Câu hỏi khi review pull request",
+              "slug": "b-3-câu-hỏi-khi-review-pull-request",
+              "level": 3
+            },
+            {
+              "id": "sec-134",
+              "title": "📎 Phụ Lục C — Thuật Ngữ Việt–Anh",
+              "slug": "📎-phụ-lục-c--thuật-ngữ-việt--anh",
+              "level": 2
+            }
+          ]
         },
         {
           "id": "chap-6",
