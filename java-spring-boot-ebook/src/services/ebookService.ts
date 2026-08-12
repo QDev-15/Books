@@ -164,7 +164,7 @@ class EbookService {
     }
 
     // Load full content from modular file
-    const fullChapter = await dataLoader.loadChapter(chapter.tier, id)
+    const fullChapter = await dataLoader.loadChapter(chapter.tier, id, chapter.slug)
 
     // Cache loaded chapter
     this.loadedChapters.set(id, fullChapter)
@@ -185,7 +185,7 @@ class EbookService {
   async preloadNextChapter(currentId: string): Promise<void> {
     const next = this.getNextChapter(currentId)
     if (next) {
-      await dataLoader.preloadChapter(next.tier, next.id)
+      await dataLoader.preloadChapter(next.tier, next.id, next.slug)
     }
   }
 

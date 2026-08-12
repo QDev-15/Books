@@ -33,7 +33,7 @@ export class DataLoader {
   /**
    * Load a single chapter from its JSON file
    */
-  async loadChapter(tierId: number, chapterId: string): Promise<Chapter> {
+  async loadChapter(tierId: number, chapterId: string, chapterSlug?: string): Promise<Chapter> {
     const cacheKey = `chap-${tierId}-${chapterId}`
 
     // Check cache first
@@ -45,8 +45,12 @@ export class DataLoader {
     }
 
     try {
+      // Use provided slug or default to chapterId if slug not provided
+      const slug = chapterSlug || chapterId
+
       // Construct path to chapter JSON file
-      const filePath = `/data/sources/tier-${tierId}/${chapterId}/${chapterId}.json`
+      // Files are stored as: /data/sources/tier-1/chapter-slug/chapter-slug.json
+      const filePath = `/data/sources/tier-${tierId}/${slug}/${slug}.json`
 
       const response = await fetch(filePath)
       if (!response.ok) {
@@ -110,13 +114,13 @@ export class DataLoader {
   /**
    * Preload next chapter to improve perceived performance
    */
-  async preloadChapter(tierId: number, chapterId: string): Promise<void> {
+  async preloadChapter(tierId: number, chapterId: string, chapterSlug?: string): Promise<void> {
     const cacheKey = `chap-${tierId}-${chapterId}`
 
     // Only preload if not already cached
     if (!this.cache.has(cacheKey)) {
       try {
-        await this.loadChapter(tierId, chapterId)
+        await this.loadChapter(tierId, chapterId, chapterSlug)
       } catch (error) {
         // Silently fail for preload attempts
         console.debug(`Preload failed for ${chapterId}`, error)
