@@ -1,7 +1,8 @@
 import { ChevronDown, Bookmark } from 'lucide-react'
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo } from 'react'
 import { useEbookStore } from '../../store/useEbookStore'
 import { ebookService } from '../../services/ebookService'
+import { useScrollHighlight } from '../../hooks/useScrollHighlight'
 import { SectionList } from './SectionList'
 import type { Chapter } from '../../types'
 
@@ -13,32 +14,15 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ chapters: _cha
   // Get tiers from service (centralized)
   const tiers = useMemo(() => ebookService.getAllTiers(), [])
 
-  // Initialize all tiers and chapters as expanded
+  // Khởi tạo tất cả tiers và chapters là mở rộng
   const [expandedTiers, setExpandedTiers] = useState<Set<number>>(new Set(tiers))
   const [expandedChapters, setExpandedChapters] = useState<Set<string>>(new Set())
-  const [activeSection, setActiveSection] = useState<string>('')
   const { currentChapterId, setCurrentChapter, isBookmarked, getBookmarkCount } = useEbookStore()
 
-  // Track active section while scrolling
-  useEffect(() => {
-    const handleScroll = () => {
-      const headings = document.querySelectorAll('[id^="phần-"], [id^="🎯-"], [id^="📚-"]')
-      let current = ''
-
-      headings.forEach(heading => {
-        const rect = heading.getBoundingClientRect()
-        if (rect.top <= 100) {
-          current = heading.id
-        }
-      })
-
-      setActiveSection(current)
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
+  // Theo dõi section nào đang hiển thị khi scroll
+  const activeSection = useScrollHighlight()
+  
+  console.log(activeSection, 'activeSection')
   const toggleTier = (tier: number) => {
     const newTiers = new Set(expandedTiers)
     if (newTiers.has(tier)) {
